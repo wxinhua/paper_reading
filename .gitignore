@@ -1,0 +1,17 @@
+# Generated reader and deployment bundle
+/*.html
+/dist/
+__pycache__/
+*.py[cod]
+
+# Local archives and machine-specific state
+*.pdf
+.local*/
+.env
+.env.*
+*.pem
+*.key
+zotero-*.json
+*-progress.json
+.DS_Store
+

@@ -1,0 +1,67 @@
+{
+  "paper_id": "012",
+  "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2602.10106v2",
+  "source_url": "http://arxiv.org/abs/2602.10106",
+  "source_sha256": "73ed9bfc11c60c12fd8eb2652f47a0b64d423d7f266b6d81f8023ca47fa0b5e2",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/012-egohumanoid/fig-01-overview.png",
+      "crop_normalized": [
+        0.075,
+        0.245,
+        0.94,
+        0.68
+      ],
+      "crop_pdf_points": [
+        45.9,
+        194.04,
+        575.28,
+        538.56
+      ],
+      "image_size": [
+        1470,
+        957
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 1: Introducing E GO H UMANOID , the first investigation on human-to-humanoid transfer for whole-body loco-manipulation. Robot teleoperation data collection is constrained to laboratory environment due to hardware and safety limitations, while in- the-wild human demonstrations offer scalable diversity in objects, scenes, lighting, and viewpoints. Our alignment pipeline bridges the embodiment gap through view and action alignment, enabling vision-language-action (VLA) co-training on both data sources. Real-world loco-manipulation deployment validates that egocentric human demonstrations invigorate generalization without scene-specific robot data, outperforming robot-only baselines by 51% with consistent scaling behavior.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "5ab22ab87c6a9dfb60d8f4c02968835edfeafb72c107caf03d0f1d8d3779c0ab"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "method",
+      "page": 5,
+      "file": "fig-03-method.png",
+      "path": "assets/012-egohumanoid/fig-03-method.png",
+      "crop_normalized": [
+        0.075,
+        0.06,
+        0.94,
+        0.37
+      ],
+      "crop_pdf_points": [
+        45.9,
+        47.52,
+        575.28,
+        293.04
+      ],
+      "image_size": [
+        1470,
+        682
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 3: Pipeline of human-to-humanoid alignment. (a) View Alignment: Egocentric images are transformed to approximate robot viewpoints by reprojecting estimated depth points and generative inpainting to fill in blank holes. (b) Action Alignment: We employ relative end-effector poses to unify the upper body action space, and discrete commands for lower-body locomotion.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "1d2b77bf9497752cefe471bc0f861e829e146633cc09d00e8cb723cec92f54fc"
+    }
+  ],
+  "source_version": "arXiv:2602.10106v2 [cs.RO] 4 Jun 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

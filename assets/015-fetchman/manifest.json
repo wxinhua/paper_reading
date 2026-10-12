@@ -1,0 +1,121 @@
+{
+  "paper_id": "015",
+  "title": "FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2608.17027v2",
+  "source_url": "http://arxiv.org/abs/2608.17027",
+  "source_sha256": "3e58e5d42c992ac6210e2e70bd73a7221cb129b5f7d0e0ea5cb33a9d07b84bfe",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/015-fetchman/fig-01-overview.png",
+      "crop_normalized": [
+        0.15,
+        0.535,
+        0.85,
+        0.855
+      ],
+      "crop_pdf_points": [
+        91.8,
+        423.72,
+        520.2,
+        677.16
+      ],
+      "image_size": [
+        1190,
+        704
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: F ETCH M AN learns visual humanoid loco-manipulation entirely in simulation and deploys it zero-shot to a real Unitree G1. The resulting policy walks up to and grasps objects across diverse, unseen real-world scenes, with no real-world data or per-scene tuning.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "1a405c7d6a13edc211d23af4be25dc634e3fbb1978935f6250f196dc34be0caa"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "data-generation",
+      "page": 5,
+      "file": "fig-03-data-generation.png",
+      "path": "assets/015-fetchman/fig-03-data-generation.png",
+      "crop_normalized": [
+        0.15,
+        0.085,
+        0.85,
+        0.29
+      ],
+      "crop_pdf_points": [
+        91.8,
+        67.32,
+        520.2,
+        229.68
+      ],
+      "image_size": [
+        1190,
+        451
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 3: Synthetic data generation pipeline. Each episode samples (1) a house from MolmoSpaces, (2) a pickable target object within it, (3) a contact-free start and grasp-standoff goal pose connected by a planned path the scripted controller follows, and (4) domain randomization applied independently per episode.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "a51b36aeeb8caa77137c86561367bef85f03fc8d6c4da3961739b6d025684059"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "architecture",
+      "page": 6,
+      "file": "fig-04-architecture.png",
+      "path": "assets/015-fetchman/fig-04-architecture.png",
+      "crop_normalized": [
+        0.15,
+        0.085,
+        0.85,
+        0.39
+      ],
+      "crop_pdf_points": [
+        91.8,
+        67.32,
+        520.2,
+        308.88
+      ],
+      "image_size": [
+        1190,
+        671
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 4: Policy architecture. The head and wrist RGB streams are encoded by a frozen DINOv3 backbone into per-patch image tokens, while the proprioceptive vector (h t , r t , p t , q t upper , g t ) is mapped by an MLP to a single state token. A flow-matching DiT cross-attends to these tokens and denoises a 15-dimensional action chunk, split into upper-body targets (waist, arm, and gripper) tracked by a joint-level PD controller and a base command (v x , v y , ω, h̄ t ) executed by the pre-trained lower-body locomotion controller.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "571bb9b67c06958bc22c7355d0e2e8111c4a676b700268ad97ec7b71a260db68"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "training",
+      "page": 7,
+      "file": "fig-05-training.png",
+      "path": "assets/015-fetchman/fig-05-training.png",
+      "crop_normalized": [
+        0.15,
+        0.08,
+        0.85,
+        0.35
+      ],
+      "crop_pdf_points": [
+        91.8,
+        63.36,
+        520.2,
+        277.2
+      ],
+      "image_size": [
+        1190,
+        594
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 5: Two-stage training pipeline. Stage 1 (Imitation Pretraining). The task sampler instantiates diverse simulated environments in which the scripted G1 staged policy generates demonstration trajectories, and the resulting frozen dataset trains the loco-manipulation policy π by behavior cloning. Stage 2 (Online GRPO Refinement). The same sampler resets groups of environments to identical tasks (group size × number of groups), π collects on-policy trajectories that differ only in sampled action noise, and a group-relative GRPO update refines π in place.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "615abfff25edc58aea16658212796e9421af32be3bb4255197d3ae5fe2dd0731"
+    }
+  ],
+  "source_version": "arXiv:2608.17027v2 [cs.RO] 29 Aug 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

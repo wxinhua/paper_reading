@@ -1,0 +1,67 @@
+{
+  "paper_id": "007",
+  "title": "SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2606.08278v1",
+  "source_url": "https://arxiv.org/abs/2606.08278",
+  "source_sha256": "f9150c3c8db27b0c9a2765b242ca2cc8f837d63dedd43b46b68dc00cc42d72c9",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/007-simple/fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.275,
+        0.83,
+        0.65
+      ],
+      "crop_pdf_points": [
+        104.04,
+        217.8,
+        507.96,
+        514.8
+      ],
+      "image_size": [
+        1122,
+        825
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Humanoid Loco-manipulation in SIMPLE. We introduce a comprehensive simulation benchmark designed to standardize the evaluation and training of humanoid foundation models. The framework features 60 diverse whole-body tasks across 50 indoor scenes, utilizing over 1,000 object assets. By coupling MuJoCo’s robust contact physics with Isaac Sim’s photorealistic rendering, SIMPLE provides built-in data collection pipelines and natively benchmarks state-of-the-art VLAs and WAMs (e.g., Ψ 0 [1], π 0.5 [2], DreamZero [3]).",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "23248a4b99fcda7b13d069a81625d6e781c333e202787801b1e424a4f5ab52a7"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "page": 4,
+      "file": "fig-02-method.png",
+      "path": "assets/007-simple/fig-02-method.png",
+      "crop_normalized": [
+        0.17,
+        0.085,
+        0.83,
+        0.35
+      ],
+      "crop_pdf_points": [
+        104.04,
+        67.32,
+        507.96,
+        277.2
+      ],
+      "image_size": [
+        1122,
+        583
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 2: System Pipeline. Our pipeline consists of three stages: (1) data generation in MuJoCo via motion planning and teleoperation; (2) offline replay and rendering in Isaac Sim to obtain photore- alistic visual observations; and (3) policy evaluation under diverse domain-randomized settings.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "bf7216e537327e767ebcf537ea18b25ef3bc08d5eec78d6e59b80cba990af42d"
+    }
+  ],
+  "source_version": "arXiv:2606.08278v1 [cs.RO] 6 Jun 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

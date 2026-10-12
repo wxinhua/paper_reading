@@ -1,0 +1,94 @@
+{
+  "paper_id": "008",
+  "title": "GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2606.05160v1",
+  "source_url": "http://arxiv.org/abs/2606.05160",
+  "source_sha256": "6e125c17f5fc148c1f3c4cbb2bbcefbc889dedfc9881e40042b9f21554ad1cae",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/008-grail/fig-01-overview.png",
+      "crop_normalized": [
+        0.1,
+        0.3,
+        0.9,
+        0.84
+      ],
+      "crop_pdf_points": [
+        59.53,
+        252.57,
+        535.75,
+        707.19
+      ],
+      "image_size": [
+        1324,
+        1263
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: From Fully Digital Data Generation to Real-World Deployment. GRAIL generates humanoid loco-manipulation data from 3D assets and video priors without physical scene rebuilds or robot teleoperation. Top: simulated humanoids execute generated references spanning pick-up, whole-body manipulation, sitting, and terrain traversal. Bottom: egocentric visual policies trained only on GRAIL-generated data are deployed on a Unitree G1 for stair-climbing and object pick-up.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "18aab51af0330c7b8eb3872be099adb841cef84deeec25c2827524bd026023b0"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "hoi-generation",
+      "page": 4,
+      "file": "fig-02-hoi-generation.png",
+      "path": "assets/008-grail/fig-02-hoi-generation.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.305
+      ],
+      "crop_pdf_points": [
+        59.53,
+        84.19,
+        535.75,
+        256.78
+      ],
+      "image_size": [
+        1324,
+        479
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 2: Asset-Conditioned 4D HOI Generation. Given a 3D object asset, we render a fully specified 3D scene with a character prefitted to the target humanoid and known camera parameters, synthesize a static-camera interaction video via a VFM conditioned on the rendered frame, and reconstruct metric 4D human-object motion by jointly refining initial human and object trajectory estimates with keypoint, depth, and contact losses anchored to the privileged 3D configuration.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "fe339db886d1b6e3532f594e1b1ca95907abf38f9f6abf06cefbf0ad33cda31a"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "controller-adaptation",
+      "page": 7,
+      "file": "fig-03-controller-adaptation.png",
+      "path": "assets/008-grail/fig-03-controller-adaptation.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.405
+      ],
+      "crop_pdf_points": [
+        59.53,
+        84.19,
+        535.75,
+        340.97
+      ],
+      "image_size": [
+        1324,
+        713
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 3: Task-General Tracking via Complementary Controller Adaptation. Retargeted 4D HOI trajectories are converted into robot-action data by adapting different parts of a pretrained whole-body controller. Object- manipulation trajectories are used to train an object-aware adaptor 𝜋 𝜑 while the controller remains frozen: the adaptor observes proprioception 𝑠 𝑡 and an object reference 𝑜 𝑡 , injects a latent residual ∆𝑧 𝑡 , and emits hand actions 𝑎 hand . Terrain traversal and chair-sitting trajectories are used to fine-tune the controller with a scene- 𝑡 aware height encoder 𝜖 ℎ : the encoder maps the local height map ℎ 𝑡 into terrain context for scene-conditioned whole-body control.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "2c9f39ec5931abb2345fbf9b2ac97dba508b53bf90b4394b1e9ecc5e8ba26efe"
+    }
+  ],
+  "source_version": "arXiv:2606.05160v1 [cs.RO] 3 Jun 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

@@ -1,0 +1,81 @@
+{
+  "paper_id": "020",
+  "title": "Retrieve, Don't Retrain: Extending Vision Language Action Models to New Tasks at Test Time",
+  "source_document": "https://arxiv.org/abs/2606.15631v1",
+  "source_url": "https://arxiv.org/pdf/2606.15631v1",
+  "source_version": "v1",
+  "source_sha256": "c690f8b889c8de32eda0d2546a0b27e9dca14ea9005a52d672470a192d73c431",
+  "source_pages": 20,
+  "extracted_on": "2026-10-09",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 2,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.08,
+        0.835,
+        0.327
+      ],
+      "crop_pdf_points": [
+        104.04,
+        63.36,
+        511.02,
+        258.98400000000004
+      ],
+      "crop_pixels": [
+        289,
+        176,
+        1420,
+        719
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        543
+      ],
+      "sha256": "449336e035c35085212c9a9a85a06335527a6a36a447c38e156b1aa70b99ad59",
+      "original_caption": "Figure 1: RECAP overview. Instead of teleoperating each new task and fine-tuning the policy (top,\n∼24 GPU-hours/task for Cosmos Policy [7]), ReCAP appends cheap human-hand demonstrations\nto a retrieval pool while keeping the policy frozen (bottom), 18× cheaper [9, 10], no additional\ntraining.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-pipeline",
+      "pdf_page": 4,
+      "file": "fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.463,
+        0.078,
+        0.833,
+        0.389
+      ],
+      "crop_pdf_points": [
+        283.356,
+        61.776,
+        509.796,
+        308.088
+      ],
+      "crop_pixels": [
+        787,
+        172,
+        1416,
+        856
+      ],
+      "dpi": 200,
+      "size_px": [
+        629,
+        684
+      ],
+      "sha256": "2b8a730b20f623c904ba6cb99a3bae41644c262fa11853b6e59774b53644b477",
+      "original_caption": "Figure 2: RECAP framework. The current observa-\ntion retrieves a matching state-action chunk from the\npool database; the retrieved chunk and the current ob-\nservation then condition a world action model that de-\nnoises the next action and next observation in one video\nsequence.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    }
+  ]
+}

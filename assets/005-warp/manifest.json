@@ -1,0 +1,67 @@
+{
+  "paper_id": "005",
+  "title": "WARP: Whole-Body Retargeting for Learning from Offline Human Demonstrations",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2606.29940v2",
+  "source_url": "http://arxiv.org/abs/2606.29940",
+  "source_sha256": "b1760fa7f611cf71c0b7a02f4cb5d1e00a918b43250c1229901c41bb4f3f9400",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/005-warp/fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.56,
+        0.83,
+        0.91
+      ],
+      "crop_pdf_points": [
+        104.04,
+        443.52,
+        507.96,
+        720.72
+      ],
+      "image_size": [
+        1122,
+        770
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Whole-body-Aware Retargeting from human Pose (WARP). (a) We collect human manipula- tion data offline using VR devices, and WARP retargets this motion into whole-body robot actions, producing human-like trajectories directly usable for policy training. (b) The central difficulty of the offline setting is the absence of online human correction to close the embodiment gap. With no human in the loop to absorb mis- matches, retargeting errors become far less tolerable, and small errors cause replay failure. (c) WARP retargets whole-body human motions, creating versatile whole-body coordination skills for manipulation.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "b85abc8f8d14cf327eb0498370fa6cb125159d1a4bfd2c87f21e3a284e3b6ca2"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "page": 4,
+      "file": "fig-02-method.png",
+      "path": "assets/005-warp/fig-02-method.png",
+      "crop_normalized": [
+        0.17,
+        0.085,
+        0.83,
+        0.28
+      ],
+      "crop_pdf_points": [
+        104.04,
+        67.32,
+        507.96,
+        221.76
+      ],
+      "image_size": [
+        1122,
+        429
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 2: Offline retargeting with WARP. (a) Finding the optimal robot torso placement using Adaptive Offset (b) After aligning robot palm to human, robot wrist position can be solved (c) Prioritizing EEF alignment leaves the elbow configuration underconstrained. (d) Given fixed robot wrist and shoulder, we identify the elbow nullspace. Using stereo-sew [24], we find a unique plane intersecting the nullspace circle. (d) The solved robot SEW representation.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "4edd44acf399d93430acaad63e43cd4ef35776d7d30acfc32e3b31d77b6b3f3b"
+    }
+  ],
+  "source_version": "arXiv:2606.29940v2 [cs.RO] 19 Aug 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

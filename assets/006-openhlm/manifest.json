@@ -1,0 +1,40 @@
+{
+  "paper_id": "006",
+  "title": "OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2606.22174v1",
+  "source_url": "http://arxiv.org/abs/2606.22174",
+  "source_sha256": "2781bfd88a7b7d9c94083ef72195bcf1192d431f92e1298e77534e53b04aac32",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview-study-design",
+      "page": 2,
+      "file": "fig-01-overview-study-design.png",
+      "path": "assets/006-openhlm/fig-01-overview-study-design.png",
+      "crop_normalized": [
+        0.17,
+        0.08,
+        0.83,
+        0.355
+      ],
+      "crop_pdf_points": [
+        104.04,
+        63.36,
+        507.96,
+        281.16
+      ],
+      "image_size": [
+        1122,
+        605
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Overview of OpenHLM. A roadmap of controlled experiments in three phases: (I) we compare teleop interfaces for a low-level whole-body controller and adopt a joint-based interface; (II) we adapt a manipulation VLA to the humanoid’s full action space along several design axes; (III) we extend the policy to new objects and instructions by co-training the full loco-manipulation data with stationary teleop or HuMI [1] demonstrations.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "33df05175dcaf83fe9e89b72df33a6292550d12ea46594052526b2ca25b48e14"
+    }
+  ],
+  "source_version": "arXiv:2606.22174v1 [cs.RO] 20 Jun 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

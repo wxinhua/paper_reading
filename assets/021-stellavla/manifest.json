@@ -1,0 +1,81 @@
+{
+  "paper_id": "021",
+  "title": "StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models",
+  "source_document": "https://arxiv.org/abs/2608.11671v1",
+  "source_url": "https://arxiv.org/pdf/2608.11671v1",
+  "source_version": "v1",
+  "source_sha256": "ef0082f4f9618a409ebc780c3ef4d1e1fb073cf85c5cf4ce8a367556eeeecca4",
+  "source_pages": 21,
+  "extracted_on": "2026-10-09",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 2,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.11,
+        0.076,
+        0.89,
+        0.469
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        60.192,
+        544.6800000000001,
+        371.448
+      ],
+      "crop_pixels": [
+        187,
+        167,
+        1513,
+        1032
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        865
+      ],
+      "sha256": "5b04e31db7d137db2dda8370b0c0bdfac1e6ddf1cb6150eb0a29e116ed7d71ad",
+      "original_caption": "Figure 1 Overview of StellaVLA, which conditions a VLA policy on in-context structured demonstrations. We\nconvert diverse human and robot demonstrations into structured examples. Each example comprises high-level semantic\nrationales (sub-goals) and fine-grained kinematic rationales (movements), which are retrieved to prompt a vision-\nlanguage-action model for manipulation tasks. During training, an auxiliary spatial-language expert supervises these\nrationales so the policy grounds its actions in the underlying reasoning rather than only imitating the observed motions.\nAt inference this expert is removed and only the action expert is used, preserving real-time control. The resulting model\ngeneralizes more robustly to unseen tasks and environments in both simulation and real-world experiments.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-pipeline",
+      "pdf_page": 5,
+      "file": "fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.11,
+        0.076,
+        0.89,
+        0.435
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        60.192,
+        544.6800000000001,
+        344.52
+      ],
+      "crop_pixels": [
+        187,
+        167,
+        1513,
+        957
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        790
+      ],
+      "sha256": "ebdea8d89a4a1673fa1727df0284bc7068f6207fc7f778ad8884af01f801c76e",
+      "original_caption": "Figure 2 Overview of StellaVLA. Top left: a retrieved context demonstration is represented as a task plan and a\nsequence of subgoals, each containing a keyframe, robot state, 2D trace, and 3D motion. Right: these annotations are\ngenerated automatically offline from VLM reasoning and robot trajectories, without human labeling. Bottom left: the\nvision-language model encodes the demonstration together with the current observation and instruction into a shared\nrepresentation, which is consumed by an action expert for action prediction and a spatial-language expert for auxiliary\nsupervision during training only. The spatial-language expert is removed at inference, requiring only a single forward\npass.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    }
+  ]
+}

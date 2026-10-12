@@ -1,0 +1,67 @@
+{
+  "paper_id": "017",
+  "title": "Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2610.00438v1",
+  "source_url": "http://arxiv.org/abs/2610.00438",
+  "source_sha256": "6d2e48b284c9d2d6a21882239cb6dcec5b493744c1bac0bcd2681008849fbc76",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/017-human-pretraining/fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.2425,
+        0.83,
+        0.54
+      ],
+      "crop_pdf_points": [
+        104.04,
+        192.06,
+        507.96,
+        427.68
+      ],
+      "image_size": [
+        1122,
+        654
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Introducing λ 0 with H UMAN V ERSE -500. We introduce a robot-free egocentric human- data collection paradigm and use it to collect H UMAN V ERSE -500, a 500-hour dataset of whole- body human loco-manipulation. Then, we develop λ 0 , a unified whole-body humanoid vision– language–action policy, through a three-stage recipe combining large-scale Internet manipulation data, H UMAN V ERSE -500, and embodiment-specific data. Finally, λ 0 achieves state-of-the-art per- formance and strong generalization across simulated and real-world loco-manipulation tasks.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "d1532fc55f979945b9ea68b25088d17453726cb376f3c50c1fb3478660a8f0fc"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "training",
+      "page": 6,
+      "file": "fig-06-training.png",
+      "path": "assets/017-human-pretraining/fig-06-training.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.83,
+        0.315
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        507.96,
+        249.48
+      ],
+      "image_size": [
+        1122,
+        473
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 6: Three-stage training of λ 0 . The policy learns interaction from egocentric data, whole- body coordination from H UMAN V ERSE -500, and downstream control from real-robot data.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "7da14749b7fbc47dd1accf8a69a2fb4ca1ae887f2f3cc138d26efa265ce7d12c"
+    }
+  ],
+  "source_version": "arXiv:2610.00438v1 [cs.RO] 30 Sep 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

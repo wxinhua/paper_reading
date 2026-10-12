@@ -1,0 +1,81 @@
+{
+  "paper_id": "022",
+  "title": "RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation",
+  "source_document": "https://arxiv.org/abs/2608.25585v2",
+  "source_url": "https://arxiv.org/pdf/2608.25585v2",
+  "source_version": "v2",
+  "source_sha256": "094b6cf7b44aa70394e6734bf0ce048bbe9177db955d8e09d25fb6813c92ad4b",
+  "source_pages": 18,
+  "extracted_on": "2026-10-09",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.497,
+        0.218,
+        0.893,
+        0.55
+      ],
+      "crop_pdf_points": [
+        304.164,
+        172.656,
+        546.516,
+        435.6
+      ],
+      "crop_pixels": [
+        845,
+        480,
+        1518,
+        1210
+      ],
+      "dpi": 200,
+      "size_px": [
+        673,
+        730
+      ],
+      "sha256": "27913a9a01deb5d767045ab33f5f18c668ed15fd8ef6a77f23cc5ce97dba875e",
+      "original_caption": "Figure 1. Adaptation bottleneck in existing ICIL frameworks.\nExisting ICIL methods (a) prioritize superficial visual similarity\nover functional intent in context retrieval, (b) fail to effectively\nleverage contextual guidance, and (c) exhibit significant computa-\ntional overhead for larger contexts. While this overhead is plotted\nfor RICL, other ICIL baselines follow a nearly identical trend.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-pipeline",
+      "pdf_page": 4,
+      "file": "fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.086,
+        0.08,
+        0.89,
+        0.405
+      ],
+      "crop_pdf_points": [
+        52.632,
+        63.36,
+        544.6800000000001,
+        320.76000000000005
+      ],
+      "crop_pixels": [
+        146,
+        176,
+        1513,
+        891
+      ],
+      "dpi": 200,
+      "size_px": [
+        1367,
+        715
+      ],
+      "sha256": "def2268422b9639014e28c88440c087a72a9de7828435ea6d72d85eed094b3b4",
+      "original_caption": "Figure 2. Overview of RA-VLA. Our framework retrieves task-relevant expert segments to serve as in-context guidance, facilitating\naction generation for unseen task adaptation. The architecture integrates two key components: a retriever trained to identify behaviorally\nsimilar segments (Section 4.2) and a VLA policy finetuned to effectively ground action generation on the retrieved context (Section 4.3).",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    }
+  ]
+}

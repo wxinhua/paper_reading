@@ -1,0 +1,67 @@
+{
+  "paper_id": "013",
+  "title": "HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning and Adaptation",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://openreview.net/pdf?id=ekzk7TSLKr",
+  "source_url": "https://openreview.net/pdf?id=ekzk7TSLKr",
+  "source_sha256": "79bf93729d6b3dde98fdb2ec36d6c58db0940338a0647b1175a9c4058e6fb035",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/013-humanoidmimicgen/fig-01-overview.png",
+      "crop_normalized": [
+        0.075,
+        0.17,
+        0.94,
+        0.415
+      ],
+      "crop_pdf_points": [
+        45.9,
+        134.64,
+        575.28,
+        328.68
+      ],
+      "image_size": [
+        1470,
+        539
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 1: HumanoidMimicGen Overview. We present HumanoidMimicGen, an algorithm for humanoid legged loco-manipulation demonstra- tion generation. Left: first, a human teleoperator collects a loco-manipulation task demonstration. Center: HumanoidMimicGen synthetically generates thousands of new demonstrations across different scene and object layouts by adapting local segments of the human demonstration using a novel integration of whole-body planning and control. Right: These demonstrations can be used to train performant loco-manipulation policies in both simulated and real-world settings.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "afeb82b73f19b52d0adc33ef0e828c771a7730180770dbbde20bef56f8417053"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "page": 3,
+      "file": "fig-02-method.png",
+      "path": "assets/013-humanoidmimicgen/fig-02-method.png",
+      "crop_normalized": [
+        0.075,
+        0.06,
+        0.94,
+        0.37
+      ],
+      "crop_pdf_points": [
+        45.9,
+        47.52,
+        575.28,
+        293.04
+      ],
+      "image_size": [
+        1470,
+        682
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 2: Method Overview. Left: HumanoidMimicGen takes a source demonstration with per-arm skill annotations (blue arrows) and constraints (orange box, described in Sec. B) that govern the order of base and arm execution. Right: The skill annotations and constraints are used to determine an order for skill execution, and a target end-effector pose for the beginning of each skill. The Whole-Body Planning process constructs a decoupled locomotion plan and per-arm plan to achieve the target(s) (shown in orange arrows), which are then executed by the whole-body controller and upper-body controller, respectively. Finally, the adapted skill segment(s) are executed. This process repeats until there are no more skill segments to execute.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "3b23e4c5732d44b2f94bb10db36334dc5873f6955f95e255c781e9dbb3bd2c9f"
+    }
+  ],
+  "source_version": "匿名 PDF；修订号、作者与日期未核实",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

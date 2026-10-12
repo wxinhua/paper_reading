@@ -1,0 +1,12 @@
+{
+  "id": "021",
+  "slug": "stellavla",
+  "title": "StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models",
+  "arxiv": "2608.11671",
+  "version": "v1",
+  "source_url": "https://arxiv.org/pdf/2608.11671v1",
+  "pdf": "assets/021-stellavla/source.pdf",
+  "bytes": 2200219,
+  "sha256": "ef0082f4f9618a409ebc780c3ef4d1e1fb073cf85c5cf4ce8a367556eeeecca4",
+  "downloaded_on": "2026-10-09"
+}

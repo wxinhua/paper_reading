@@ -1,0 +1,40 @@
+{
+  "paper_id": "004",
+  "title": "HumanoidArena: Benchmarking Egocentric Hierarchical Whole-body Learning",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2606.17833v1",
+  "source_url": "http://arxiv.org/abs/2606.17833",
+  "source_sha256": "7414187c4c87e8aa358f564cf3af1b317f3ffea352b637f789f4107f909d03ba",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview-method",
+      "page": 3,
+      "file": "fig-01-overview-method.png",
+      "path": "assets/004-humanoidarena/fig-01-overview-method.png",
+      "crop_normalized": [
+        0.17,
+        0.085,
+        0.83,
+        0.475
+      ],
+      "crop_pdf_points": [
+        104.04,
+        67.32,
+        507.96,
+        376.2
+      ],
+      "image_size": [
+        1122,
+        858
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Overview of H UMANOID A RENA . The benchmark studies leg-critical HOI/HSI tasks where success requires coordinated perception, foot placement, balance, and whole-body motion. Within this hierarchical formulation, high-level policies predict intermediate whole-body actions from egocentric visual observations, task instructions, and proprioception, while low-level GMTs stabilize and track them into feasible humanoid motions. To evaluate this interface, perturbation-conditioned evaluation and GMT-conditioned evaluation diagnose task generalization, tracker-induced distribution shifts, and policy–tracker compatibility.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "0ef277e7e7b8d0a293b2f0c7e610f1b70a7640c0aa3ca30ee545ed67d76e181a"
+    }
+  ],
+  "source_version": "arXiv:2606.17833v1 [cs.RO] 16 Jun 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

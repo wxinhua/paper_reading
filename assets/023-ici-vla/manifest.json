@@ -1,0 +1,81 @@
+{
+  "paper_id": "023",
+  "title": "ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models",
+  "source_document": "https://arxiv.org/abs/2609.07581v1",
+  "source_url": "https://arxiv.org/pdf/2609.07581v1",
+  "source_version": "v1",
+  "source_sha256": "67a7dd7078004f79d2c63bb60a7f2d6d0bdb90dd030bcee9bf011b58e39bdac8",
+  "source_pages": 9,
+  "extracted_on": "2026-10-09",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.518,
+        0.272,
+        0.918,
+        0.5
+      ],
+      "crop_pdf_points": [
+        317.016,
+        215.424,
+        561.816,
+        396.0
+      ],
+      "crop_pixels": [
+        881,
+        598,
+        1561,
+        1100
+      ],
+      "dpi": 200,
+      "size_px": [
+        680,
+        502
+      ],
+      "sha256": "08bd4f523bf9350562bea17f45843495b718a1d7f7f200931d9f5cadda3a30dd",
+      "original_caption": "Figure 1: Task Adaptation Paradigms. (a) Conventional\nVLAs collect task-specific data and update policy parameters\nfor each new task. (b) ICI-VLA conditions a fixed policy on\nthe current observation and retrieved relative demonstrations,\nrequiring no test-time gradient updates.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-pipeline",
+      "pdf_page": 4,
+      "file": "fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.083,
+        0.065,
+        0.916,
+        0.613
+      ],
+      "crop_pdf_points": [
+        50.796,
+        51.480000000000004,
+        560.592,
+        485.496
+      ],
+      "crop_pixels": [
+        141,
+        143,
+        1557,
+        1349
+      ],
+      "dpi": 200,
+      "size_px": [
+        1416,
+        1206
+      ],
+      "sha256": "6886acc0a5aaee5e6a234fdcf6e61baf4c0b8ad0890399a20a6d056af59114da",
+      "original_caption": "Figure 2: Overview of ICI-VLA. (I) Library construction: long-horizon trajectories are decomposed into fixed-horizon micro-\ndemonstrations. (II) Retrieval alignment: semantic filtering and DTW-based ranking mine contrastive triplets; at inference, the\nfrozen RD-Encoder retrieves from observable inputs without target actions. (III) Policy training and inference: Qwen3-VL-4B\nis fine-tuned without an action-specific head, while Target Action Masking reduces reliance on exact numerical continuation.\nBoth the policy and retriever remain fixed at inference, and adaptation occurs through retrieved context.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "020",
+  "slug": "recap",
+  "title": "Retrieve, Don't Retrain: Extending Vision Language Action Models to New Tasks at Test Time",
+  "arxiv": "2606.15631",
+  "version": "v1",
+  "source_url": "https://arxiv.org/pdf/2606.15631v1",
+  "pdf": "assets/020-recap/source.pdf",
+  "bytes": 8642038,
+  "sha256": "c690f8b889c8de32eda0d2546a0b27e9dca14ea9005a52d672470a192d73c431",
+  "downloaded_on": "2026-10-09"
+}

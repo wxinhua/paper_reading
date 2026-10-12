@@ -1,0 +1,67 @@
+{
+  "paper_id": "014",
+  "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2511.15200v2",
+  "source_url": "https://arxiv.org/abs/2511.15200",
+  "source_sha256": "022f551cef2a5b1f54f26a651fc8fa2832e85ed0a12069f102db953981948eb3",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/014-viral/fig-01-overview.png",
+      "crop_normalized": [
+        0.09,
+        0.273,
+        0.91,
+        0.61
+      ],
+      "crop_pdf_points": [
+        55.08,
+        216.22,
+        556.92,
+        483.12
+      ],
+      "image_size": [
+        1394,
+        741
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1. Center: Unitree G1 humanoid performing loco-manipulation, walking between tables to place and pick objects for 54 loops with our RGB-based sim-to-real policy. Surrounding: diverse simulated scenes used for training. Website: https://viral-humanoid.github.io",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "e22e6d27de64e550d7564248872fb3a8e7d7455ed46900e03572b712cd5a1ee5"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "page": 2,
+      "file": "fig-02-method.png",
+      "path": "assets/014-viral/fig-02-method.png",
+      "crop_normalized": [
+        0.09,
+        0.08,
+        0.94,
+        0.325
+      ],
+      "crop_pdf_points": [
+        55.08,
+        63.36,
+        575.28,
+        257.4
+      ],
+      "image_size": [
+        1445,
+        539
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 2. VIRAL teacher-student pipeline. Phase 1: In simulation, a privileged RL teacher policy π teacher receives full-state proprioception and exteroception of the task information and outputs WBC commands. Phase 2: A vision-based student policy π student observes only RGB images and sim-to-real proprioception and is trained to imitate the teacher policy via DAgger and behavior cloning.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "4685c87680dd6af3a6334cb0574d955067349a65789d35734ca9396780ea93c6"
+    }
+  ],
+  "source_version": "arXiv:2511.15200v2 [cs.RO] 27 Nov 2025",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

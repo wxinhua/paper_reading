@@ -1,0 +1,81 @@
+{
+  "paper_id": "019",
+  "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+  "source_document": "https://arxiv.org/abs/2508.02062v1",
+  "source_url": "https://arxiv.org/pdf/2508.02062v1",
+  "source_version": "v1",
+  "source_sha256": "d467e86c4f81fd6c7a148c3501c7268a37075cd83eadb081478a04ea4a904771",
+  "source_pages": 17,
+  "extracted_on": "2026-10-09",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 7",
+      "role": "overview",
+      "pdf_page": 14,
+      "file": "fig-07-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.337,
+        0.837,
+        0.51
+      ],
+      "crop_pdf_points": [
+        104.04,
+        266.904,
+        512.244,
+        403.92
+      ],
+      "crop_pixels": [
+        289,
+        741,
+        1423,
+        1122
+      ],
+      "dpi": 200,
+      "size_px": [
+        1134,
+        381
+      ],
+      "sha256": "dd7d4dff4c267889e248e1cf62d78fcfd60c2399007ff508b8ffd8aeeaa22ad9",
+      "original_caption": "Figure 7: Overview of RICL.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-pipeline",
+      "pdf_page": 4,
+      "file": "fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.17,
+        0.08,
+        0.835,
+        0.333
+      ],
+      "crop_pdf_points": [
+        104.04,
+        63.36,
+        511.02,
+        263.736
+      ],
+      "crop_pixels": [
+        289,
+        176,
+        1420,
+        733
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        557
+      ],
+      "sha256": "30e3b1c0c9d2ef9008fe96fb9da18ba8b2a99938177a0d14a0bca14a636aff1a",
+      "original_caption": "Figure 2: Architecture of RICL-VLAs, specifically that of RICL-π -FAST.\n0",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: diagram and original English caption inspected; no clipped labels or caption lines",
+      "visual_reviewed_on": "2026-10-09"
+    }
+  ]
+}

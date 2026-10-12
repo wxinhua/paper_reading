@@ -1,0 +1,12 @@
+{
+  "id": "019",
+  "slug": "ricl",
+  "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+  "arxiv": "2508.02062",
+  "version": "v1",
+  "source_url": "https://arxiv.org/pdf/2508.02062v1",
+  "pdf": "assets/019-ricl/source.pdf",
+  "bytes": 30842722,
+  "sha256": "d467e86c4f81fd6c7a148c3501c7268a37075cd83eadb081478a04ea4a904771",
+  "downloaded_on": "2026-10-09"
+}

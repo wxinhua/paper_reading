@@ -1,0 +1,94 @@
+{
+  "paper_id": "016",
+  "title": "SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2604.18557v2",
+  "source_url": "http://arxiv.org/abs/2604.18557",
+  "source_sha256": "5faae8686ff060b70a25d44258cae50228662219a606b5c038942954090f4243",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "file": "fig-01-overview.png",
+      "path": "assets/016-synagent/fig-01-overview.png",
+      "crop_normalized": [
+        0.08,
+        0.32,
+        0.92,
+        0.595
+      ],
+      "crop_pdf_points": [
+        48.96,
+        253.44,
+        563.04,
+        471.24
+      ],
+      "image_size": [
+        1428,
+        605
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: Features of SynAgent. As the first model to address trajectory-following object manipulation with multiple humanoid agents, SynAgent generalizes across diverse object geometries and supports cooperative manipulation.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "b8b68bd2fdc2caad124017e02b94f378e00e672d6796f5ec8fabfbbbf9a53262"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "retargeting",
+      "page": 3,
+      "file": "fig-02-retargeting.png",
+      "path": "assets/016-synagent/fig-02-retargeting.png",
+      "crop_normalized": [
+        0.515,
+        0.06,
+        0.94,
+        0.43
+      ],
+      "crop_pdf_points": [
+        315.18,
+        47.52,
+        575.28,
+        340.56
+      ],
+      "image_size": [
+        722,
+        814
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 2: Interaction-Preserving Retargeting. (1) The up- per part shows the difference between the MoCap actor and the actual agent’s skeletons. (2) In the lower part, the red shows the result of directly retargeting MoCap joints onto the agent, leading to incorrect interaction relationships. The brown area shows how we construct tetrahedrons to describe the interaction relationships, making the interaction relation- ships unchanged after retargeting.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "61a538d32d889f97f98f2933b894989e6f571a7fe83ddb291a0b1834486afac5"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "training",
+      "page": 4,
+      "file": "fig-03-training.png",
+      "path": "assets/016-synagent/fig-03-training.png",
+      "crop_normalized": [
+        0.08,
+        0.06,
+        0.92,
+        0.57
+      ],
+      "crop_pdf_points": [
+        48.96,
+        47.52,
+        563.04,
+        451.44
+      ],
+      "image_size": [
+        1428,
+        1122
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 3: Overview of SynAgent Training Pipeline. (1) Stage I pre-trains imitation policies {π si } N i=1 on single-human HOI data, then adapts them to multi-agent scenarios with MAPPO algorithm. (2) After distilling {π si } N into a unified Base Model, i=1 Stage II adapts the Base Model to multi-human HOHI data and get policies {π m M } . (3) Stage III learns a trajectory-conditioned i i=1 cVAE policy. Motion imitation policies {π si } N m M i=1 and {π i } i=1 are used to provide physical states as refined training data, and actions for supervised learning, which stabilize and boost the model training.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "3a7dd4ea3677c1e70c4d816abe91e8d4f1abb7b9c4da76331e0cfa3bd53f4c8b"
+    }
+  ],
+  "source_version": "arXiv:2604.18557v2 [cs.CV] 2 Aug 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

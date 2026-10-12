@@ -1,0 +1,65 @@
+{
+  "paper_id": "018",
+  "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+  "source_document": "https://arxiv.org/abs/2602.07439v1",
+  "source_url": "https://arxiv.org/pdf/2602.07439v1",
+  "source_version": "arXiv:2602.07439v1, 7 Feb 2026",
+  "source_sha256": "884c204fa9afddddf4179ea88e031ff42f68a526c72b24d185d4388cfec30aea",
+  "extracted_on": "2026-10-09",
+  "method": "Original PDF rendered by Poppler at 200 dpi and cropped only; original captions retained.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 1,
+      "path": "assets/018-textop/fig-01-overview.png",
+      "crop_normalized": [
+        0.075,
+        0.29,
+        0.94,
+        0.725
+      ],
+      "crop_pdf_points": [
+        45.9,
+        229.68,
+        575.28,
+        574.2
+      ],
+      "dpi": 200,
+      "image_size": [
+        1470,
+        957
+      ],
+      "original_caption_text": "Fig. 1: TextOp enables a humanoid robot to execute a seamless sequence of diverse skills—ranging from expressive gestures to complex physical tasks—driven by real-time, interactive text commands from the user in a single continuous trial.",
+      "sha256": "9912afe09834561a68eca6cdfdf48afc7bb00b4303bef7c64f796eaabd6657de",
+      "visual_review": "Reviewed rendered crop; diagram and original caption complete."
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method_pipeline",
+      "page": 3,
+      "path": "assets/018-textop/fig-02-method-pipeline.png",
+      "crop_normalized": [
+        0.075,
+        0.07,
+        0.94,
+        0.46
+      ],
+      "crop_pdf_points": [
+        45.9,
+        55.44,
+        575.28,
+        364.32
+      ],
+      "dpi": 200,
+      "image_size": [
+        1470,
+        858
+      ],
+      "original_caption_text": "Fig. 2: Overview of TextOp’s framework. The framework consists of three main parts: (a) Interactive Motion Generation, including VAE training and LDM training, which together model future reference motion sequences conditioned on history motion and text prompt in an autoregressive style; (b) Dynamic Motion Tracking, where the MLP-based policy π takes reference motions and robot states to generate joint actions, trained in the simulation for stable execution; (c) Deployment, where the real-time user text prompt is converted into motions by the generator, translated into actions by the tracking policy based on the robot state, and executed on the physical robot.",
+      "sha256": "7f9640009fb782e67f82c6578792dc6a4ad88127cc7615287363c10d2f141134",
+      "visual_review": "Reviewed rendered crop; diagram and original caption complete."
+    }
+  ],
+  "visual_reviewed_on": "2026-10-09"
+}

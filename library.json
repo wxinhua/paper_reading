@@ -1,0 +1,2004 @@
+{
+  "schema_version": 1,
+  "library_title": "全身智能 · Paper 笔记库",
+  "updated_on": "2026-10-12",
+  "papers": [
+    {
+      "id": "001",
+      "short_title": "Workhorse",
+      "title": "Workhorse: Learning Robust Whole-Body Humanoid Loco-Manipulation from Human Data",
+      "arxiv_id": "2610.09117",
+      "version": "v1",
+      "submitted_on": "2026-10-06",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/001-workhorse.md",
+      "sources": {
+        "paper": "https://arxiv.org/html/2610.09117v1",
+        "project": "https://hybridrobotics.github.io/workhorse/"
+      },
+      "code_status": {
+        "value": "not_released_on_project_page",
+        "checked_on": "2026-10-08"
+      },
+      "tags": [
+        "robot-free-demonstration",
+        "whole-body-loco-manipulation",
+        "five-link-interface",
+        "flow-matching",
+        "robust-control"
+      ],
+      "data": {
+        "demonstrators": 1,
+        "rooms": 1,
+        "box_sorting_hours": 2.2,
+        "suitcase_hours": 1.2,
+        "box_catching_minutes": 13
+      },
+      "policy_scope": "separate_planner_and_tracker_for_each_task_and_robot",
+      "real_robot": {
+        "platform": "Unitree G1",
+        "evidence": "capability_demonstrations",
+        "success_rate": null
+      },
+      "simulation": {
+        "task": "box_sorting",
+        "scene": "reconstructed_demonstration_room",
+        "episodes_per_variant_per_condition": 100,
+        "success_definition": "all_three_boxes_placed_within_120_seconds_without_falling",
+        "push": {
+          "impulse_newton_seconds": 40,
+          "force_newtons": 40,
+          "duration_seconds": 1,
+          "interval_seconds": [
+            5,
+            10
+          ],
+          "location": "pelvis",
+          "direction": "random"
+        },
+        "rates_unit": "percent",
+        "ablations": [
+          {
+            "variant": "full",
+            "success_without_push": 77,
+            "success_with_push": 64,
+            "fall_without_push": 1,
+            "fall_with_push": 15
+          },
+          {
+            "variant": "joint_command",
+            "success_without_push": 54,
+            "success_with_push": 42,
+            "fall_without_push": 1,
+            "fall_with_push": 4
+          },
+          {
+            "variant": "link_local_action_frame",
+            "success_without_push": 5,
+            "success_with_push": 4,
+            "fall_without_push": 77,
+            "fall_with_push": 91
+          },
+          {
+            "variant": "without_projected_gravity_and_torso_height",
+            "success_without_push": 1,
+            "success_with_push": 1,
+            "fall_without_push": 97,
+            "fall_with_push": 99
+          },
+          {
+            "variant": "without_all_planner_augmentation",
+            "success_without_push": 20,
+            "success_with_push": 0,
+            "fall_without_push": 79,
+            "fall_with_push": 95
+          },
+          {
+            "variant": "without_tracker_command_augmentation",
+            "success_without_push": 76,
+            "success_with_push": 52,
+            "fall_without_push": 4,
+            "fall_with_push": 23
+          }
+        ],
+        "cross_embodiment": {
+          "platform": "Unitree H2",
+          "both_policies_retrained": true,
+          "new_human_recordings": false,
+          "success_without_push_percent": 83,
+          "episodes": 100,
+          "hardware_validated": false
+        },
+        "evaluation_constraints": [
+          "same_room",
+          "appearance_lighting_friction_mass_fixed",
+          "about_15_percent_of_planner_training_data_in_reconstructed_room_for_simulation_evaluation"
+        ],
+        "source_locator": "paper_v1_Table_II_and_Sections_V_B_V_C"
+      },
+      "reader_path": "workhorse.html",
+      "library_summary": "以五部位接口连接视觉规划与全身跟踪，重点关注闭环误差与扰动恢复。G1 真机能力展示，定量结果来自仿真。",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "以人类数据训练视觉规划器，通过五部位参考接口连接鲁棒全身跟踪；主归任务规划，关联运控与数据。"
+    },
+    {
+      "id": "002",
+      "short_title": "KODA",
+      "title": "KODA: Kinematics–Observation Data Alignment for Humanoid Learning from Human Egocentric Demonstration",
+      "paper_date": "2026-10-08",
+      "version": "Zotero PDF snapshot dated 2026-10-08; revision identifier not verified",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/002-koda.md",
+      "reader_path": "koda.html",
+      "library_summary": "以可复用的运动—观测标准记录生成控制器专属状态与动作，扩充 VLA 数据覆盖。G1 真机定量；保存总览、方法及 SCO 原图。",
+      "sources": {
+        "paper": "https://koda-humanoid.github.io/koda/assets/KODA.pdf",
+        "project": "https://koda-humanoid.github.io/koda/",
+        "pages": 32,
+        "sha256": "35d7e306575074170b6704849132168e4395ee47e2eba0d72f0f2dd9a5d8a94c"
+      },
+      "figures_manifest": "assets/002-koda/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/002-koda/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 3,
+          "path": "assets/002-koda/fig-02-method-pipeline.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "SCO_detail",
+          "page": 6,
+          "path": "assets/002-koda/fig-03-SCO-command-optimization.png"
+        }
+      ],
+      "tags": [
+        "egocentric-demonstration",
+        "canonical-record",
+        "motion-observation-alignment",
+        "SCO",
+        "CEM",
+        "controller-specific-supervision",
+        "VLA"
+      ],
+      "platform": "Unitree G1 with BrainCo hands",
+      "controllers": [
+        "SONIC",
+        "HEFT"
+      ],
+      "method": {
+        "stages": [
+          "whole-body motion generation",
+          "robot onboard view generation",
+          "controller-specific command and state generation"
+        ],
+        "canonical_record": [
+          "robot_whole_body_configuration",
+          "synthesized_robot_view",
+          "task_instruction"
+        ],
+        "control_rate_hz": 50,
+        "vla_backbone": "GR00T N1.7",
+        "vla_action_chunk_steps": 40,
+        "state_dim": 44,
+        "action_dim": {
+          "SONIC": 76,
+          "HEFT": 50
+        },
+        "scope": "cross-controller data reuse on the same robot; regenerate labels and retrain policy",
+        "canonical_images_and_controller_states_exactly_aligned": false
+      },
+      "data": {
+        "tasks": [
+          "cup-to-basket",
+          "parcel-to-shelf",
+          "basket-to-shelf",
+          "cup-to-drawer"
+        ],
+        "human_demos_per_task_max": 100,
+        "human_clips_total": 400,
+        "human_pool_shifted_vs_robot_matched_per_task": [
+          80,
+          20
+        ],
+        "all_human_clips_have_recorded_depth": true,
+        "robot_demos_per_task_per_controller": 50,
+        "collection": "chest-mounted iPhone with MobileEgo Anywhere; controller-matched PICO robot teleoperation"
+      },
+      "evaluation": {
+        "domain": "real_robot",
+        "trials_per_task_per_condition": 20,
+        "training_runs_per_configuration": 1,
+        "training_iterations": 20000,
+        "batch_size": 160,
+        "aggregation": "equal macro-average across four tasks",
+        "success_definition": "placement completed without a fall or unrecovered manipulation failure",
+        "robot_ood_definition": "conditions absent from robot demonstrations but present in the human training pool",
+        "human_budget_sampling": "independently sampled subsets, not nested; source mixture changes with episode counts",
+        "table_1_scaling": [
+          {
+            "controller": "SONIC",
+            "human_demos_per_task": 0,
+            "robot_id_success_percent": {
+              "cup-to-basket": 55,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 55,
+              "cup-to-drawer": 50
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 0,
+              "parcel-to-shelf": 15,
+              "basket-to-shelf": 0,
+              "cup-to-drawer": 0
+            },
+            "macro_robot_id_percent": 62.5,
+            "macro_robot_ood_percent": 3.75
+          },
+          {
+            "controller": "SONIC",
+            "human_demos_per_task": 25,
+            "robot_id_success_percent": {
+              "cup-to-basket": 55,
+              "parcel-to-shelf": 100,
+              "basket-to-shelf": 50,
+              "cup-to-drawer": 70
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 10,
+              "parcel-to-shelf": 25,
+              "basket-to-shelf": 15,
+              "cup-to-drawer": 15
+            },
+            "macro_robot_id_percent": 68.75,
+            "macro_robot_ood_percent": 16.25
+          },
+          {
+            "controller": "SONIC",
+            "human_demos_per_task": 50,
+            "robot_id_success_percent": {
+              "cup-to-basket": 65,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 60,
+              "cup-to-drawer": 65
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 20,
+              "parcel-to-shelf": 65,
+              "basket-to-shelf": 10,
+              "cup-to-drawer": 0
+            },
+            "macro_robot_id_percent": 70,
+            "macro_robot_ood_percent": 23.75
+          },
+          {
+            "controller": "SONIC",
+            "human_demos_per_task": 75,
+            "robot_id_success_percent": {
+              "cup-to-basket": 70,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 65,
+              "cup-to-drawer": 60
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 35,
+              "parcel-to-shelf": 70,
+              "basket-to-shelf": 30,
+              "cup-to-drawer": 30
+            },
+            "macro_robot_id_percent": 71.25,
+            "macro_robot_ood_percent": 41.25
+          },
+          {
+            "controller": "SONIC",
+            "human_demos_per_task": 100,
+            "robot_id_success_percent": {
+              "cup-to-basket": 70,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 65,
+              "cup-to-drawer": 65
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 40,
+              "parcel-to-shelf": 75,
+              "basket-to-shelf": 45,
+              "cup-to-drawer": 35
+            },
+            "macro_robot_id_percent": 72.5,
+            "macro_robot_ood_percent": 48.75
+          },
+          {
+            "controller": "HEFT",
+            "human_demos_per_task": 0,
+            "robot_id_success_percent": {
+              "cup-to-basket": 65,
+              "parcel-to-shelf": 85,
+              "basket-to-shelf": 65,
+              "cup-to-drawer": 60
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 0,
+              "parcel-to-shelf": 20,
+              "basket-to-shelf": 0,
+              "cup-to-drawer": 0
+            },
+            "macro_robot_id_percent": 68.75,
+            "macro_robot_ood_percent": 5
+          },
+          {
+            "controller": "HEFT",
+            "human_demos_per_task": 25,
+            "robot_id_success_percent": {
+              "cup-to-basket": 65,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 45,
+              "cup-to-drawer": 65
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 5,
+              "parcel-to-shelf": 35,
+              "basket-to-shelf": 20,
+              "cup-to-drawer": 20
+            },
+            "macro_robot_id_percent": 66.25,
+            "macro_robot_ood_percent": 20
+          },
+          {
+            "controller": "HEFT",
+            "human_demos_per_task": 50,
+            "robot_id_success_percent": {
+              "cup-to-basket": 60,
+              "parcel-to-shelf": 80,
+              "basket-to-shelf": 65,
+              "cup-to-drawer": 70
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 30,
+              "parcel-to-shelf": 55,
+              "basket-to-shelf": 25,
+              "cup-to-drawer": 15
+            },
+            "macro_robot_id_percent": 68.75,
+            "macro_robot_ood_percent": 31.25
+          },
+          {
+            "controller": "HEFT",
+            "human_demos_per_task": 75,
+            "robot_id_success_percent": {
+              "cup-to-basket": 70,
+              "parcel-to-shelf": 95,
+              "basket-to-shelf": 60,
+              "cup-to-drawer": 65
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 40,
+              "parcel-to-shelf": 65,
+              "basket-to-shelf": 35,
+              "cup-to-drawer": 40
+            },
+            "macro_robot_id_percent": 72.5,
+            "macro_robot_ood_percent": 45
+          },
+          {
+            "controller": "HEFT",
+            "human_demos_per_task": 100,
+            "robot_id_success_percent": {
+              "cup-to-basket": 80,
+              "parcel-to-shelf": 90,
+              "basket-to-shelf": 70,
+              "cup-to-drawer": 65
+            },
+            "robot_ood_success_percent": {
+              "cup-to-basket": 50,
+              "parcel-to-shelf": 75,
+              "basket-to-shelf": 40,
+              "cup-to-drawer": 40
+            },
+            "macro_robot_id_percent": 76.25,
+            "macro_robot_ood_percent": 51.25
+          }
+        ],
+        "table_2_observation_alignment_SONIC": [
+          {
+            "variant": "no_alignment",
+            "macro_robot_id_percent": 62.5,
+            "macro_robot_ood_percent": 18.75
+          },
+          {
+            "variant": "fixed_offset",
+            "macro_robot_id_percent": 63.75,
+            "macro_robot_ood_percent": 23.75
+          },
+          {
+            "variant": "motion_based_reprojection",
+            "macro_robot_id_percent": 66.25,
+            "macro_robot_ood_percent": 37.5
+          },
+          {
+            "variant": "full_alignment",
+            "macro_robot_id_percent": 72.5,
+            "macro_robot_ood_percent": 48.75
+          }
+        ],
+        "table_3_command_generation_SONIC": [
+          {
+            "variant": "without_stage_3_SCO",
+            "macro_robot_id_percent": 48.75,
+            "macro_robot_ood_percent": 7.5
+          },
+          {
+            "variant": "with_stage_3_SCO",
+            "macro_robot_id_percent": 72.5,
+            "macro_robot_ood_percent": 48.75
+          }
+        ],
+        "command_ablation_changes": "state-action supervision as a whole; rollout body-state features can change",
+        "source_locator": "PDF Tables 1-4, Sections 4.1-4.5, Appendix D"
+      },
+      "tracking": {
+        "reference_warning": "generation errors use human source references; deployment-controller rollouts use the canonical trajectory",
+        "generation_wrist_position_cm": {
+          "direct": 15.02,
+          "SCO": 3.03,
+          "SCO_plus_IK": 0.33
+        },
+        "optimized_rollout_wrist_position_cm": {
+          "SONIC": 2.88,
+          "HEFT": 2.94
+        },
+        "optimized_rollout_camera_position_cm": {
+          "SONIC": 3.2,
+          "HEFT": 2.84
+        },
+        "SONIC_camera_orientation_rad": {
+          "direct": 0.0784,
+          "SCO": 0.0808
+        }
+      },
+      "limitations": [
+        "robot-data co-training required",
+        "one target embodiment and two controllers",
+        "human-train-covered Robot-OOD conditions",
+        "one training run per configuration",
+        "all evaluated human clips have measured depth",
+        "physics checks do not certify general contact or physical feasibility",
+        "canonical images can differ from realized controller camera poses"
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "核心是人类运动与机器人观测对齐，以及控制器专属状态—动作监督的生成，用于训练下游 VLA。"
+    },
+    {
+      "id": "003",
+      "short_title": "SONIC",
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "version": "arXiv:2511.07820v4 [cs.RO] 13 Aug 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/003-sonic.md",
+      "reader_path": "sonic.html",
+      "library_summary": "把大规模人体运动跟踪作为人形控制的基础任务，用共享量化动作 token 接入机器人运动、人体姿态、遥操作和 VLA；重点证据是控制器的规模效应、未见动作跟踪及真机全身操作。",
+      "platform": "Unitree G1",
+      "evidence": "sim-and-real",
+      "tags": [
+        "motion-tracking",
+        "latent-interface",
+        "whole-body-control"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2511.07820v4",
+        "pages": 39,
+        "sha256": "6580f9223b504c6420eb409bca849bdd968cec17af5c2e7e3c395bb9e1df4267",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/003-sonic/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/003-sonic/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "method",
+          "page": 14,
+          "path": "assets/003-sonic/fig-06-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "brain-models"
+      ],
+      "classification_reason": "核心是可扩展的通用全身运动跟踪器与量化控制接口，可供高层策略调用。"
+    },
+    {
+      "id": "004",
+      "short_title": "HumanoidArena",
+      "title": "HumanoidArena: Benchmarking Egocentric Hierarchical Whole-body Learning",
+      "version": "arXiv:2606.17833v1 [cs.RO] 16 Jun 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/004-humanoidarena.md",
+      "reader_path": "humanoidarena.html",
+      "library_summary": "一个把“高层视觉策略—低层运动跟踪器”接口作为评估对象的仿真基准：不仅看任务成功，还替换跟踪器，检查同一动作表示是否真的可以迁移。",
+      "platform": "Unitree G1 simulation",
+      "evidence": "simulation-only",
+      "tags": [
+        "benchmark",
+        "hierarchical-control",
+        "policy-tracker-transfer"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.17833v1",
+        "pages": 28,
+        "sha256": "7414187c4c87e8aa358f564cf3af1b317f3ffea352b637f789f4107f909d03ba",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/004-humanoidarena/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview-method",
+          "page": 3,
+          "path": "assets/004-humanoidarena/fig-01-overview-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是高层视觉策略与低层跟踪器组合及替换迁移的评估基准。"
+    },
+    {
+      "id": "005",
+      "short_title": "WARP",
+      "title": "WARP: Whole-Body Retargeting for Learning from Offline Human Demonstrations",
+      "version": "arXiv:2606.29940v2 [cs.RO] 19 Aug 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/005-warp.md",
+      "reader_path": "warp.html",
+      "library_summary": "面向准静态轮式全身操作，用闭式几何重定向同时保证末端精度与解的一致性，从离线人体示范学习机器人策略；关键区别是“能回放的数据”未必同样“容易被策略学会”。",
+      "platform": "Rainbow Robotics RB-Y1 wheeled mobile manipulator",
+      "evidence": "sim-and-real",
+      "tags": [
+        "retargeting",
+        "human-demonstration",
+        "closed-form-IK"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.29940v2",
+        "pages": 23,
+        "sha256": "b1760fa7f611cf71c0b7a02f4cb5d1e00a918b43250c1229901c41bb4f3f9400",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/005-warp/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/005-warp/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 4,
+          "path": "assets/005-warp/fig-02-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要贡献是面向准静态轮式全身操作的闭式几何重定向 / IK，同时服务于人类示范转换。"
+    },
+    {
+      "id": "006",
+      "short_title": "OpenHLM",
+      "title": "OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation",
+      "version": "arXiv:2606.22174v1 [cs.RO] 20 Jun 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/006-openhlm.md",
+      "reader_path": "openhlm.html",
+      "library_summary": "通过一系列真机控制变量实验，提出“全身关节遥操作 + 机器人数据预训练 VLA + 异构数据共训练”的 G1 全身移动操作配方，而不是依赖一种全新的网络结构。",
+      "platform": "Unitree G1",
+      "evidence": "real-robot",
+      "tags": [
+        "empirical-recipe",
+        "VLA",
+        "heterogeneous-co-training"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.22174v1",
+        "pages": 30,
+        "sha256": "2781bfd88a7b7d9c94083ef72195bcf1192d431f92e1298e77534e53b04aac32",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/006-openhlm/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview-study-design",
+          "page": 2,
+          "path": "assets/006-openhlm/fig-01-overview-study-design.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要研究全身移动操作 VLA 的预训练与异构数据共训练配方，并验证任务策略表现。"
+    },
+    {
+      "id": "007",
+      "short_title": "SIMPLE",
+      "title": "SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation",
+      "version": "arXiv:2606.08278v1 [cs.RO] 6 Jun 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/007-simple.md",
+      "reader_path": "simple.html",
+      "library_summary": "把 MuJoCo 的接触动力学与 Isaac Sim 的视觉渲染分开组合，提供人形移动操作的数据生成、策略训练与评估基础设施，并在少量相似真机场景验证纯仿真训练的迁移。",
+      "platform": "Unitree G1 simulation and real transfer",
+      "evidence": "sim-and-real",
+      "tags": [
+        "simulation",
+        "benchmark",
+        "sim-to-real"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.08278v1",
+        "pages": 18,
+        "sha256": "f9150c3c8db27b0c9a2765b242ca2cc8f837d63dedd43b46b68dc00cc42d72c9",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/007-simple/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/007-simple/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 4,
+          "path": "assets/007-simple/fig-02-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models"
+      ],
+      "classification_reason": "主要提供结合接触动力学与视觉渲染的仿真数据生成、策略训练和评估基础设施。"
+    },
+    {
+      "id": "008",
+      "short_title": "GRAIL",
+      "title": "GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors",
+      "version": "arXiv:2606.05160v1 [cs.RO] 3 Jun 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/008-grail.md",
+      "reader_path": "grail.html",
+      "library_summary": "先规定完整 3D 场景，再让视频模型生成交互，借助已知几何重建 4D 人—物运动，最后通过适配跟踪器生成机器人数据；用纯生成数据训练的视觉策略完成真机拾取与爬楼。",
+      "platform": "Unitree G1",
+      "evidence": "sim-and-real",
+      "tags": [
+        "video-prior",
+        "interaction-reconstruction",
+        "controller-adaptation"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.05160v1",
+        "pages": 24,
+        "sha256": "6e125c17f5fc148c1f3c4cbb2bbcefbc889dedfc9881e40042b9f21554ad1cae",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/008-grail/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/008-grail/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "hoi-generation",
+          "page": 4,
+          "path": "assets/008-grail/fig-02-hoi-generation.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "controller-adaptation",
+          "page": 7,
+          "path": "assets/008-grail/fig-03-controller-adaptation.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是生成视频、4D 交互重建与跟踪器适配组成的机器人合成数据流水线。"
+    },
+    {
+      "id": "009",
+      "short_title": "HumanTracker",
+      "title": "HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark",
+      "version": "arXiv:2608.13555v1 [cs.RO] 13 Aug 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/009-humantracker.md",
+      "reader_path": "humantracker.html",
+      "library_summary": "提供 153 小时分类动捕基准，并从专家对跟踪视频的成对偏好学习时序评分 HumanScore，补充姿态误差无法充分反映的滑步、接触、抖动和稳定性。",
+      "platform": "Unitree G1 simulation",
+      "evidence": "simulation-only",
+      "tags": [
+        "benchmark",
+        "human-preference",
+        "reward-model"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2608.13555v1",
+        "pages": 15,
+        "sha256": "59e2f8815f611ed66184352e7477176533732da99a30c3410801e4bb06b8060f",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/009-humantracker/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/009-humantracker/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "reward-model",
+          "page": 6,
+          "path": "assets/009-humantracker/fig-04-reward-model.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是人体动捕跟踪基准与人类偏好评分，用于评估全身跟踪质量。"
+    },
+    {
+      "id": "010",
+      "short_title": "WholeBodyWAM",
+      "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+      "version": "匿名 PDF；修订号、作者与日期未核实",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/010-wholebodywam.md",
+      "reader_path": "wholebodywam.html",
+      "library_summary": "把大量异构人体/机器人运动转成统一身体姿态表示，先训练预测未来运动的 Motion Expert，再和视频、动作专家联合训练，使身体未来演化为机器人控制提供先验。",
+      "platform": "TianGong 3.0",
+      "evidence": "real-robot",
+      "tags": [
+        "motion-pretraining",
+        "world-action-model",
+        "motion-prior"
+      ],
+      "sources": {
+        "paper": null,
+        "pages": 8,
+        "sha256": "8c955656949d4929092a8412f2a5fcc847687e6ca0d6058a4e3fda981093d771",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/010-wholebodywam/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/010-wholebodywam/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 4,
+          "path": "assets/010-wholebodywam/fig-02-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "以运动预训练和视频、动作专家联合训练构建全身世界动作模型，为任务策略提供未来运动先验。"
+    },
+    {
+      "id": "011",
+      "short_title": "Humanoid Locomotion and Manipulation · 综述",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "version": "arXiv:2501.02116v2 [cs.RO] 19 Apr 2025",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/011-humanoid-survey.md",
+      "reader_path": "humanoid-survey.html",
+      "library_summary": "以“感知接触—规划接触与运动—预测与反馈控制—技能学习—基础模型”为主线梳理人形移动操作，强调模型方法和学习方法可以互补，而非必须二选一。",
+      "platform": "multiple; survey",
+      "evidence": "survey-no-new-experiment",
+      "tags": [
+        "survey",
+        "planning",
+        "control",
+        "learning"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2501.02116v2",
+        "pages": 39,
+        "sha256": "8993b1cfd7114d32577815091aa87e5c2dcc129a97ea0c931bb45b41f4aaebb6",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/011-humanoid-survey/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 2",
+          "role": "survey-taxonomy",
+          "page": 3,
+          "path": "assets/011-humanoid-survey/fig-02-survey-taxonomy.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "系统梳理人形移动操作的感知、规划、控制与学习，属于领域综述。"
+    },
+    {
+      "id": "012",
+      "short_title": "EgoHumanoid",
+      "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+      "version": "arXiv:2602.10106v2 [cs.RO] 4 Jun 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/012-egohumanoid.md",
+      "reader_path": "egohumanoid.html",
+      "library_summary": "通过视角转换和统一高层动作，把多场景人体第一视角示范与少量机器人数据共训练，让 G1 获得更好的导航和移动操作泛化；精细操作仍需要机器人监督。",
+      "platform": "Unitree G1",
+      "evidence": "real-robot",
+      "tags": [
+        "egocentric-demonstration",
+        "view-alignment",
+        "co-training"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2602.10106v2",
+        "pages": 17,
+        "sha256": "73ed9bfc11c60c12fd8eb2652f47a0b64d423d7f266b6d81f8023ca47fa0b5e2",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/012-egohumanoid/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/012-egohumanoid/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "method",
+          "page": 5,
+          "path": "assets/012-egohumanoid/fig-03-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "通过视角对齐与人机数据共训练，学习导航和移动操作的高层视觉语言动作策略。"
+    },
+    {
+      "id": "013",
+      "short_title": "HumanoidMimicGen",
+      "title": "HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning and Adaptation",
+      "version": "匿名 PDF；修订号、作者与日期未核实",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/013-humanoidmimicgen.md",
+      "reader_path": "humanoidmimicgen.html",
+      "library_summary": "从少量仿真遥操作种子示范出发，把对象中心技能重放与全身规划结合，扩增不同物体和机器人初始位置下的移动操作数据，并用仿真—真实共训练改善真机表现。",
+      "platform": "Unitree G1",
+      "evidence": "sim-and-real",
+      "tags": [
+        "data-generation",
+        "whole-body-planning",
+        "skill-adaptation"
+      ],
+      "sources": {
+        "paper": "https://openreview.net/pdf?id=ekzk7TSLKr",
+        "pages": 12,
+        "sha256": "79bf93729d6b3dde98fdb2ec36d6c58db0940338a0647b1175a9c4058e6fb035",
+        "additional_versions": [
+          {
+            "pages": 20,
+            "sha256": "4cc79994d93a90f65a1e66c4c273b0b000a2bad85d375b1487dc5be4a5d6b653",
+            "paper": "https://arxiv.org/abs/2605.27724"
+          }
+        ]
+      },
+      "figures_manifest": "assets/013-humanoidmimicgen/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/013-humanoidmimicgen/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 3,
+          "path": "assets/013-humanoidmimicgen/fig-02-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是通过对象中心技能重放、全身规划与适配扩增少量种子示范。"
+    },
+    {
+      "id": "014",
+      "short_title": "VIRAL",
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "version": "arXiv:2511.15200v2 [cs.RO] 27 Nov 2025",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/014-viral.md",
+      "reader_path": "viral.html",
+      "library_summary": "用大规模仿真训练特权状态 RL 教师，再通过混合 DAgger / BC 蒸馏为 RGB 学生，配合视觉随机化、手部系统辨识与相机对齐，实现 G1 的持续移动取放。",
+      "platform": "Unitree G1",
+      "evidence": "sim-and-real",
+      "tags": [
+        "sim-to-real",
+        "teacher-student",
+        "DAgger"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2511.15200v2",
+        "pages": 17,
+        "sha256": "022f551cef2a5b1f54f26a651fc8fa2832e85ed0a12069f102db953981948eb3",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/014-viral/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/014-viral/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 2,
+          "path": "assets/014-viral/fig-02-method.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要学习闭环 RGB 移动取放策略，由特权 RL 教师蒸馏为视觉学生；属于任务策略，不特指基础 VLA。"
+    },
+    {
+      "id": "015",
+      "short_title": "FetchMan",
+      "title": "FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences",
+      "version": "arXiv:2608.17027v2 [cs.RO] 29 Aug 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/015-fetchman.md",
+      "reader_path": "fetchman.html",
+      "library_summary": "先用程序化仿真生成大量“走过去并拿起物体”的示范，再用稀疏成功奖励优化视觉策略，补上行为克隆在导航与操作衔接处的缺口，最后直接部署到 G1。",
+      "platform": "Unitree G1",
+      "evidence": "sim-and-real",
+      "tags": [
+        "simulation-data",
+        "flow-GRPO",
+        "visual-policy"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2608.17027v2",
+        "pages": 14,
+        "sha256": "3e58e5d42c992ac6210e2e70bd73a7221cb129b5f7d0e0ea5cb33a9d07b84bfe",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/015-fetchman/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/015-fetchman/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "data-generation",
+          "page": 5,
+          "path": "assets/015-fetchman/fig-03-data-generation.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "architecture",
+          "page": 6,
+          "path": "assets/015-fetchman/fig-04-architecture.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "training",
+          "page": 7,
+          "path": "assets/015-fetchman/fig-05-training.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要学习导航与取物衔接的视觉任务策略，结合仿真示范与稀疏奖励优化。"
+    },
+    {
+      "id": "016",
+      "short_title": "SynAgent",
+      "title": "SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy",
+      "version": "arXiv:2604.18557v2 [cs.CV] 2 Aug 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/016-synagent.md",
+      "reader_path": "synagent.html",
+      "library_summary": "把单人搬物技能转化为多主体共享策略，再用交互保持重定向和多教师蒸馏，训练由物体轨迹驱动的协作人体控制；实验在物理仿真人体上完成。",
+      "platform": "physically simulated humanoid characters; no real robot",
+      "evidence": "simulation-only",
+      "tags": [
+        "cooperative-manipulation",
+        "interaction-retargeting",
+        "MAPPO"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2604.18557v2",
+        "pages": 14,
+        "sha256": "5faae8686ff060b70a25d44258cae50228662219a606b5c038942954090f4243",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/016-synagent/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/016-synagent/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "retargeting",
+          "page": 3,
+          "path": "assets/016-synagent/fig-02-retargeting.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "training",
+          "page": 4,
+          "path": "assets/016-synagent/fig-03-training.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "由物体轨迹驱动协作人体的关节控制，结合交互保持重定向与多教师蒸馏；实验对象为物理仿真人体。"
+    },
+    {
+      "id": "017",
+      "short_title": "λ0 / HumanVerse-500",
+      "title": "Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining",
+      "version": "arXiv:2610.00438v1 [cs.RO] 30 Sep 2026",
+      "read_on": "2026-10-08",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/017-human-pretraining.md",
+      "reader_path": "human-pretraining.html",
+      "library_summary": "采集 500 小时同步第一视角视频、身体与手部运动，用“手部交互预训练 → 全身人类数据中训练 → 机器人后训练”把人类活动迁移到 G1 的全身视觉语言动作策略。",
+      "platform": "Unitree G1 with Revo2 hands",
+      "evidence": "sim-and-real",
+      "tags": [
+        "egocentric-data",
+        "whole-body-pretraining",
+        "VLA"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.00438v1",
+        "pages": 15,
+        "sha256": "6d2e48b284c9d2d6a21882239cb6dcec5b493744c1bac0bcd2681008849fbc76",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/017-human-pretraining/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/017-human-pretraining/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "training",
+          "page": 6,
+          "path": "assets/017-human-pretraining/fig-06-training.png"
+        }
+      ],
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要研究人体活动预训练如何迁移到机器人全身 VLA，同时提供同步第一视角与全身运动数据。"
+    },
+    {
+      "id": "018",
+      "short_title": "TextOp",
+      "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+      "arxiv_id": "2602.07439",
+      "version": "arXiv:2602.07439v1 [cs.RO] 7 Feb 2026",
+      "submitted_on": "2026-02-07",
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "note_path": "papers/018-textop.md",
+      "reader_path": "textop.html",
+      "library_summary": "将可持续更新的文字转换为短时全身参考，用机器人骨架表示、自回归扩散和生成动作增强连接高层生成与 G1 跟踪；记录真机延迟及随机参考筛选条件。",
+      "platform": "Unitree G1, 29 DoF; generator on an external RTX 4090 workstation",
+      "evidence": "sim-and-real",
+      "tags": [
+        "streaming-text-control",
+        "autoregressive-motion-diffusion",
+        "robot-skeleton-representation",
+        "generated-motion-augmentation",
+        "whole-body-tracking"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2602.07439v1",
+        "project": "https://text-op.github.io/",
+        "project_status_verified": false,
+        "pages": 20,
+        "sha256": "884c204fa9afddddf4179ea88e031ff42f68a526c72b24d185d4388cfec30aea",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/018-textop/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/018-textop/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 3,
+          "path": "assets/018-textop/fig-02-method-pipeline.png"
+        }
+      ],
+      "method": {
+        "motion_representation_dim": 69,
+        "history_frames": 2,
+        "future_frames": 8,
+        "denoising_steps": 5,
+        "guidance_scale": 5,
+        "generation_rate_hz": 6.25,
+        "motion_rate_hz": 50,
+        "tracker_rate_hz": 50,
+        "tracker_reference_frames": 5,
+        "generator_history": "previous generated reference motion",
+        "tracker": "MLP trained with asymmetric PPO in Isaac Lab"
+      },
+      "evaluation": {
+        "real_robot_random_stream": {
+          "duration_seconds": 30,
+          "successes": 16,
+          "trials": 20,
+          "success_definition": "complete without falling, hardware failure or leaving the predefined workspace",
+          "protocol": "offline-generated references; reject trajectories with maximum displacement greater than 2 m from the initial position"
+        },
+        "interaction_latency_seconds": {
+          "mean": 0.73,
+          "std": 0.1,
+          "trials": 10,
+          "transition": "stand to wave left hand",
+          "measurement": "manually recorded input to perceived motion start"
+        },
+        "sim_to_sim": "Isaac Lab training; MuJoCo evaluation",
+        "sim_success_definition": "maximum over time of root-relative mean body-link position error <= 0.3 m",
+        "generated_reference_success_rate": {
+          "mocap": 0.992,
+          "mocap_plus_generated": 0.993,
+          "generated": 0.991
+        },
+        "unseen_SnapMoGen_test_success_rate": {
+          "mocap": 0.823,
+          "mocap_plus_generated": 0.814,
+          "generated": 0.772
+        },
+        "source_locator": "Tables I-V and Appendix B"
+      },
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control"
+      ],
+      "classification_reason": "主要把流式文字转换为短时参考运动，再交给独立全身跟踪器；属于文字动作生成，不等同于环境感知 VLA。"
+    },
+    {
+      "id": "019",
+      "short_title": "RICL",
+      "title": "RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models",
+      "submitted_on": "2025-08-04",
+      "version": "arXiv:2508.02062v1 [cs.RO] 4 Aug 2025; CoRL 2025",
+      "platform": "Franka / DROID; 7 joint velocities and gripper position",
+      "evidence": "real-robot",
+      "library_summary": "用 400 条 priming 示范教 π0-FAST-DROID 利用检索上下文，新任务 20 条机器人示范入库后固定参数适应；区分 token 概率插值、纯 ICL 与目标任务微调。",
+      "tags": [
+        "ICL",
+        "retrieval",
+        "post-training",
+        "pi0-FAST",
+        "token-interpolation",
+        "Franka"
+      ],
+      "method": {
+        "backbone": "pi0-FAST-DROID",
+        "retriever": "frozen DINOv2; top-camera image L2",
+        "priming_tasks": 20,
+        "priming_demonstrations_per_task": 20,
+        "context_groups": 4,
+        "action_horizon": 15,
+        "action_dim": 8,
+        "interpolation": "FAST token probability distributions",
+        "interpolation_lambda": 10
+      },
+      "evaluation": {
+        "novel_task_icl": {
+          "tasks": 8,
+          "buffer_demonstrations_per_task": 20,
+          "rollouts_per_task": 10,
+          "full_success_rate": 0.3125,
+          "base_full_success_rate": 0.025,
+          "test_time_parameter_updates": false
+        },
+        "additional_target_finetuning": {
+          "ricl_success_rate": 0.6167,
+          "base_success_rate": 0.3167,
+          "protocol": "separate target-task finetuning evaluation; not pooled with pure ICL"
+        },
+        "source_locator": "Section 5, Figure 4, Appendix C-D"
+      },
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "note_path": "papers/019-ricl.md",
+      "reader_path": "ricl.html",
+      "arxiv_id": "2508.02062",
+      "sources": {
+        "paper": "https://arxiv.org/abs/2508.02062v1",
+        "pages": 17,
+        "sha256": "d467e86c4f81fd6c7a148c3501c7268a37075cd83eadb081478a04ea4a904771",
+        "additional_versions": [],
+        "project": "https://ricl-vla.github.io/",
+        "code": "https://github.com/ricl-vla/ricl_openpi"
+      },
+      "figures_manifest": "assets/019-ricl/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 7",
+          "role": "overview",
+          "page": 14,
+          "path": "assets/019-ricl/fig-07-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 4,
+          "path": "assets/019-ricl/fig-02-method-pipeline.png"
+        }
+      ],
+      "category": "icl-vla"
+    },
+    {
+      "id": "020",
+      "short_title": "ReCAP",
+      "title": "Retrieve, Don’t Retrain: Extending Vision-Language-Action Models to New Tasks at Test Time",
+      "submitted_on": "2026-06-14",
+      "version": "arXiv:2606.15631v1 [cs.RO] 14 Jun 2026",
+      "platform": "PushT triangle/disc; RoboTwin Aloha-Agilex/UR5; physical robot/human wrist trajectories",
+      "evidence": "sim-and-real",
+      "library_summary": "以源具身轨迹提供运动先验，WAM 学习目标具身残差与未来图像；冻结模型后扩展源示范库接入新任务，真机人手数据需要 VR 位姿和共同状态—动作接口。",
+      "tags": [
+        "ICL",
+        "cross-embodiment",
+        "retrieval",
+        "WAM",
+        "residual-actions",
+        "human-data"
+      ],
+      "method": {
+        "backbone": "Cosmos Policy / Cosmos Predict2.5 2B",
+        "shared_interface": "SE(3) end-effector pose and gripper",
+        "action_parameterization": "retrieved source actions plus learned target-embodiment residual",
+        "joint_future_image_prediction": true,
+        "retrieval": "two-stage trajectory prefilter and local matching; target future actions excluded at inference",
+        "robotwin_action_horizon": 16
+      },
+      "evaluation": {
+        "pusht": {
+          "training_goal_angles_degrees": [
+            -45,
+            45
+          ],
+          "paired_demonstrations": 100,
+          "unseen_goal_angles": 7,
+          "recap_success_rate": 0.349,
+          "no_retrieval_success_rate": 0.06,
+          "best_other_baseline_success_rate": 0.191
+        },
+        "robotwin": {
+          "paired_training_episodes": 246,
+          "training_tasks": 5,
+          "heldout_tasks": 5,
+          "seen_success_rate": 0.435,
+          "heldout_success_rate": 0.315,
+          "pool_growth_tasks": [
+            11,
+            17,
+            23,
+            29,
+            35
+          ],
+          "pool_growth_success_rates": [
+            0.09,
+            0.185,
+            0.195,
+            0.22,
+            0.315
+          ]
+        },
+        "real_robot": {
+          "paired_training_demonstrations": 25,
+          "training_task": "open cabinet",
+          "heldout_pool_demonstrations_per_task": 10,
+          "rollouts_per_task": 10,
+          "place_bottle_success_rate": 0.8,
+          "close_cabinet_success_rate": 0.3,
+          "open_cabinet_success_rate": 0.9
+        },
+        "source_locator": "Section 5, Table 1, Figures 5/7/8, Appendix A/D-F"
+      },
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "note_path": "papers/020-recap.md",
+      "reader_path": "recap.html",
+      "arxiv_id": "2606.15631",
+      "sources": {
+        "paper": "https://arxiv.org/abs/2606.15631v1",
+        "pages": 20,
+        "sha256": "c690f8b889c8de32eda0d2546a0b27e9dca14ea9005a52d672470a192d73c431",
+        "additional_versions": [],
+        "project": "https://recap-robot.github.io/"
+      },
+      "figures_manifest": "assets/020-recap/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/020-recap/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 4,
+          "path": "assets/020-recap/fig-02-method-pipeline.png"
+        }
+      ],
+      "category": "icl-vla"
+    },
+    {
+      "id": "021",
+      "short_title": "StellaVLA",
+      "title": "StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models",
+      "submitted_on": "2026-08-12",
+      "version": "arXiv:2608.11671v1 [cs.RO] 12 Aug 2026; PDF internal date 1 Aug 2026",
+      "platform": "LIBERO / LIBERO-Plus / VLA-Arena; 6-DoF AgileX Piper",
+      "evidence": "sim-and-real",
+      "library_summary": "将一条示范变成子目标、关键帧与 2D/3D 运动文字；训练联合动作和空间语言，部署只走动作头并缓存静态上下文，区分真机部分进展、跨来源单步一致性与完整成功。",
+      "tags": [
+        "ICL",
+        "structured-demonstration",
+        "spatial-language",
+        "cross-embodiment-context",
+        "Qwen3-VL",
+        "KV-cache"
+      ],
+      "method": {
+        "backbone": "Qwen3-VL-4B-Instruct",
+        "action_head": "OpenVLA-OFT-style MLP",
+        "retriever": "instruction language embeddings only",
+        "context_demonstrations": 1,
+        "context_refresh": "fixed for the full episode",
+        "language_loss_weight": 0.3,
+        "training_steps": 30000,
+        "batch_size": 128,
+        "cross_embodiment_data_role": "context only; target actions supervised by real-robot trajectories"
+      },
+      "evaluation": {
+        "libero": {
+          "rollouts_per_suite": 500,
+          "success_rate": 0.988,
+          "fixed_checkpoint_context_interventions": {
+            "correct": 0.988,
+            "none": 0.624,
+            "wrong_task": 0.449
+          }
+        },
+        "libero_plus": {
+          "success_rate": 0.851,
+          "aggregation": "task-count-weighted over seven perturbation categories; excludes original tasks"
+        },
+        "real_robot": {
+          "robot_demonstrations": 125,
+          "human_hand_takes": 26,
+          "xr_retargeted_trajectories": 26,
+          "rollouts_per_cell": 10,
+          "id_success_rate": 0.85,
+          "ood_l1_success_rate": 0.75,
+          "ood_l2_full_success_rate": 0.0,
+          "ood_l2_progress_out_of_4": 1.9,
+          "cross_source_agreement": "single-step predictions, not isolated closed-loop source comparisons"
+        },
+        "latency_ms": {
+          "no_demo": 64,
+          "image_text_no_cache": 183,
+          "image_text_cached": 91,
+          "paired_action_only": 88,
+          "paired_83_language_tokens": 3177,
+          "real_robot_pipeline_per_chunk_approx": 205
+        },
+        "source_locator": "Tables 1-8, Figure 4, Appendices A-D"
+      },
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "note_path": "papers/021-stellavla.md",
+      "reader_path": "stellavla.html",
+      "arxiv_id": "2608.11671",
+      "sources": {
+        "paper": "https://arxiv.org/abs/2608.11671v1",
+        "pages": 21,
+        "sha256": "ef0082f4f9618a409ebc780c3ef4d1e1fb073cf85c5cf4ce8a367556eeeecca4",
+        "additional_versions": [],
+        "project": "https://stelledge.com/blog/stellavla",
+        "project_status_verified": false
+      },
+      "figures_manifest": "assets/021-stellavla/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/021-stellavla/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 5,
+          "path": "assets/021-stellavla/fig-02-method-pipeline.png"
+        }
+      ],
+      "category": "icl-vla"
+    },
+    {
+      "id": "022",
+      "short_title": "RA-VLA",
+      "title": "RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation",
+      "submitted_on": "2026-08-26",
+      "version": "arXiv:2608.25585v2 [cs.RO] 7 Oct 2026; ICML 2026, PMLR 306",
+      "platform": "LIBERO; UR5e / Robotiq 2F-85 / RealSense D435",
+      "evidence": "sim-and-real",
+      "library_summary": "用动作 DTW 对齐训练检索器，通过相关与无关上下文误差间隔训练动作头遵循示范；缓存冻结 VLM 特征并按层接入，严格区分保留任务测试和基线的 flow-matching 适配实现。",
+      "tags": [
+        "ICL",
+        "action-aware-retrieval",
+        "contextual-adherence",
+        "GR00T-N1.5",
+        "flow-matching",
+        "cached-context"
+      ],
+      "method": {
+        "backbone": "GR00T N1.5",
+        "vlm_frozen": true,
+        "retriever": "two-layer Transformer; contrastive DTW behavioral alignment",
+        "action_horizon": 16,
+        "slice_stride": 4,
+        "denoising_steps": 4,
+        "default_context_segments": 1,
+        "adherence_margin": 0.01,
+        "adherence_loss_weight": 0.1,
+        "flow_initialization": "empirical mean of retrieved expert action chunks"
+      },
+      "evaluation": {
+        "libero": {
+          "protocol": "train on three suites; rotate the held-out fourth suite",
+          "buffer_demonstrations_per_task": 3,
+          "rollouts_per_task": 50,
+          "average_success_rate": 0.3845,
+          "best_adapted_baseline_success_rate": 0.2085,
+          "absolute_improvement_percentage_points": 17.6
+        },
+        "real_robot": {
+          "protocol": "leave one of four tasks out; training augmented with LIBERO",
+          "recorded_demonstrations_per_task": 30,
+          "buffer_demonstrations_per_heldout_task": 4,
+          "rollouts_per_task": 12,
+          "average_success_rate": 0.5625,
+          "best_adapted_baseline_success_rate": 0.3542,
+          "absolute_improvement_percentage_points": 20.83
+        },
+        "baseline_caveat": "RAEA and RICL are adapted implementations on GR00T N1.5, not original paper checkpoints",
+        "source_locator": "Section 5, Tables 1-4, Appendices B-E"
+      },
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "note_path": "papers/022-ra-vla.md",
+      "reader_path": "ra-vla.html",
+      "arxiv_id": "2608.25585",
+      "sources": {
+        "paper": "https://arxiv.org/abs/2608.25585v2",
+        "pages": 18,
+        "sha256": "094b6cf7b44aa70394e6734bf0ce048bbe9177db955d8e09d25fb6813c92ad4b",
+        "additional_versions": [],
+        "conference": "https://proceedings.mlr.press/v306/jang26c.html"
+      },
+      "figures_manifest": "assets/022-ra-vla/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/022-ra-vla/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 4,
+          "path": "assets/022-ra-vla/fig-02-method-pipeline.png"
+        }
+      ],
+      "category": "icl-vla"
+    },
+    {
+      "id": "023",
+      "short_title": "ICI-VLA",
+      "title": "ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models",
+      "submitted_on": "2026-09-07",
+      "version": "arXiv:2609.07581v1 [cs.RO] 7 Sep 2026",
+      "platform": "LIBERO / RoboTwin 2.0; dual-arm Aloha",
+      "evidence": "sim-and-real",
+      "library_summary": "将长轨迹转成微示范，语义过滤与离线 DTW 监督阶段检索，Qwen3-VL 直接生成数值动作文本；训练遮蔽查询目标动作前缀，推理读取三条示例，记录轨迹划分与跨论文比较边界。",
+      "tags": [
+        "ICL",
+        "micro-demonstration",
+        "phase-alignment",
+        "DTW",
+        "text-actions",
+        "Qwen3-VL",
+        "Aloha"
+      ],
+      "method": {
+        "backbone": "Qwen3-VL-4B; native numerical text actions; no action-specific head",
+        "retriever": "Qwen3-VL-Embedding-2B RD-Encoder",
+        "source_trajectories_approx": 11200,
+        "library_micro_demonstrations_approx": 139659,
+        "context_examples": 3,
+        "action_horizon": 25,
+        "semantic_candidates": 64,
+        "hard_negatives": 15,
+        "max_mining_cycles": 5,
+        "mining_positive_change_threshold": 0.05,
+        "context_refresh_confidence_threshold": 0.65,
+        "masking": "training query target action prefix corruption; not expert-context action deletion or explicit residual regression"
+      },
+      "evaluation": {
+        "simulation": {
+          "rollouts_per_task": 10,
+          "libero_success_rate": 0.977,
+          "robotwin_success_rate": 0.604,
+          "matched_naive_icl_libero_success_rate": 0.715,
+          "matched_naive_icl_robotwin_success_rate": 0.107,
+          "split_caveat": "trajectory partitions non-overlapping; benchmark task semantics may recur"
+        },
+        "real_robot": {
+          "tasks": 4,
+          "rollouts_per_task": 250,
+          "total_trials": 1000,
+          "average_success_rate": 0.832,
+          "wilson_95_ci": [
+            0.808,
+            0.854
+          ],
+          "pi0_success_rate": 0.664,
+          "vla0_success_rate": 0.63,
+          "split": "evaluation objects, layouts, instructions and trajectories disjoint from training and retrieval library"
+        },
+        "external_baseline_caveat": "published benchmark protocols; not all controlled paired comparisons",
+        "source_locator": "Sections 3-4, Tables 1-3, Figures 4-5"
+      },
+      "read_on": "2026-10-09",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "note_path": "papers/023-ici-vla.md",
+      "reader_path": "ici-vla.html",
+      "arxiv_id": "2609.07581",
+      "sources": {
+        "paper": "https://arxiv.org/abs/2609.07581v1",
+        "pages": 9,
+        "sha256": "67a7dd7078004f79d2c63bb60a7f2d6d0bdb90dd030bcee9bf011b58e39bdac8",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/023-ici-vla/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/023-ici-vla/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method_pipeline",
+          "page": 4,
+          "path": "assets/023-ici-vla/fig-02-method-pipeline.png"
+        }
+      ],
+      "category": "icl-vla"
+    },
+    {
+      "id": "024",
+      "short_title": "Being-M0.7",
+      "title": "Being-M0.7: A Latent World-Action Model for Humanoid Robots",
+      "arxiv_id": "2610.11283",
+      "version": "arXiv:2610.11283v1, 2026-10-08",
+      "submitted_on": "2026-10-08",
+      "read_on": "2026-10-10",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "category": "wholebody-intelligence",
+      "note_path": "papers/024-being-m07.md",
+      "reader_path": "being-m07.html",
+      "library_summary": "混合人类视频 / 运动数据预训练视觉—运动先验，机器人中训练适配后冻结，通过门控未来视觉上下文和当前观测生成 SONIC 动作；依据 10 月 arXiv v1，记录仿真总体领先、真机并列及部署禁用显式运动。",
+      "platform": "Unitree G1; SONIC; Linker Hand O6; external RTX 4090; SIMPLE simulation",
+      "evidence": "sim-and-real",
+      "tags": [
+        "latent-WAM",
+        "mixed-modality-human-data",
+        "head-root-motion",
+        "MoT",
+        "robot-mid-training",
+        "gated-cross-attention",
+        "SONIC",
+        "G1"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.11283v1",
+        "pages": 27,
+        "sha256": "950a70ab3b2fba369e24ad0609e236f7241e951766ef3a243df88f2689ab245d",
+        "source_record": "assets/024-being-m07/source-record.json",
+        "additional_versions": []
+      },
+      "figures_manifest": "assets/024-being-m07/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/024-being-m07/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method-framework",
+          "page": 4,
+          "path": "assets/024-being-m07/fig-02-method-framework.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "data-recipe",
+          "page": 5,
+          "path": "assets/024-being-m07/fig-03-data-recipe.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "attention-interface",
+          "page": 16,
+          "path": "assets/024-being-m07/fig-06-attention-interface.png"
+        }
+      ],
+      "method": {
+        "training_stages": [
+          "mixed-human-pretraining",
+          "robot-midtraining",
+          "frozen-prior-action-posttraining"
+        ],
+        "raw_human_source_hours_approx": 10226,
+        "raw_hours_before_filtering": true,
+        "motion_representation_dim": 22,
+        "motion_input_or_prediction_at_deployment": false,
+        "action_dim_real_robot": 66,
+        "action_components": "64D SONIC token + left/right hand open-close scalars",
+        "proprioception_dim_real_robot": 63,
+        "observed_frames": 1,
+        "future_visual_frames": 24,
+        "prediction_frame_rate_hz": 5,
+        "future_horizon_seconds": 4.8,
+        "action_chunk_length": 30,
+        "command_execution_rate_hz": 50,
+        "nominal_action_query_rate_hz": 1.6666666666666667,
+        "action_chunk_duration_seconds": 0.6,
+        "prior_layers": 30,
+        "expert_layers": 30,
+        "prior_hidden_width": 768,
+        "expert_hidden_width": 1024,
+        "world_cross_attention_layers": [
+          3,
+          6,
+          9,
+          12,
+          15,
+          18,
+          21,
+          24,
+          27,
+          30
+        ],
+        "prior_sampling_steps_posttraining": 3,
+        "prior_sampling_steps_inference": 10,
+        "action_sampling_steps_inference": 10,
+        "world_context_dropout_real_posttraining": 0.1,
+        "world_context_dropout_simulation": 0.0,
+        "prior_frozen_during_action_posttraining": true,
+        "current_observation_updated_per_query": true
+      },
+      "evaluation": {
+        "protocol": "joint multitask training; six simulation tasks or three real tasks per model; no test-time demonstration ICL evaluation",
+        "simulation": {
+          "benchmark": "SIMPLE",
+          "tasks": 6,
+          "randomization_levels": 3,
+          "trials_per_task_level": 10,
+          "total_trials_per_method": 180,
+          "successes": 128,
+          "success_rate": 0.7111111111111111,
+          "baseline_successes": {
+            "GR00T-N1.6": 61,
+            "Psi0": 116,
+            "pi0.5": 95
+          },
+          "ablation_successes": {
+            "without_pretraining": 88,
+            "without_midtraining": 107,
+            "language_only_upstream_context": 105
+          },
+          "default_seed_settings": true,
+          "baseline_runs": "authors trained and evaluated official implementations on the same machine"
+        },
+        "real_robot": {
+          "tasks": [
+            "Walk to Fish",
+            "Walk to Mirror",
+            "Walk to Doll"
+          ],
+          "trials_per_task": 5,
+          "total_trials_per_method": 15,
+          "trial_time_limit_seconds": 30,
+          "successes_by_task": [
+            3,
+            5,
+            5
+          ],
+          "total_successes": 13,
+          "success_rate": 0.8666666666666667,
+          "baseline_total_successes": {
+            "GR00T-N1.6": 13,
+            "Psi0": 3,
+            "pi0.5": 7
+          },
+          "strongest_baseline_tied": true,
+          "includes_approach_locomotion_all_three_tasks": true,
+          "human_evaluator": true,
+          "starting_robot_and_table_positions_marked": true,
+          "target_initial_positions_randomized": "left, center and right workspace regions"
+        },
+        "source_locator": "October arXiv PDF Tables 1-3; Appendix C-D"
+      },
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "10 月版以混合人类视频 / 运动训练先验，经机器人中训练和门控动作专家生成 SONIC 接口动作，主归大脑模型。"
+    }
+  ],
+  "batches": [
+    {
+      "collection": "wholebody",
+      "read_on": "2026-10-08",
+      "source_entries": 18,
+      "added_unique_papers": 15,
+      "skipped_existing_papers": 2,
+      "merged_version_entries": 1,
+      "saved_figures": 31,
+      "order": "Zotero dateAdded ascending"
+    },
+    {
+      "collection": "wholebody",
+      "read_on": "2026-10-09",
+      "scope": "user-selected newly added TextOp; not a full collection inventory",
+      "source_entries": 1,
+      "added_unique_papers": 1,
+      "skipped_existing_papers": 0,
+      "merged_version_entries": 0,
+      "saved_figures": 2,
+      "order": "user-selected TextOp"
+    },
+    {
+      "collection": "ICL VLA 专题",
+      "read_on": "2026-10-09",
+      "source_origin": "public_paper",
+      "source_entries": 5,
+      "added_unique_papers": 5,
+      "skipped_existing_papers": 0,
+      "merged_version_entries": 0,
+      "saved_figures": 10,
+      "order": "user-selected: RICL, ReCAP, StellaVLA, RA-VLA, ICI-VLA"
+    },
+    {
+      "collection": "wholebody",
+      "read_on": "2026-10-10",
+      "scope": "user-selected Being-M0.7 only; not a fresh full-collection snapshot",
+      "source_entries": 1,
+      "added_unique_papers": 1,
+      "skipped_existing_papers": 0,
+      "merged_version_entries": 0,
+      "saved_source_pdfs": 1,
+      "saved_figures": 4,
+      "order": "user-selected Being-M0.7",
+      "summary_version": "arXiv:2610.11283v1, 2026-10-08 only"
+    }
+  ],
+  "reading_lists": [
+    {
+      "id": "icl-vla",
+      "title": "具备 ICL 能力的 VLA · 专题阅读清单",
+      "updated_on": "2026-10-09",
+      "note_path": "research/icl-vla.md",
+      "reader_path": "icl-vla.html",
+      "status": "literature_search_with_five_completed_paper_summaries",
+      "primary_demonstration_conditioned_methods": [
+        "RICL",
+        "ReCAP",
+        "StellaVLA",
+        "RA-VLA",
+        "ICI-VLA"
+      ],
+      "interaction_conditioned_method": "MEM",
+      "counted_as_full_paper_summaries": false,
+      "formal_summary_ids": [
+        "019",
+        "020",
+        "021",
+        "022",
+        "023"
+      ],
+      "category": "icl-vla"
+    }
+  ],
+  "categories": [
+    {
+      "id": "wholebody-intelligence",
+      "label": "Wholebody Intelligence",
+      "description": "全身运动、移动操作、人类数据与人形机器人学习。",
+      "subcategories": [
+        {
+          "id": "brain-models",
+          "label": "大脑模型与任务策略",
+          "description": "VLA / VAM / WAM、视觉任务策略与文字动作生成：决定任务意图、动作计划或参考运动。",
+          "keywords": [
+            "VLA",
+            "VAM",
+            "WAM",
+            "visual-policy",
+            "text-to-motion"
+          ]
+        },
+        {
+          "id": "motion-control",
+          "label": "运动控制与重定向",
+          "description": "GMT / WBC 类全身动作跟踪、关节控制与几何重定向：把参考动作变成可执行运动，也包括物理仿真角色控制。",
+          "keywords": [
+            "GMT",
+            "WBC",
+            "motion-tracking",
+            "retargeting",
+            "IK"
+          ]
+        },
+        {
+          "id": "data-and-evaluation",
+          "label": "数据、基准与综述",
+          "description": "人类示范对齐、合成数据、仿真基础设施、能力评测与领域综述。",
+          "keywords": [
+            "human-data",
+            "data-generation",
+            "benchmark",
+            "simulation",
+            "survey"
+          ]
+        }
+      ],
+      "classification_policy": "按主要贡献确定唯一主子类；跨模块工作标注关联方向，篇数与细分筛选只计主子类。分类为笔记库组织判断，不代表作者自称的模型类型。"
+    },
+    {
+      "id": "icl-vla",
+      "label": "ICL-VLA",
+      "description": "通过示范上下文适应任务的视觉语言动作模型。"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/wxinhua/paper_reading",
+    "pages_url": "https://wxinhua.github.io/paper_reading/"
+  },
+  "publication": {
+    "prepared_on": "2026-10-12",
+    "pdf_policy": "Public paper links; local PDF archives are kept separately."
+  }
+}

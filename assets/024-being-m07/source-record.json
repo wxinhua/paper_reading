@@ -1,0 +1,17 @@
+{
+  "paper_id": "024",
+  "title": "Being-M0.7: A Latent World-Action Model for Humanoid Robots",
+  "verified_on": "2026-10-10",
+  "primary": {
+    "source_url": "https://arxiv.org/pdf/2610.11283v1",
+    "metadata_url": "https://arxiv.org/abs/2610.11283v1",
+    "version": "arXiv:2610.11283v1, 2026-10-08",
+    "document_date": "2026-10-08",
+    "pages": 27,
+    "bytes": 15567380,
+    "sha256": "950a70ab3b2fba369e24ad0609e236f7241e951766ef3a243df88f2689ab245d",
+    "role": "sole_summary_and_figure_source"
+  },
+  "additional_versions": [],
+  "summary_scope": "Only arXiv:2610.11283v1 dated 2026-10-08 is used for the summary and all four figures. PDF figure and appendix numbers are used."
+}

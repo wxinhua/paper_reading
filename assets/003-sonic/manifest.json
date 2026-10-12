@@ -1,0 +1,67 @@
+{
+  "paper_id": "003",
+  "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2511.07820v4",
+  "source_url": "http://arxiv.org/abs/2511.07820",
+  "source_sha256": "6580f9223b504c6420eb409bca849bdd968cec17af5c2e7e3c395bb9e1df4267",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 2,
+      "file": "fig-01-overview.png",
+      "path": "assets/003-sonic/fig-01-overview.png",
+      "crop_normalized": [
+        0.1,
+        0.095,
+        0.9,
+        0.555
+      ],
+      "crop_pdf_points": [
+        59.53,
+        79.98,
+        535.75,
+        467.25
+      ],
+      "image_size": [
+        1324,
+        1076
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 1: SONIC enables diverse humanoid tasks through a universal control policy that handles diverse input modalities and control interfaces.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "0d4de85aa794fbed60e7c6929e96691bb4a0294b1313426993232a8ae7c2683b"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "method",
+      "page": 14,
+      "file": "fig-06-method.png",
+      "path": "assets/003-sonic/fig-06-method.png",
+      "crop_normalized": [
+        0.1,
+        0.185,
+        0.9,
+        0.465
+      ],
+      "crop_pdf_points": [
+        59.53,
+        155.75,
+        535.75,
+        391.48
+      ],
+      "image_size": [
+        1324,
+        655
+      ],
+      "dpi": 200,
+      "original_caption_text": "Figure 6: SONIC enables universal humanoid motion tracking through a universal control policy that handles diverse motion commands and modalities. Specialized encoders process robot, human, and hybrid motion commands into a universal token that drives robot control and motion decoders. This multi-encoder design supports diverse applications including gamepad control, VR teleoperation, whole-body teleoperation, and video teleoperation.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "fc43ea39dd5639b5380d5a337bbb9ff9fa49c2338cf99b48d8995c0f7a439327"
+    }
+  ],
+  "source_version": "arXiv:2511.07820v4 [cs.RO] 13 Aug 2026",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

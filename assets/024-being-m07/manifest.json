@@ -1,0 +1,149 @@
+{
+  "paper_id": "024",
+  "title": "Being-M0.7: A Latent World-Action Model for Humanoid Robots",
+  "source_document": "https://arxiv.org/abs/2610.11283v1",
+  "source_url": "https://arxiv.org/pdf/2610.11283v1",
+  "source_version": "arXiv v1, 2026-10-08",
+  "source_sha256": "950a70ab3b2fba369e24ad0609e236f7241e951766ef3a243df88f2689ab245d",
+  "source_pages": 27,
+  "extracted_on": "2026-10-10",
+  "extraction": "Original PDF page rendered with Poppler, cropped with Pillow; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.11,
+        0.25,
+        0.89,
+        0.535
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        198.0,
+        544.6800000000001,
+        423.72
+      ],
+      "crop_pixels": [
+        187,
+        550,
+        1513,
+        1177
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        627
+      ],
+      "sha256": "472dfd30bbc9cf6983cba1e4aa085d5d57319d05445477634808d97e36a6ff76",
+      "original_caption": "Figure 1: Being-M0.7 at a glance. Being-M0.7 is a latent World-Action Model pretrained on egocentric\nvideos and human motions with a Mixture of Transformers (MoT) structure, then grounded into humanoid\ncontrol through action expert post-training on robot trajectories for diverse loco-manipulation tasks. The\nrightmost panels show three real-world tasks executed by the humanoid.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: original diagram and all English caption lines inspected; labels and captions not clipped",
+      "visual_reviewed_on": "2026-10-10"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-framework",
+      "pdf_page": 4,
+      "file": "fig-02-method-framework.png",
+      "crop_normalized": [
+        0.11,
+        0.095,
+        0.89,
+        0.445
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        75.24,
+        544.6800000000001,
+        352.44
+      ],
+      "crop_pixels": [
+        187,
+        209,
+        1513,
+        979
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        770
+      ],
+      "sha256": "f6d965a6fcd6bd75ddec05229fde29d0071b46e52101359af32fcdf56636b014",
+      "original_caption": "Figure 2: Being-M0.7 framework. Mixed-modality pre-training learns a visual–motion prior with a shared\nhuman–humanoid motion representation. Robot mid-training adapts the prior model; gated post-training\nlearns an action expert from its frozen visual context and current robot observations.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: original diagram and all English caption lines inspected; labels and captions not clipped",
+      "visual_reviewed_on": "2026-10-10"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "data-recipe",
+      "pdf_page": 5,
+      "file": "fig-03-data-recipe.png",
+      "crop_normalized": [
+        0.11,
+        0.095,
+        0.89,
+        0.445
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        75.24,
+        544.6800000000001,
+        352.44
+      ],
+      "crop_pixels": [
+        187,
+        209,
+        1513,
+        979
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        770
+      ],
+      "sha256": "a57064950ea28bb1f429ee156f87e7e59f80a3efd6c68c8b9fa571efb509a386",
+      "original_caption": "Figure 3: Being-M0.7 data recipe. The pre-training corpus is sourced from external public datasets\nincluding Ego4D [18], Xperience [38], Nymeria [19], Bones-SEED [39], SnapMoGen [21], HumanML3D [20], and\nLafan1 [40], as well as additional data comprising subsets of the training corpora described in Being-H0.5 [16]\nand Being-M0.5 [41, 42], and commercially acquired datasets. Raw sources are filtered, temporally segmented,\nand reformatted into three supervision streams–D for video-motion pairs, D for video-only, and D for\nVM V M\nmotion-only–which jointly supervise the visual-motion joint distribution and its marginals, respectively.",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: original diagram and all English caption lines inspected; labels and captions not clipped",
+      "visual_reviewed_on": "2026-10-10"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "attention-interface",
+      "pdf_page": 16,
+      "file": "fig-06-attention-interface.png",
+      "crop_normalized": [
+        0.11,
+        0.105,
+        0.89,
+        0.35
+      ],
+      "crop_pdf_points": [
+        67.32000000000001,
+        83.16,
+        544.6800000000001,
+        277.2
+      ],
+      "crop_pixels": [
+        187,
+        231,
+        1513,
+        770
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        539
+      ],
+      "sha256": "4a161e16f88ea8235f3ef8fe7521bb6d2cc460bc6062a65cc9c9aeed8df7e5e3",
+      "original_caption": "Figure 6: Attention interfaces. V , M , I, and A denote vision, motion, instruction, and action hidden\nstates; τ is the flow timestep. The prior model learns from visual and motion streams during pre-training\nand mid-training. During action post-training and inference, only its visual hidden states are supplied to the\nexpert, alongside current robot observations O . The gated residual is defined in Eq. 1.\nq",
+      "caption_preserved_in_image": true,
+      "visual_review": "complete: original diagram and all English caption lines inspected; labels and captions not clipped",
+      "visual_reviewed_on": "2026-10-10"
+    }
+  ]
+}

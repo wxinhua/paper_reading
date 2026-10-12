@@ -1,0 +1,72 @@
+{
+  "paper": "KODA: Kinematics–Observation Data Alignment for Humanoid Learning from Human Egocentric Demonstration",
+  "saved_on": "2026-10-08",
+  "source_document": "https://koda-humanoid.github.io/koda/assets/KODA.pdf",
+  "source_url": "https://koda-humanoid.github.io/koda/assets/KODA.pdf",
+  "source_pdf_sha256": "35d7e306575074170b6704849132168e4395ee47e2eba0d72f0f2dd9a5d8a94c",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 2,
+      "file": "fig-01-overview.png",
+      "caption": "Overview of KODA. Whole-Body Motion Generation produces simulation-feasible whole-body motion from human egocentric demonstrations, and Robot Onboard View Generation synthesizes motion-aligned onboard views. The motion, views, and task instruction form a reusable canonical record. Control Command Generation uses this record to generate controller-specific states and actions. The resulting data are combined with matching real-robot demonstrations to co-train a controller-specific vision-language-action (VLA) policy for language-guided humanoid loco-manipulation.",
+      "pixel_size": [
+        1610,
+        1273
+      ],
+      "crop_box_pdf_points": [
+        65,
+        60,
+        548,
+        442
+      ],
+      "caption_included": true,
+      "render_dpi": 240,
+      "origin": "Rendered crop of the user-provided Zotero PDF; diagram and original caption retained.",
+      "sha256": "138f472937d4524ad7ac867d7048482a40568b83c1b1485ec13c9ac52c0aea50"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method_pipeline",
+      "page": 3,
+      "file": "fig-02-method-pipeline.png",
+      "caption": "KODA pipeline. Middle: Human demonstrations become aligned whole-body motion and onboard observations, then controller-specific state-action data for VLA training (Control Command Generation). Top: Whole-Body Motion Generation combines hand estimation and contact-aware retargeting, sampling-based command optimization (SCO), and arm refinement. Bottom: Robot Onboard View Generation combines arm removal, scene reprojection, robot rendering, depth compositing, and inpainting. Input depth is observed or estimated from RGB.",
+      "pixel_size": [
+        1610,
+        1143
+      ],
+      "crop_box_pdf_points": [
+        65,
+        59,
+        548,
+        402
+      ],
+      "caption_included": true,
+      "render_dpi": 240,
+      "origin": "Rendered crop of the user-provided Zotero PDF; diagram and original caption retained.",
+      "sha256": "9f5ed67a62f659f75b7fe711ed2e056caa0ff487bcd84309c245a992a2a32c92"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "SCO_detail",
+      "page": 6,
+      "file": "fig-03-SCO-command-optimization.png",
+      "caption": "Sampling-based command optimization (SCO) uses CEM to optimize sparse pose residuals through sampling, rollout, evaluation, and proposal updates. (a) Receding-horizon correction with a planning horizon and executed prefix. (b) The CEM loop proceeds from sampling to rollout, evaluation, and distribution update; the feedback arrow returns to sampling.",
+      "pixel_size": [
+        1610,
+        1214
+      ],
+      "crop_box_pdf_points": [
+        65,
+        61,
+        548,
+        425
+      ],
+      "caption_included": true,
+      "render_dpi": 240,
+      "origin": "Rendered crop of the user-provided Zotero PDF; diagram and original caption retained.",
+      "sha256": "8f957b271c1a3ee93be84d52fdbc3cd80a83d4dd47c97086ed36c9b0b2da739c"
+    }
+  ]
+}

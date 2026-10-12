@@ -1,0 +1,67 @@
+{
+  "paper_id": "010",
+  "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+  "extracted_on": "2026-10-08",
+  "source_document": "本地归档；未记录可核实的公开地址",
+  "source_url": null,
+  "source_sha256": "8c955656949d4929092a8412f2a5fcc847687e6ca0d6058a4e3fda981093d771",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "page": 2,
+      "file": "fig-01-overview.png",
+      "path": "assets/010-wholebodywam/fig-01-overview.png",
+      "crop_normalized": [
+        0.08,
+        0.06,
+        0.94,
+        0.525
+      ],
+      "crop_pdf_points": [
+        48.96,
+        47.52,
+        575.28,
+        415.8
+      ],
+      "image_size": [
+        1462,
+        1023
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 1. Overview of W HOLE B ODY WAM. We curate UniMotion-4K with over 400M whole-body motion frames from 1.19M human and humanoid motion sequences, totaling more than 4K hours, to pretrain a predictive Motion Expert. The learned motion prior is then integrated with Video and Action Experts and transferred to real-world humanoid whole-body control.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "cf5efbed98c5c9992b6681bb9fe7326524a619f7d3ccc814937f27b0fbe8e5ce"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "page": 4,
+      "file": "fig-02-method.png",
+      "path": "assets/010-wholebodywam/fig-02-method.png",
+      "crop_normalized": [
+        0.08,
+        0.06,
+        0.94,
+        0.45
+      ],
+      "crop_pdf_points": [
+        48.96,
+        47.52,
+        575.28,
+        356.4
+      ],
+      "image_size": [
+        1462,
+        858
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 2. Model architecture and two-stage training. (a) Asymmetric attention masks for Stage II training and inference. (b) Stage I language-conditioned Motion Expert pretraining on unified 63D motion. (c) Stage II Video–Motion–Action post-training with layer-wise Mixture-of-Transformers interactions.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "8df6a4c35698dd9050b65c281551c1dbbcb9fc0d7f00a749b988322e3fa1ed74"
+    }
+  ],
+  "source_version": "匿名 PDF；修订号、作者与日期未核实",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}

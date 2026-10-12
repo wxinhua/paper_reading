@@ -1,0 +1,40 @@
+{
+  "paper_id": "011",
+  "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+  "extracted_on": "2026-10-08",
+  "source_document": "https://arxiv.org/abs/2501.02116v2",
+  "source_url": "http://arxiv.org/abs/2501.02116",
+  "source_sha256": "8993b1cfd7114d32577815091aa87e5c2dcc129a97ea0c931bb45b41f4aaebb6",
+  "method": "Original PDF page rendered with Poppler at 200 dpi, cropped only; no redrawing or generated images.",
+  "figures": [
+    {
+      "figure": "Figure 2",
+      "role": "survey-taxonomy",
+      "page": 3,
+      "file": "fig-02-survey-taxonomy.png",
+      "path": "assets/011-humanoid-survey/fig-02-survey-taxonomy.png",
+      "crop_normalized": [
+        0.075,
+        0.05,
+        0.94,
+        0.59
+      ],
+      "crop_pdf_points": [
+        45.9,
+        39.6,
+        575.28,
+        467.28
+      ],
+      "image_size": [
+        1470,
+        1188
+      ],
+      "dpi": 200,
+      "original_caption_text": "Fig. 2. This survey begins by defining relevant concepts of humanoid robots and their locomotion and manipulation capabilities. Centered around achieving humanoid loco-manipulation tasks, the core of this survey delves into two main categories of methods: the traditional planning and control approaches, such as contact planning, motion planning, and control, as well as the emerging learning-based approaches, including skill learning and foundation models. In addition, this survey highlights whole-body tactile sensing as a crucial modality to achieve contact-rich loco-manipulation.",
+      "caption_note": "Original English caption retained in PNG; extracted text may include nearby text or lose math formatting.",
+      "sha256": "20e56063d33a145ed0f49cde593d68ca2a04d63736a20e47db30315ebd393f15"
+    }
+  ],
+  "source_version": "arXiv:2501.02116v2 [cs.RO] 19 Apr 2025",
+  "figure_and_caption_visual_check": "reviewed 2026-10-08"
+}
