@@ -1,0 +1,146 @@
+{
+  "paper_id": "025",
+  "title": "VioLA: Learning Generalist Humanoid Control Policies from Human Data",
+  "source_document": "https://arxiv.org/abs/2610.12435v1",
+  "source_url": "https://arxiv.org/pdf/2610.12435v1",
+  "source_version": "arXiv:2610.12435v1, 2026-10-08",
+  "source_sha256": "93e13be09ec7e5a89eaccad354ff9f72d7c8bf242f5aa7acf314a7814e89a47f",
+  "source_pages": 24,
+  "extracted_on": "2026-10-13",
+  "extraction": "Original PDF pages rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.61,
+        0.84,
+        0.89
+      ],
+      "crop_pdf_points": [
+        104.04,
+        483.12,
+        514.0799999999999,
+        704.88
+      ],
+      "crop_pixels": [
+        289,
+        1342,
+        1428,
+        1958
+      ],
+      "dpi": 200,
+      "size_px": [
+        1139,
+        616
+      ],
+      "sha256": "c602a79b7ab900c6d03206603953f3b8247bf28e051328b6a9e92e8baf3912c8",
+      "original_caption_source": "Figure 1, PDF page 1; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; no clipping or unrelated body text"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-framework",
+      "pdf_page": 4,
+      "file": "fig-02-method-framework.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.84,
+        0.346
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        514.0799999999999,
+        274.032
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1428,
+        761
+      ],
+      "dpi": 200,
+      "size_px": [
+        1139,
+        541
+      ],
+      "sha256": "02a5c1cc9b4fc906fc52e8e265063e00ec5f3607e853a47dbe62a5fa8146c2f0",
+      "original_caption_source": "Figure 2, PDF page 4; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; no clipping or unrelated body text"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "main-results",
+      "pdf_page": 7,
+      "file": "fig-03-main-results.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.84,
+        0.618
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        514.0799999999999,
+        489.456
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1428,
+        1360
+      ],
+      "dpi": 200,
+      "size_px": [
+        1139,
+        1140
+      ],
+      "sha256": "1d2a62b3c043fbe4f6a0189bbf367a4472af4332fcc1c5fccf7af21e3d35fc1e",
+      "original_caption_source": "Figure 3, PDF page 7; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; no clipping or unrelated body text"
+    },
+    {
+      "figure": "Figure 9",
+      "role": "data-schedule",
+      "pdf_page": 19,
+      "file": "fig-09-data-schedule.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.84,
+        0.325
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        514.0799999999999,
+        257.40000000000003
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1428,
+        715
+      ],
+      "dpi": 200,
+      "size_px": [
+        1139,
+        495
+      ],
+      "sha256": "9a6f2717a4717e64515675604034601625dc55d3b72f83ee28404506c786b68a",
+      "original_caption_source": "Figure 9, PDF page 19; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; no clipping or unrelated body text"
+    }
+  ],
+  "visually_reviewed_on": "2026-10-13"
+}

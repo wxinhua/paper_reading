@@ -4,13 +4,13 @@
 
 **[在线阅读目录](https://wxinhua.github.io/paper_reading/)** · [统一笔记模板](template.md) · [维护说明](CONTRIBUTING.md)
 
-当前共 **24 篇**，保存 **50 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
+当前共 **25 篇**，保存 **54 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
 
 ## 分类
 
-**Wholebody Intelligence · 19 篇**
+**Wholebody Intelligence · 20 篇**
 
-- [大脑模型与任务策略 · 9 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成与高层规划。
+- [大脑模型与任务策略 · 10 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成与高层规划。
 - [运动控制与重定向 · 3 篇](https://wxinhua.github.io/paper_reading/#subcategory-motion-control)：GMT / WBC 类全身跟踪、关节控制与重定向 / IK。
 - [数据、基准与综述 · 7 篇](https://wxinhua.github.io/paper_reading/#subcategory-data-and-evaluation)：示范对齐与生成、仿真基础设施、评测与综述。
 
@@ -44,6 +44,7 @@
 - 022 · [RA-VLA](papers/022-ra-vla.md)
 - 023 · [ICI-VLA](papers/023-ici-vla.md)
 - 024 · [Being-M0.7 · 10 月版](papers/024-being-m07.md)
+- 025 · [VioLA](papers/025-viola.md)
 
 ## 更新方式
 

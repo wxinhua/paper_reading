@@ -1,0 +1,23 @@
+{
+  "paper_id": "025",
+  "title": "VioLA: Learning Generalist Humanoid Control Policies from Human Data",
+  "verified_on": "2026-10-13",
+  "primary": {
+    "source_url": "https://arxiv.org/pdf/2610.12435v1",
+    "metadata_url": "https://arxiv.org/abs/2610.12435v1",
+    "version": "arXiv:2610.12435v1, 2026-10-08",
+    "document_date": "2026-10-08",
+    "pages": 24,
+    "bytes": 7495993,
+    "sha256": "93e13be09ec7e5a89eaccad354ff9f72d7c8bf242f5aa7acf314a7814e89a47f",
+    "role": "sole_full_text_and_figure_source"
+  },
+  "project": {
+    "url": "https://viola.is.tue.mpg.de/",
+    "checked_on": "2026-10-13",
+    "code_status": "coming_soon_on_author_project_page",
+    "retrieved_html_sha256": "77abf80b272e1ec36b2060422be7449973626d22b6e355f647e9f1506cf57b41"
+  },
+  "additional_versions": [],
+  "summary_scope": "Full main text and Appendix A.1-A.10; fixed v1 PDF; code and checkpoint publication not confirmed beyond coming-soon project status."
+}

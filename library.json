@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-12",
+  "updated_on": "2026-10-13",
   "papers": [
     {
       "id": "001",
@@ -1866,6 +1866,184 @@
         "data-and-evaluation"
       ],
       "classification_reason": "10 月版以混合人类视频 / 运动训练先验，经机器人中训练和门控动作专家生成 SONIC 接口动作，主归大脑模型。"
+    },
+    {
+      "id": "025",
+      "short_title": "VioLA",
+      "title": "VioLA: Learning Generalist Humanoid Control Policies from Human Data",
+      "arxiv_id": "2610.12435",
+      "version": "arXiv:2610.12435v1, 2026-10-08",
+      "submitted_on": "2026-10-08",
+      "read_on": "2026-10-13",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "通用策略预测共享、可执行的身体与双手 latent，以人体运动直接监督动作专家；身体运控复用 SONIC，主归大脑模型。",
+      "note_path": "papers/025-viola.md",
+      "reader_path": "viola.html",
+      "library_summary": "以共享身体 / 双手 latent 直接用人类运动监督通用策略，冻结 SONIC 与手部解码器执行。G1 运动 30/30、主操作 31/35；任务家族训练已见；含额外瓶子任务后操作 31/40。",
+      "platform": "Unitree G1; five-finger Inspire hands; SONIC v1.1; GR00T N1.7",
+      "evidence": "real-robot",
+      "tags": [
+        "VLA",
+        "WAM",
+        "executable-motion-latent",
+        "shared-human-robot-actions",
+        "human-supervision",
+        "closed-loop-simulation-labeling",
+        "flow-matching",
+        "RTC",
+        "SONIC",
+        "hand-prior"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.12435v1",
+        "project": "https://viola.is.tue.mpg.de/",
+        "pages": 24,
+        "sha256": "93e13be09ec7e5a89eaccad354ff9f72d7c8bf242f5aa7acf314a7814e89a47f",
+        "source_record": "assets/025-viola/source-record.json",
+        "additional_versions": []
+      },
+      "code_status": {
+        "value": "coming_soon_on_author_project_page",
+        "checked_on": "2026-10-13"
+      },
+      "figures_manifest": "assets/025-viola/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/025-viola/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method-framework",
+          "page": 4,
+          "path": "assets/025-viola/fig-02-method-framework.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "main-results",
+          "page": 7,
+          "path": "assets/025-viola/fig-03-main-results.png"
+        },
+        {
+          "figure": "Figure 9",
+          "role": "data-schedule",
+          "page": 19,
+          "path": "assets/025-viola/fig-09-data-schedule.png"
+        }
+      ],
+      "method": {
+        "body_latent_dim": 64,
+        "both_hands_latent_dim": 64,
+        "total_action_dim": 128,
+        "main_policy_state_dim": 46,
+        "main_chunk_length": 40,
+        "other_backbone_chunk_length": 50,
+        "control_rate_hz": 50,
+        "main_prediction_delay_ms": 160.2,
+        "main_replanning_interval_ms": 559.9,
+        "motion_modules_frozen": true,
+        "human_body_representation": "SMPL",
+        "human_hand_representation": "MANO fitted to annotated keypoints",
+        "human_proprioception_source": "aligned frozen-controller simulation rollout",
+        "body_targets_heading_source": "current simulated robot heading for both human and robot demonstrations",
+        "policy_uses_original_human_images": true,
+        "raw_unannotated_video_to_motion_model_in_this_paper": false,
+        "preconverted_pool_frames": 140572312,
+        "pool_counted_before_train_eval_split": true,
+        "preconverted_pool_hours": 780.96,
+        "preconverted_human_frames": 131010575,
+        "human_pool_frame_share": 0.932,
+        "human_training_exposure_expected": 0.8,
+        "human_pretraining_steps": 150000,
+        "mixed_steps": 50000,
+        "mixed_sampling_prob_per_corpus": 0.2
+      },
+      "evaluation": {
+        "protocol": "Task families occur in training; held-out episodes, laboratory and object instances; no task-specific fine-tuning.",
+        "single_embodiment": "Unitree G1",
+        "trials_per_task": 5,
+        "main_task_count": 13,
+        "locomotion": {
+          "trials": 30,
+          "successes": 30,
+          "released_baseline_successes": {
+            "GR00T-N1.7": 5,
+            "Psi0": 0
+          }
+        },
+        "main_manipulation": {
+          "trials": 35,
+          "successes": 31,
+          "released_baseline_successes": {
+            "GR00T-N1.7": 0,
+            "Psi0": 3
+          },
+          "per_task_successes": {
+            "Rotate Chair": 5,
+            "Hang Coat": 4,
+            "Close Laptop": 5,
+            "Place Dumpling": 5,
+            "Close Kettle": 5,
+            "Store Shampoo": 2,
+            "Push Duck": 5
+          }
+        },
+        "additional_bottle_carrying": {
+          "trials": 5,
+          "successes": 0,
+          "included_in_main_figure": false
+        },
+        "manipulation_including_bottle": {
+          "trials": 40,
+          "successes": 31
+        },
+        "human_data_ablation": {
+          "human_then_mixed": {
+            "locomotion_successes": 30,
+            "manipulation_successes": 31,
+            "steps": 200000
+          },
+          "robot_only": {
+            "locomotion_successes": 24,
+            "manipulation_successes": 33,
+            "steps": 200000
+          },
+          "human_only": {
+            "locomotion_successes": 12,
+            "locomotion_trials": 30,
+            "scope": "generalist-policy demonstrations only; pretrained backbone and motion modules retained",
+            "final_checkpoint_steps_not_explicit": true
+          }
+        },
+        "backbone_successes": {
+          "GR00T-N1.7": {
+            "locomotion": 30,
+            "manipulation": 31
+          },
+          "pi0.5": {
+            "locomotion": 20,
+            "manipulation": 16
+          },
+          "DiT4DiT": {
+            "locomotion": 30,
+            "manipulation": 9
+          }
+        },
+        "locomotion_timeout_seconds": 5,
+        "bend_timeout_seconds": 10,
+        "manipulation_fixed_timeout": false,
+        "rtc_evidence": "four selected 5.1-second recordings; latent continuity, not averaged task success",
+        "source_locator": "PDF Sections 4.1-4.7, Tables 1-3, Appendix A.6-A.10"
+      }
     }
   ],
   "batches": [
