@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-13",
+  "updated_on": "2026-10-15",
   "papers": [
     {
       "id": "001",
@@ -2043,6 +2043,174 @@
         "manipulation_fixed_timeout": false,
         "rtc_evidence": "four selected 5.1-second recordings; latent continuity, not averaged task success",
         "source_locator": "PDF Sections 4.1-4.7, Tables 1-3, Appendix A.6-A.10"
+      }
+    },
+    {
+      "id": "026",
+      "short_title": "HumanoidTTT",
+      "title": "HumanoidTTT: Test-Time Capability Reuse for Efficient Humanoid Control",
+      "arxiv_id": "2610.00198",
+      "version": "arXiv:2610.00198v1, 2026-09-18",
+      "submitted_on": "2026-09-18",
+      "read_on": "2026-10-15",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_components",
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "brain-models"
+      ],
+      "classification_reason": "主要贡献是固定生成器 / 跟踪器上的完整参考运动适用性门控与动作库保留，归入运控部署与能力复用；在线小网络决定存储动作，关联高层策略。",
+      "note_path": "papers/026-humanoidttt.md",
+      "reader_path": "humanoidttt.html",
+      "library_summary": "固定 OMG / HoloMotion，按当前入口状态复用已验证完整动作，以在线 Double-DQN 管理有限动作库。高重复率流推理加速 16.4×，K=10 回放比同一冻结保留策略每 200 请求多避免 13.2 次生成；真机为 A–B–A 展示。",
+      "platform": "Unitree G1; OMG frozen generator; HoloMotion frozen tracker; MuJoCo replay; CPU FP32 retention scorer and GPU generation",
+      "evidence": "sim-and-real",
+      "tags": [
+        "full-motion-reuse",
+        "entry-applicability",
+        "capability-store",
+        "online-Double-DQN",
+        "test-time-consolidation",
+        "motion-caching",
+        "OMG",
+        "HoloMotion",
+        "G1"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.00198v1",
+        "code": "https://github.com/AIGeeksGroup/HumanoidTTT",
+        "code_commit": "3903b473697d8b05b4e4f6758a6a4f6aa4405e74",
+        "project": "https://aigeeksgroup.github.io/HumanoidTTT/",
+        "pages": 8,
+        "sha256": "4120bc89956995b7eff885fda383ca1b82d88d3d380f5bc070ea40f184b37b6b",
+        "source_record": "assets/026-humanoidttt/source-record.json"
+      },
+      "code_status": {
+        "value": "official_components_public; integration supplied by application; linked initial weights not downloaded",
+        "checked_on": "2026-10-15",
+        "executed": false
+      },
+      "figures_manifest": "assets/026-humanoidttt/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/026-humanoidttt/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method-framework",
+          "page": 3,
+          "path": "assets/026-humanoidttt/fig-02-method-framework.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "consolidation",
+          "page": 4,
+          "path": "assets/026-humanoidttt/fig-03-consolidation.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "real-robot-reuse",
+          "page": 7,
+          "path": "assets/026-humanoidttt/fig-06-real-robot-reuse.png"
+        }
+      ],
+      "method": {
+        "stored_object": "qualified complete robot reference motion plus identity and entry certificate",
+        "entry_descriptor_dim": 45,
+        "continuous_dimensions": 42,
+        "normalized_local_radius": 2.35,
+        "exact_conditions": "both feet contact = 1; history counter = 32",
+        "certificate_frozen_after_acquisition": true,
+        "generator_frozen": true,
+        "tracker_frozen": true,
+        "updated_module": "store retention scorer only",
+        "main_store_capacity": 10,
+        "retention_feature_dim_per_action": 71,
+        "retention_action_count_at_capacity_10": 11,
+        "retention_architecture": [
+          71,
+          128,
+          64,
+          1
+        ],
+        "retention_parameter_count": 17537,
+        "reward": "execution-successful store reuses / observed requests between consecutive qualified full-store misses",
+        "retention_algorithm": "Double-DQN",
+        "runtime": "CPU FP32 scorer; GPU generator on misses",
+        "official_component_capacity_constraint": 10,
+        "paper_code_certificate_difference": "paper single local-cell formulation; public code supports replay-qualified local-cell union"
+      },
+      "evaluation": {
+        "execution_quality": {
+          "requests": 200,
+          "physical_success_rate": 0.83,
+          "tracking_mpjpe_mm": 20.94,
+          "joint_limit_violation_rate": 0.0308,
+          "table": "I",
+          "hardware_vs_simulation_partition_not_fully_disclosed": true
+        },
+        "selective_reuse": {
+          "protocol": "held-out frozen MuJoCo replay",
+          "endpoints": 200,
+          "accepted_endpoints": 180,
+          "unsafe_accepts": 0,
+          "ood_conditions": 887,
+          "ood_false_accepts": 0,
+          "replays_per_endpoint": 3,
+          "accepted_replay_successes": 540,
+          "accepted_replays": 540,
+          "table": "II"
+        },
+        "accepted_hit_latency": {
+          "boundary": "entry gate plus stored full-motion retrieval; excludes acquisition, misses and physical execution",
+          "p50_ms": 29.514,
+          "p95_ms": 63.115,
+          "fresh_p50_ms": 5057.996,
+          "p50_speedup_over_fresh": 171.4,
+          "table": "III"
+        },
+        "end_to_end": {
+          "requests": 200,
+          "trace": "fixed high-recurrence trace separate from retention streams",
+          "boundary": "request arrival to executable G1 reference; excludes physical motion duration",
+          "precision": "FP32",
+          "mean_latency_ms": 268.66,
+          "fresh_mean_latency_ms": 4415.82,
+          "dit_cache_mean_latency_ms": 523.41,
+          "speedup_over_fresh": 16.4,
+          "speedup_over_dit_cache": 1.95,
+          "mean_gflops_per_request": 75.46,
+          "peak_vram_gb": 1.595,
+          "table": "IV"
+        },
+        "consolidation": {
+          "protocol": "controlled identity-level replay; qualification and fallback outcomes frozen",
+          "matched_stream_count": 15,
+          "requests_per_stream": 200,
+          "capacity": 10,
+          "mean_calls_avoided": 131.4,
+          "calls_avoided_sd": 16.017,
+          "mean_generator_calls": 68.6,
+          "frozen_same_checkpoint_calls_avoided": 118.2,
+          "gain_over_frozen_calls_per_stream": 13.2,
+          "lru_calls_avoided": 97.8,
+          "capacity_sweep_online_minus_frozen": {
+            "5": 10.867,
+            "10": 13.2,
+            "20": 1.0
+          },
+          "table": "V"
+        },
+        "real_robot": {
+          "platform": "Unitree G1 with HoloMotion",
+          "aba_sequences": 4,
+          "evidence": "qualitative continuous acquire A, acquire B, reuse A demonstrations",
+          "quantified_long_term_online_rl_trials_not_reported": true
+        }
       }
     }
   ],

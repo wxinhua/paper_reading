@@ -1,0 +1,148 @@
+{
+  "paper_id": "026",
+  "title": "HumanoidTTT: Test-Time Capability Reuse for Efficient Humanoid Control",
+  "source_document": "https://arxiv.org/abs/2610.00198v1",
+  "source_url": "https://arxiv.org/pdf/2610.00198v1",
+  "source_version": "arXiv:2610.00198v1, 2026-09-18",
+  "source_sha256": "4120bc89956995b7eff885fda383ca1b82d88d3d380f5bc070ea40f184b37b6b",
+  "source_pages": 8,
+  "source_license": "CC BY-NC-SA 4.0",
+  "source_license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "extracted_on": "2026-10-15",
+  "extraction": "Original PDF pages rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.075,
+        0.228,
+        0.925,
+        0.595
+      ],
+      "crop_pdf_points": [
+        45.9,
+        180.576,
+        566.1,
+        471.23999999999995
+      ],
+      "crop_pixels": [
+        128,
+        502,
+        1572,
+        1309
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        807
+      ],
+      "sha256": "925b4fc477b253525ba36f82bf9af47c9963e83ce98bcd1c1a154742c7f5f6f1",
+      "original_caption_source": "Figure 1, PDF page 1; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: complete original figure and caption visible, no unrelated body text"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-framework",
+      "pdf_page": 3,
+      "file": "fig-02-method-framework.png",
+      "crop_normalized": [
+        0.084,
+        0.06,
+        0.916,
+        0.29
+      ],
+      "crop_pdf_points": [
+        51.408,
+        47.519999999999996,
+        560.592,
+        229.67999999999998
+      ],
+      "crop_pixels": [
+        143,
+        132,
+        1557,
+        638
+      ],
+      "dpi": 200,
+      "size_px": [
+        1414,
+        506
+      ],
+      "sha256": "a9d86e859f772d30f9a7c532527b2012c9fe1d8f0fff1de4a804fd8d35e9baf4",
+      "original_caption_source": "Figure 2, PDF page 3; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: complete original figure and caption visible, no unrelated body text"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "consolidation",
+      "pdf_page": 4,
+      "file": "fig-03-consolidation.png",
+      "crop_normalized": [
+        0.084,
+        0.06,
+        0.496,
+        0.268
+      ],
+      "crop_pdf_points": [
+        51.408,
+        47.519999999999996,
+        303.552,
+        212.256
+      ],
+      "crop_pixels": [
+        143,
+        132,
+        843,
+        590
+      ],
+      "dpi": 200,
+      "size_px": [
+        700,
+        458
+      ],
+      "sha256": "22709b7be46db1256e8990b9079cd9e65e417c3a867c3e77b50667b346ce008e",
+      "original_caption_source": "Figure 3, PDF page 4; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: complete original figure and caption visible, no unrelated body text"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "real-robot-reuse",
+      "pdf_page": 7,
+      "file": "fig-06-real-robot-reuse.png",
+      "crop_normalized": [
+        0.084,
+        0.06,
+        0.916,
+        0.463
+      ],
+      "crop_pdf_points": [
+        51.408,
+        47.519999999999996,
+        560.592,
+        366.696
+      ],
+      "crop_pixels": [
+        143,
+        132,
+        1557,
+        1019
+      ],
+      "dpi": 200,
+      "size_px": [
+        1414,
+        887
+      ],
+      "sha256": "8c8f9976ec5f4844c091474e8ba908b170776f021f72748bb85324d96f10ea18",
+      "original_caption_source": "Figure 6, PDF page 7; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: complete original figure and caption visible, no unrelated body text"
+    }
+  ],
+  "visually_reviewed_on": "2026-10-15"
+}

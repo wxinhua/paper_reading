@@ -1,0 +1,48 @@
+{
+  "paper_id": "026",
+  "title": "HumanoidTTT: Test-Time Capability Reuse for Efficient Humanoid Control",
+  "verified_on": "2026-10-15",
+  "primary": {
+    "source_url": "https://arxiv.org/pdf/2610.00198v1",
+    "metadata_url": "https://arxiv.org/abs/2610.00198v1",
+    "version": "arXiv:2610.00198v1, 2026-09-18",
+    "document_date": "2026-09-18",
+    "pages": 8,
+    "bytes": 8314942,
+    "sha256": "4120bc89956995b7eff885fda383ca1b82d88d3d380f5bc070ea40f184b37b6b",
+    "license": "CC BY-NC-SA 4.0",
+    "role": "sole_paper_and_figure_source"
+  },
+  "official_code": {
+    "url": "https://github.com/AIGeeksGroup/HumanoidTTT",
+    "commit": "3903b473697d8b05b4e4f6758a6a4f6aa4405e74",
+    "checked_on": "2026-10-15",
+    "executed": false,
+    "reviewed_files": [
+      {
+        "path": "README.md",
+        "sha256": "f2493509dba83f84737c0abde5be8cdf1a669eb623cd060b724024647e06a4b2"
+      },
+      {
+        "path": "src/humanoid_ttt/entry_features.py",
+        "sha256": "c8fa0ce6c7acaf67c658269895d7ce859ca837a7465331ec725f3a11bdb5aead"
+      },
+      {
+        "path": "src/humanoid_ttt/certificates.py",
+        "sha256": "000cec2a12f62b032563d714b9c58718858293cffbb8db767c195a54be2939b5"
+      },
+      {
+        "path": "src/humanoid_ttt/consolidation.py",
+        "sha256": "9b29af957f8289eeb53167eedf0640e225cb29749b11e09fd1d5360fd3a5cbfb"
+      }
+    ]
+  },
+  "availability": {
+    "project_url": "https://aigeeksgroup.github.io/HumanoidTTT/",
+    "project_page_retrieval": "connection_timed_out",
+    "weights_url": "https://huggingface.co/AIGeeksGroup/HumanoidTTT",
+    "weights_retrieval": "connection_timed_out; link documented in official README",
+    "full_pipeline_reproduced": false
+  },
+  "source_scope": "Paper Sections I-VI, Tables I-V and Figures 1-6; official components inspected read-only; paper/code certificate-construction and fixed-capacity differences are documented."
+}
