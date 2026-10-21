@@ -1,0 +1,146 @@
+{
+  "paper_id": "027",
+  "title": "EgoHumanoid-V2: Human-to-Humanoid Transfer of Coordinated Whole-Body Skills for Loco-Manipulation",
+  "source_document": "https://arxiv.org/abs/2609.37181v1",
+  "source_url": "https://arxiv.org/pdf/2609.37181v1",
+  "source_version": "arXiv:2609.37181v1, 2026-09-29",
+  "source_sha256": "d6b9bfb64b6d4444b83bbcd11d9e29d3a82f0eff991f347ea80bf8b412553d8e",
+  "source_pages": 24,
+  "extracted_on": "2026-10-21",
+  "extraction": "Original PDF pages rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.29,
+        0.835,
+        0.608
+      ],
+      "crop_pdf_points": [
+        104.04,
+        229.67999999999998,
+        511.02,
+        481.536
+      ],
+      "crop_pixels": [
+        289,
+        638,
+        1420,
+        1338
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        700
+      ],
+      "sha256": "8abcdaf1fed3821df82ce019f8ee5da9ce9680c72aba41ba516e0a76bdb1dced",
+      "original_caption_source": "Figure 1, PDF page 1; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; Fig. 4 values checked in plotted x-axis order"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "method-alignment",
+      "pdf_page": 5,
+      "file": "fig-03-method-alignment.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.835,
+        0.438
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        511.02,
+        346.896
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1420,
+        964
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        744
+      ],
+      "sha256": "b2331849d043cb1e3b1352a1c9933b8eb42f30980b5f3d7aa371a3ea4caa1375",
+      "original_caption_source": "Figure 3, PDF page 5; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; Fig. 4 values checked in plotted x-axis order"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "real-task-scores",
+      "pdf_page": 6,
+      "file": "fig-04-real-task-scores.png",
+      "crop_normalized": [
+        0.17,
+        0.05,
+        0.835,
+        0.426
+      ],
+      "crop_pdf_points": [
+        104.04,
+        39.6,
+        511.02,
+        337.392
+      ],
+      "crop_pixels": [
+        289,
+        110,
+        1420,
+        937
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        827
+      ],
+      "sha256": "a7eed686fe96ff3b373e35cbb154781633b3eefe82c78057193a342beb58e87f",
+      "original_caption_source": "Figure 4, PDF page 6; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; Fig. 4 values checked in plotted x-axis order"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "refinement-depth",
+      "pdf_page": 9,
+      "file": "fig-06-refinement-depth.png",
+      "crop_normalized": [
+        0.17,
+        0.095,
+        0.835,
+        0.347
+      ],
+      "crop_pdf_points": [
+        104.04,
+        75.24,
+        511.02,
+        274.82399999999996
+      ],
+      "crop_pixels": [
+        289,
+        209,
+        1420,
+        763
+      ],
+      "dpi": 200,
+      "size_px": [
+        1131,
+        554
+      ],
+      "sha256": "662facf443cb71b007dc7329e4a97800114451fa1c1284f4e9f31239f42c580c",
+      "original_caption_source": "Figure 6, PDF page 9; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: full figure and original caption visible; Fig. 4 values checked in plotted x-axis order"
+    }
+  ],
+  "visually_reviewed_on": "2026-10-21"
+}

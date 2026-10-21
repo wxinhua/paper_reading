@@ -1,0 +1,30 @@
+{
+  "paper_id": "027",
+  "title": "EgoHumanoid-V2: Human-to-Humanoid Transfer of Coordinated Whole-Body Skills for Loco-Manipulation",
+  "verified_on": "2026-10-21",
+  "primary": {
+    "source_url": "https://arxiv.org/pdf/2609.37181v1",
+    "metadata_url": "https://arxiv.org/abs/2609.37181v1",
+    "version": "arXiv:2609.37181v1, 2026-09-29",
+    "document_date": "2026-09-29",
+    "pages": 24,
+    "bytes": 8703037,
+    "sha256": "d6b9bfb64b6d4444b83bbcd11d9e29d3a82f0eff991f347ea80bf8b412553d8e",
+    "role": "sole_full_text_and_figure_source"
+  },
+  "official_code": {
+    "url": "https://github.com/OpenDriveLab/EgoHumanoid-V2",
+    "commit": "7f72d1c442d821e6705d4a9f234507af0b6232e4",
+    "checked_on": "2026-10-21",
+    "executed": false,
+    "readme_sha256": "010e90b513647fd678bdfa62d5797ac1a81d5966888c9c709628843d0a7f0654",
+    "tree_checked": true,
+    "release_status": "hardware, environment, human capture, action alignment and one example per task available; visual alignment, VLA training and deployment pipelines marked coming soon"
+  },
+  "project": {
+    "url": "https://opendrivelab.com/EgoHumanoid-V2/",
+    "checked_on": "2026-10-21",
+    "role": "author overview and result cross-check"
+  },
+  "source_scope": "Full v1 PDF including Appendices A-D; original PDF plots visually checked, official project and release checklist cross-checked; no code execution or reproduction."
+}

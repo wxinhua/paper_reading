@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-15",
+  "updated_on": "2026-10-21",
   "papers": [
     {
       "id": "001",
@@ -2210,6 +2210,259 @@
           "aba_sequences": 4,
           "evidence": "qualitative continuous acquire A, acquire B, reuse A demonstrations",
           "quantified_long_term_online_rl_trials_not_reported": true
+        }
+      }
+    },
+    {
+      "id": "027",
+      "short_title": "EgoHumanoid-V2",
+      "title": "EgoHumanoid-V2: Human-to-Humanoid Transfer of Coordinated Whole-Body Skills for Loco-Manipulation",
+      "arxiv_id": "2609.37181",
+      "version": "arXiv:2609.37181v1, 2026-09-29",
+      "submitted_on": "2026-09-29",
+      "read_on": "2026-10-21",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "核心方法是以固定 SONIC 执行反馈修正人体参考与 token，并构造视觉 / 状态 / 动作对齐监督；主归人类示范数据对齐，关联任务专用 VLA 与运控。",
+      "note_path": "papers/027-egohumanoid-v2.md",
+      "reader_path": "egohumanoid-v2.html",
+      "library_summary": "H 仿真初始化、K 离线 IK 与 D 响应模型辅助 token 优化，加手臂渲染 / 增强，为四个任务分别后训练 π0.5。无目标机器人示范；200 人体示范 / 任务真机子步骤均分 51.67%，非完整成功率。",
+      "platform": "Unitree G1; BrainCo Revo2; GoPro; SONIC frozen tracker; task-specific pi0.5",
+      "evidence": "sim-and-real",
+      "tags": [
+        "human-to-humanoid-transfer",
+        "coarse-to-fine-alignment",
+        "offline-IK",
+        "execution-response-model",
+        "token-refinement",
+        "SONIC",
+        "pi0.5",
+        "robot-arm-rendering",
+        "task-specific-policy",
+        "G1"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2609.37181v1",
+        "project": "https://opendrivelab.com/EgoHumanoid-V2/",
+        "code": "https://github.com/OpenDriveLab/EgoHumanoid-V2",
+        "code_commit": "7f72d1c442d821e6705d4a9f234507af0b6232e4",
+        "pages": 24,
+        "sha256": "d6b9bfb64b6d4444b83bbcd11d9e29d3a82f0eff991f347ea80bf8b412553d8e",
+        "source_record": "assets/027-egohumanoid-v2/source-record.json"
+      },
+      "code_status": {
+        "value": "hardware, environment, human capture, action alignment and one example per task available; visual alignment, VLA training and deployment pipelines marked coming soon",
+        "checked_on": "2026-10-21",
+        "executed": false
+      },
+      "figures_manifest": "assets/027-egohumanoid-v2/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/027-egohumanoid-v2/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "method-alignment",
+          "page": 5,
+          "path": "assets/027-egohumanoid-v2/fig-03-method-alignment.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "real-task-scores",
+          "page": 6,
+          "path": "assets/027-egohumanoid-v2/fig-04-real-task-scores.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "refinement-depth",
+          "page": 9,
+          "path": "assets/027-egohumanoid-v2/fig-06-refinement-depth.png"
+        }
+      ],
+      "method": {
+        "initialization": "H: SONIC rollout of human body motion",
+        "coarse_stage": "K: constrained offline IK on reference motion",
+        "fine_stage": "D: token optimization through frozen decoder and learned execution response; fresh rollout between rounds",
+        "default_k_rounds": 1,
+        "default_d_rounds": 8,
+        "adam_steps_per_d_round": 400,
+        "tracker_frozen": true,
+        "response_model_frozen_during_token_optimization": true,
+        "simulation_not_differentiated": true,
+        "training_state_dim": 43,
+        "action_dim": 76,
+        "action_components": {
+          "body_sonic_token": 64,
+          "left_revo2": 6,
+          "right_revo2": 6
+        },
+        "collection_and_replay_rate_hz": 50,
+        "vla_chunk_length_not_reported": true,
+        "policy": "pi05_base post-trained per task",
+        "policy_training_steps": 30000,
+        "global_batch_size": 256,
+        "target_task_robot_demonstrations": 0,
+        "response_model": {
+          "history_dim": 144,
+          "baseline_state_dim": 93,
+          "reference_token_dim": 64,
+          "input_information_dim": 301,
+          "output_dim": 24,
+          "architecture": "frozen linear response + MLP residual; two hidden layers of width 64, SiLU",
+          "training_motions": 250,
+          "training_capture_dates": 68,
+          "training_frame_perturbation_pairs": 345080,
+          "validation_motions": 13,
+          "validation_capture_dates": 7,
+          "validation_frame_perturbation_pairs": 20420,
+          "source": "BONES-SEED G1 motion; matched simulated perturbed/unperturbed rollouts"
+        },
+        "selection_protocols_differ": {
+          "vla_labels": "accepted candidates ranked with stability checks and independent replay; fallback to earlier stages allowed",
+          "table_1_offline_error": "historical minimum weighted mean error without acceptance filtering or validation replay"
+        }
+      },
+      "evaluation": {
+        "real_robot": {
+          "tasks": [
+            "Close Laptop",
+            "Open Fridge",
+            "Pull Curtain",
+            "Close Drawer"
+          ],
+          "separate_policy_per_task": true,
+          "trials_per_task_condition": 20,
+          "sequential_binary_subtasks": 3,
+          "stops_at_first_failure": true,
+          "metric": "normalized partial-completion task score, not complete-trial success",
+          "human_demos_per_task_main": 200,
+          "main_scores_percent": [
+            53.33,
+            38.33,
+            53.33,
+            61.67
+          ],
+          "main_mean_score_percent": 51.67,
+          "error_bars_reported": false,
+          "multi_seed_confidence_intervals_reported": false,
+          "no_target_robot_demos": true,
+          "unseen_task_generalization_tested": false
+        },
+        "data_budget_scores_percent": {
+          "budgets": [
+            25,
+            50,
+            100,
+            200
+          ],
+          "Close Laptop": [
+            35.0,
+            31.67,
+            48.33,
+            53.33
+          ],
+          "Open Fridge": [
+            21.67,
+            33.33,
+            28.33,
+            38.33
+          ],
+          "Pull Curtain": [
+            40.0,
+            38.33,
+            50.0,
+            53.33
+          ],
+          "Close Drawer": [
+            56.67,
+            36.67,
+            53.33,
+            61.67
+          ],
+          "source": "PDF Fig. 4, visually verified x-axis order"
+        },
+        "alignment_stages": {
+          "trajectories_per_task": 25,
+          "tasks": 4,
+          "H": {
+            "position_cm": 11.21,
+            "orientation_deg": 21.22,
+            "real_task_score_percent": 21.25
+          },
+          "H_K": {
+            "position_cm": 4.45,
+            "orientation_deg": 13.77,
+            "real_task_score_percent": 47.08
+          },
+          "H_K_Ds": {
+            "position_cm": 3.41,
+            "orientation_deg": 6.71,
+            "real_task_score_percent": 51.67
+          },
+          "orientation_excludes_foot_task": true,
+          "error_protocol": "historical selection; no acceptance filtering"
+        },
+        "expanded_alignment": {
+          "simulation_tasks": 50,
+          "trajectories": 112,
+          "position_cm_by_stage": [
+            17.03,
+            5.22,
+            3.83
+          ],
+          "orientation_deg_by_stage": [
+            36.06,
+            21.81,
+            10.85
+          ],
+          "real_robot_policy_evaluations": false
+        },
+        "online_ik_diagnostic": {
+          "variants": 3,
+          "tasks": 4,
+          "trajectories_per_task": 5,
+          "total_runs": 60,
+          "author_video_assessment": "instability observed in all runs",
+          "drawer_initialization_falls": 15,
+          "scope": "tested SONIC command-composition implementations only"
+        },
+        "collection_cost": {
+          "tasks": [
+            "Close Laptop",
+            "Pull Curtain"
+          ],
+          "unit": "person-seconds per episode",
+          "human": [
+            32.1,
+            34.5
+          ],
+          "robot": [
+            93.6,
+            188.1
+          ],
+          "mean_human": 33.3,
+          "mean_robot": 140.85,
+          "reduction_per_episode_percent": 76.36,
+          "human_operators": 1,
+          "robot_operators": 2,
+          "includes_offline_compute": false,
+          "equal_performance_total_cost_claim": false
+        },
+        "offline_processing": {
+          "K1_D8_seconds_per_source_frame": 1.49,
+          "K8_D8_seconds_per_source_frame": 3.38,
+          "mixed_hosts_and_three_concurrent_episodes": true,
+          "excludes": "queueing, discarded failed attempts, final candidate selection and validation",
+          "not_online_policy_latency": true
         }
       }
     }
