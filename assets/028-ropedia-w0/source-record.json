@@ -1,0 +1,53 @@
+{
+  "paper_id": "028",
+  "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+  "arxiv_id": "2610.26855",
+  "version": "arXiv:2610.26855v1, 2026-10-19",
+  "read_on": "2026-10-22",
+  "source_document": "https://arxiv.org/abs/2610.26855v1",
+  "source_url": "https://arxiv.org/pdf/2610.26855v1",
+  "sha256": "d46324442525185daeaa802d29d234eecabb4dbbf3ccc4560edeb794b2a21994",
+  "pages": 54,
+  "bytes": 48435883,
+  "verification": "PDF metadata and full text parsed with system Poppler; saved figures and key result tables visually reviewed; archive SHA-256 computed locally.",
+  "official_sources": [
+    {
+      "role": "project",
+      "url": "https://ropedia.github.io/ropedia-w0/"
+    },
+    {
+      "role": "code_and_release_readme",
+      "url": "https://github.com/Ropedia/ropedia-w0",
+      "commit": "759b192fcb0aed48695ace42a4eb2fd7e48c12b9",
+      "readme_sha256": "0ed4e122ef151f3ae84267ed4af6cfb3fe82b50010d9f124197fdfa4f008172f"
+    },
+    {
+      "role": "model",
+      "url": "https://huggingface.co/ropedia-ai/Ropedia-W0",
+      "revision": "a66d950c3d4b3a2ca3fde917771e6b98e2e39e90",
+      "released_weights": [
+        "w0-5b-pretrain.safetensors",
+        "w0-5b-midtrain.safetensors"
+      ]
+    },
+    {
+      "role": "public_dataset",
+      "url": "https://huggingface.co/datasets/ropedia-ai/Xp-Teleop",
+      "revision": "1f5714a8ec890b994b1751712b75b69b1c4f0c03",
+      "card_sha256": "e153dec44a9ec4518c68dd59a6d3d08990e5c58220f5a6bbd5ae5f0f2e0e9f08"
+    }
+  ],
+  "boundaries": [
+    "Xp-Data training pool is not equivalent to public Xp-Teleop",
+    "Original raw colour JPEG/depth files not included in released dataset",
+    "Video prediction differs from direct robot action output",
+    "Task progress differs from complete-trial success"
+  ],
+  "licenses": {
+    "code": "Apache-2.0",
+    "model": "CC-BY-NC-4.0",
+    "Xp-Teleop": "CC-BY-4.0"
+  },
+  "author_code_executed": false,
+  "full_weights_or_dataset_downloaded": false
+}

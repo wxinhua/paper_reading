@@ -1,0 +1,182 @@
+{
+  "paper_id": "028",
+  "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+  "source_document": "https://arxiv.org/abs/2610.26855v1",
+  "source_url": "https://arxiv.org/pdf/2610.26855v1",
+  "source_version": "arXiv:2610.26855v1, 2026-10-19",
+  "source_sha256": "d46324442525185daeaa802d29d234eecabb4dbbf3ccc4560edeb794b2a21994",
+  "source_pages": 54,
+  "page_size_points": [
+    595.276,
+    841.89
+  ],
+  "extracted_on": "2026-10-22",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.115,
+        0.355,
+        0.89,
+        0.807
+      ],
+      "crop_pdf_points": [
+        68.45674,
+        298.87095,
+        529.7956399999999,
+        679.4052300000001
+      ],
+      "crop_pixels": [
+        190,
+        830,
+        1472,
+        1888
+      ],
+      "dpi": 200,
+      "size_px": [
+        1282,
+        1058
+      ],
+      "sha256": "67349627e7952b97a99cf31c0612008596b28b83417f59f402019faedce86ecb",
+      "original_caption_source": "Figure 1, PDF page 1; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original caption, axes and labels checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "data-curation",
+      "pdf_page": 5,
+      "file": "fig-02-data-curation.png",
+      "crop_normalized": [
+        0.115,
+        0.098,
+        0.895,
+        0.558
+      ],
+      "crop_pdf_points": [
+        68.45674,
+        82.50522000000001,
+        532.77202,
+        469.77462
+      ],
+      "crop_pixels": [
+        190,
+        229,
+        1480,
+        1305
+      ],
+      "dpi": 200,
+      "size_px": [
+        1290,
+        1076
+      ],
+      "sha256": "b276fad9ab9d2cbc40260238d3058a1b487007750429ea1a5e48aeed2b6035f7",
+      "original_caption_source": "Figure 2, PDF page 5; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original caption, axes and labels checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "model",
+      "pdf_page": 8,
+      "file": "fig-04-model.png",
+      "crop_normalized": [
+        0.115,
+        0.098,
+        0.895,
+        0.501
+      ],
+      "crop_pdf_points": [
+        68.45674,
+        82.50522000000001,
+        532.77202,
+        421.78688999999997
+      ],
+      "crop_pixels": [
+        190,
+        229,
+        1480,
+        1172
+      ],
+      "dpi": 200,
+      "size_px": [
+        1290,
+        943
+      ],
+      "sha256": "3e93f4c49e257764e29e6a81c489b7743a52dc7efd6113dfa58546b843b44d9a",
+      "original_caption_source": "Figure 4, PDF page 8; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original caption, axes and labels checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "xp-teleop",
+      "pdf_page": 11,
+      "file": "fig-05-xp-teleop.png",
+      "crop_normalized": [
+        0.115,
+        0.098,
+        0.895,
+        0.477
+      ],
+      "crop_pdf_points": [
+        68.45674,
+        82.50522000000001,
+        532.77202,
+        401.58153
+      ],
+      "crop_pixels": [
+        190,
+        229,
+        1480,
+        1116
+      ],
+      "dpi": 200,
+      "size_px": [
+        1290,
+        887
+      ],
+      "sha256": "f9e7a5dfbc0fa9a6822215cfa95418806d7acfbcbc048d5d9a1e134cc1e4b4ab",
+      "original_caption_source": "Figure 5, PDF page 11; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original caption, axes and labels checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 9",
+      "role": "policy-and-planning",
+      "pdf_page": 17,
+      "file": "fig-09-policy-and-planning.png",
+      "crop_normalized": [
+        0.115,
+        0.098,
+        0.895,
+        0.322
+      ],
+      "crop_pdf_points": [
+        68.45674,
+        82.50522000000001,
+        532.77202,
+        271.08858
+      ],
+      "crop_pixels": [
+        190,
+        229,
+        1480,
+        753
+      ],
+      "dpi": 200,
+      "size_px": [
+        1290,
+        524
+      ],
+      "sha256": "1e56a0a21cb2b760e962b25229372ed178ae265adad5075b8c82afd6f84f75a7",
+      "original_caption_source": "Figure 9, PDF page 17; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original caption, axes and labels checked against PDF rendering on 2026-10-22"
+    }
+  ]
+}

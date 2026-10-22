@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-21",
+  "updated_on": "2026-10-22",
   "papers": [
     {
       "id": "001",
@@ -2464,6 +2464,237 @@
           "excludes": "queueing, discarded failed attempts, final candidate selection and validation",
           "not_online_policy_latency": true
         }
+      }
+    },
+    {
+      "id": "028",
+      "short_title": "Ropedia W0",
+      "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+      "arxiv_id": "2610.26855",
+      "version": "arXiv:2610.26855v1, 2026-10-19",
+      "submitted_on": "2026-10-19",
+      "read_on": "2026-10-22",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "跨具身、相机与骨架条件化的视频世界模型，可供规划和 WAM 初始化使用；主归大脑侧世界模型，关联 Xp-Data / Xp-Teleop 数据与评测；不等同直接输出动作的 VLA。",
+      "note_path": "papers/028-ropedia-w0.md",
+      "reader_path": "ropedia-w0.html",
+      "library_summary": "约 10k 小时人类＋3k 小时机器人视频；相机射线图与原生投影骨架统一移动 / 操作条件，生成未来 ego RGB。5B / A14B 跨具身预测，另验证规划与 FastWAM 初始化；公开 Xp-Teleop，不等于全量 Xp-Data 开放。",
+      "platform": "Wan2.2 5B / A14B; cross-embodiment robot video; Unitree G1 + Inspire; RoboTwin 2.0; LIBERO",
+      "evidence": "sim-and-real",
+      "tags": [
+        "world-model",
+        "egocentric-video",
+        "Xp-Data",
+        "Xp-Teleop",
+        "loco-manipulation",
+        "cross-embodiment",
+        "camera-trajectory",
+        "projected-skeleton",
+        "Plucker-rays",
+        "Wan2.2",
+        "flow-matching",
+        "FastWAM",
+        "distillation"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.26855v1",
+        "project": "https://ropedia.github.io/ropedia-w0/",
+        "code": "https://github.com/Ropedia/ropedia-w0",
+        "code_commit": "759b192fcb0aed48695ace42a4eb2fd7e48c12b9",
+        "model": "https://huggingface.co/ropedia-ai/Ropedia-W0",
+        "dataset": "https://huggingface.co/datasets/ropedia-ai/Xp-Teleop",
+        "pages": 54,
+        "sha256": "d46324442525185daeaa802d29d234eecabb4dbbf3ccc4560edeb794b2a21994",
+        "source_record": "assets/028-ropedia-w0/source-record.json"
+      },
+      "code_status": {
+        "value": "5B inference, human pretrain / midtrain checkpoints and Xp-Teleop released; A14B, benchmark checkpoints, evaluation code/data and post-training code pending in official README",
+        "checked_on": "2026-10-22",
+        "executed": false
+      },
+      "figures_manifest": "assets/028-ropedia-w0/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/028-ropedia-w0/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "data-curation",
+          "page": 5,
+          "path": "assets/028-ropedia-w0/fig-02-data-curation.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "model",
+          "page": 8,
+          "path": "assets/028-ropedia-w0/fig-04-model.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "xp-teleop",
+          "page": 11,
+          "path": "assets/028-ropedia-w0/fig-05-xp-teleop.png"
+        },
+        {
+          "figure": "Figure 9",
+          "role": "policy-and-planning",
+          "page": 17,
+          "path": "assets/028-ropedia-w0/fig-09-policy-and-planning.png"
+        }
+      ],
+      "method": {
+        "main_task": "future egocentric RGB prediction conditioned on first frame, text and supplied future kinematics",
+        "direct_joint_action_output": false,
+        "camera_condition": "metric poses relative to initial frame; six-channel Plucker ray map",
+        "manipulation_condition": "native projected hand/robot skeleton; optional wrist and 1.5x wide-FOV renderings",
+        "train_objective": "latent flow matching; first temporal latent clean; future latents noised and supervised",
+        "training_stages": [
+          "human-only pretrain",
+          "human-robot midtrain sampled 50/50",
+          "optional target-dataset posttrain"
+        ],
+        "models": {
+          "dense_parameters_B": 5,
+          "MoE_active_parameters_B": 14,
+          "MoE_total_parameters_B_approx": 27
+        },
+        "human_hours_approx": 10000,
+        "robot_hours_approx": 3000,
+        "public_human_datasets": 14,
+        "public_robot_datasets": 13,
+        "inhouse_multiview_hours_over": 6000,
+        "main_data_clip": {
+          "frames": 81,
+          "width": 640,
+          "height": 480,
+          "fps_in_data_pipeline": 16
+        }
+      },
+      "evaluation": {
+        "human_eval": {
+          "clips": 200,
+          "datasets": [
+            "EgoSuite",
+            "OpenAoE"
+          ],
+          "clips_per_dataset": 100,
+          "seed": 0,
+          "A14B_pretrain": {
+            "ATE_cm": 1.542,
+            "PSNR_dB": 19.77,
+            "LPIPS": 0.2381
+          }
+        },
+        "robot_prediction_windows": {
+          "DreamDojo_InLab": 100,
+          "DreamDojo_EgoDex": 65,
+          "DreamDojo_HV": 68,
+          "Psi0": 100,
+          "omega_HOME": 100,
+          "Xp_Teleop": 100,
+          "AgiBot": 50
+        },
+        "A14B_midtrain_PSNR_dB": {
+          "setting_order": [
+            "no post-training",
+            "few-shot",
+            "full-data"
+          ],
+          "Psi0": [
+            17.36,
+            18.28,
+            19.07
+          ],
+          "omega_HOME": [
+            19.55,
+            20.71,
+            21.77
+          ],
+          "Xp_Teleop": [
+            16.42,
+            18.25,
+            18.74
+          ]
+        },
+        "cross_embodiment_ablation": {
+          "embodiments": 8,
+          "windows": 400,
+          "A14B_PSNR_full_without_camera_without_skeleton": [
+            21.98,
+            21.65,
+            18.17
+          ],
+          "5B_PSNR_full_without_camera_without_skeleton": [
+            19.83,
+            19.71,
+            18.03
+          ]
+        },
+        "downstream": {
+          "policy_eval_correlation_sim": 0.984,
+          "sim_policy_checkpoints": 5,
+          "policy_eval_correlation_real": 0.996,
+          "real_policy_checkpoints_plus_teleop": 4,
+          "planning_task_progress_percent": {
+            "sim_planning_best_fixed_random": [
+              92,
+              85,
+              53
+            ],
+            "real_planning_best_fixed_random": [
+              55,
+              45,
+              26
+            ]
+          },
+          "FastWAM_init_LIBERO_Plus_success_percent": [
+            50.06,
+            56.82
+          ],
+          "FastWAM_init_G1_task_progress_percent": [
+            33.3,
+            56.7
+          ],
+          "real_trial_counts_not_sufficiently_reported": true
+        },
+        "distillation": {
+          "student_steps": 4,
+          "teacher_steps": 50,
+          "student_fps": 21.3,
+          "teacher_fps": 3.0,
+          "resolution": [
+            640,
+            480
+          ],
+          "first_block_seconds_approx": 1.4,
+          "end_to_end_speedup_approx": 7,
+          "not_robot_control_frequency": true
+        },
+        "zero_shot_definition": "target evaluation dataset absent in training; same embodiment may occur in other midtrain datasets",
+        "confidence_intervals_reported": false
+      },
+      "dataset_release": {
+        "name": "Xp-Teleop",
+        "revision": "1f5714a8ec890b994b1751712b75b69b1c4f0c03",
+        "episodes": 27,
+        "atomic_segments": 543,
+        "skill_classes_in_paper": 30,
+        "frames": 96064,
+        "fps": 30,
+        "width": 1280,
+        "height": 720,
+        "raw_depth_in_download": false,
+        "Xp_Data_full_pool_download_verified": false,
+        "model_revision": "a66d950c3d4b3a2ca3fde917771e6b98e2e39e90"
       }
     }
   ],
