@@ -1,0 +1,66 @@
+{
+  "paper_id": "029",
+  "title": "Video Prediction Policy 2: Predict Better, Act Better",
+  "arxiv_id": "2610.10270",
+  "version": "arXiv:2610.10270v3, 2026-10-13",
+  "first_submitted_on": "2026-10-07",
+  "read_on": "2026-10-22",
+  "source_document": "https://arxiv.org/abs/2610.10270v3",
+  "source_url": "https://arxiv.org/pdf/2610.10270v3",
+  "sha256": "fc15a7b1d2aa05aeab23f5505703717db85b4c06100c072308e38097ffde616e",
+  "pages": 21,
+  "bytes": 5998618,
+  "source_preserved_unmodified": true,
+  "parser_note": "System Poppler reports source metadata syntax warnings near bytes 877/881 and a font type warning; full text extracted and all saved figure regions visually verified. No source PDF repair or rewriting performed.",
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2610.10270v3"
+    },
+    {
+      "role": "project",
+      "url": "https://robert-gyj.github.io/video-prediction-policy-2/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/roboterax/video-prediction-policy-2",
+      "commit": "a103a1e1784d3e45014549a82238894d3ed85959"
+    },
+    {
+      "role": "models",
+      "url": "https://huggingface.co/Haodong082399/VPP2",
+      "revision": "04824ddb3aae11f13db50984ed7d540c3b77dd9f"
+    }
+  ],
+  "reviewed_code_docs": [
+    "README.md",
+    "docs/libero.md",
+    "docs/robodojo.md",
+    "configs/libero/train_action.yaml",
+    "src/vpp2/models/wan21_14b/mot.py",
+    "src/vpp2/models/wan21_14b/vpp2.py",
+    "src/vpp2/libero/action_model.py"
+  ],
+  "source_snapshot_sha256": {
+    "vpp2-readme.md": "9fea091a671cb3b71a4abe76f9a03f8f95047195b3d143d8dcb08fc7267318a7",
+    "vpp2-libero.md": "a0c37f52340087ad8c03c441991ab699979841647b5ec90bb847192249977727",
+    "vpp2-robodojo.md": "e36da815a807be9a171f141d5a90af507c6647ad21d7a3ae847a084810d22f94",
+    "vpp2-mot.py": "bac5d3ce4c0d8debae30d57993bce82fc90e5578887f0d550047bf24f1a986b3",
+    "vpp2-model.py": "5ffcf791dcc7cc0e52259c8106be2844d82b988bfecd3f61306e72049540f857",
+    "vpp2-libero-action.py": "178fbe4cf02b9a2e133ef31389b6bb2f9baf0504bd0818a265b6bff32ebc3914"
+  },
+  "evidence_boundaries": [
+    "Video instruction-following differs from physical task success",
+    "ALOHA zero-shot uses a seen embodiment without task-specific fine-tuning",
+    "RoboDojo 42-task main table is simulation and uses no subtask planner",
+    "Five-task planning comparison also changes subtask-conditioned training",
+    "Generic 0.9B / five-step action recipe differs from public benchmark configurations",
+    "Large-scale aggregate event training pool size and availability not established"
+  ],
+  "author_code_executed": false,
+  "full_weights_or_dataset_downloaded": false,
+  "licenses": {
+    "code": "MIT",
+    "weights_and_source_data": "Separate upstream terms; not inferred from code license"
+  }
+}

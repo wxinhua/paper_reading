@@ -1,0 +1,182 @@
+{
+  "paper_id": "029",
+  "title": "Video Prediction Policy 2: Predict Better, Act Better",
+  "source_document": "https://arxiv.org/abs/2610.10270v3",
+  "source_url": "https://arxiv.org/pdf/2610.10270v3",
+  "source_version": "arXiv:2610.10270v3, 2026-10-13",
+  "source_sha256": "fc15a7b1d2aa05aeab23f5505703717db85b4c06100c072308e38097ffde616e",
+  "source_pages": 21,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-22",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.174,
+        0.65,
+        0.832,
+        0.925
+      ],
+      "crop_pdf_points": [
+        106.488,
+        514.8000000000001,
+        509.18399999999997,
+        732.6
+      ],
+      "crop_pixels": [
+        296,
+        1430,
+        1414,
+        2035
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        605
+      ],
+      "sha256": "b480b256289a2d38c8e9cc30dd493f35dbc5bbf01865d6016a93432d5dd9fd2b",
+      "original_caption_source": "Figure 1, PDF page 1; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "data-processing",
+      "pdf_page": 3,
+      "file": "fig-02-data-processing.png",
+      "crop_normalized": [
+        0.174,
+        0.285,
+        0.832,
+        0.503
+      ],
+      "crop_pdf_points": [
+        106.488,
+        225.71999999999997,
+        509.18399999999997,
+        398.376
+      ],
+      "crop_pixels": [
+        296,
+        627,
+        1414,
+        1107
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        480
+      ],
+      "sha256": "b358738e92fd176a8792ece0390a4b4970083ff70a7ebcac97be551caf0c7dba",
+      "original_caption_source": "Figure 2, PDF page 3; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "training-pipeline",
+      "pdf_page": 5,
+      "file": "fig-04-training-pipeline.png",
+      "crop_normalized": [
+        0.174,
+        0.1,
+        0.832,
+        0.35
+      ],
+      "crop_pdf_points": [
+        106.488,
+        79.2,
+        509.18399999999997,
+        277.2
+      ],
+      "crop_pixels": [
+        296,
+        220,
+        1414,
+        770
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        550
+      ],
+      "sha256": "ab7b64ad572fecc2c80b48430b969f866feafdce932480689632c9917d599e97",
+      "original_caption_source": "Figure 4, PDF page 5; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 8",
+      "role": "real-aloha",
+      "pdf_page": 8,
+      "file": "fig-08-real-aloha.png",
+      "crop_normalized": [
+        0.174,
+        0.1,
+        0.832,
+        0.245
+      ],
+      "crop_pdf_points": [
+        106.488,
+        79.2,
+        509.18399999999997,
+        194.04
+      ],
+      "crop_pixels": [
+        296,
+        220,
+        1414,
+        539
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        319
+      ],
+      "sha256": "f068d7661a90765c1deb8942cfdefb168418846f614ad66f09744704c11d3e91",
+      "original_caption_source": "Figure 8, PDF page 8; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption checked against PDF rendering on 2026-10-22"
+    },
+    {
+      "figure": "Figure 9",
+      "role": "subtask-planning",
+      "pdf_page": 9,
+      "file": "fig-09-subtask-planning.png",
+      "crop_normalized": [
+        0.174,
+        0.206,
+        0.832,
+        0.339
+      ],
+      "crop_pdf_points": [
+        106.488,
+        163.152,
+        509.18399999999997,
+        268.488
+      ],
+      "crop_pixels": [
+        296,
+        453,
+        1414,
+        746
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        293
+      ],
+      "sha256": "44a6c4ffc9ce0cb06924a604cce14bc976f362d9c7776ea2f30ebaa186a45fae",
+      "original_caption_source": "Figure 9, PDF page 9; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption checked against PDF rendering on 2026-10-22"
+    }
+  ]
+}

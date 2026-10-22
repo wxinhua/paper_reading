@@ -2696,6 +2696,301 @@
         "Xp_Data_full_pool_download_verified": false,
         "model_revision": "a66d950c3d4b3a2ca3fde917771e6b98e2e39e90"
       }
+    },
+    {
+      "id": "029",
+      "short_title": "VPP2",
+      "title": "Video Prediction Policy 2: Predict Better, Act Better",
+      "arxiv_id": "2610.10270",
+      "version": "arXiv:2610.10270v3, 2026-10-13",
+      "submitted_on": "2026-10-07",
+      "read_on": "2026-10-22",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要贡献是完整事件视频预训练、一步视觉规划与 MoT 动作专家构成的 WAM；关联数据统一与域外评测。主真机证据为 ALOHA 双臂，不等同全身行走控制。",
+      "note_path": "papers/029-vpp2.md",
+      "reader_path": "vpp2.html",
+      "library_summary": "先用详细描述学习完整事件，再做固定时长预测和一步蒸馏，MoT 动作专家读取视频 KV。ALOHA 无任务专门微调 58.5%；LIBERO-Pro 45.0%、OOD 63.9%；RoboDojo 仿真 32.26%，Open 仍仅 4.08%。",
+      "platform": "ALOHA; LIBERO / Franka; RoboDojo bimanual simulation; Wan2.1-I2V-14B",
+      "evidence": "sim-and-real",
+      "tags": [
+        "WAM",
+        "video-prediction-policy",
+        "event-level-pretraining",
+        "detailed-captions",
+        "consistency-distillation",
+        "MoT",
+        "implicit-inverse-dynamics",
+        "KV-cache",
+        "ALOHA",
+        "LIBERO-Pro",
+        "LIBERO-OOD",
+        "RoboDojo"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.10270v3",
+        "project": "https://robert-gyj.github.io/video-prediction-policy-2/",
+        "code": "https://github.com/roboterax/video-prediction-policy-2",
+        "code_commit": "a103a1e1784d3e45014549a82238894d3ed85959",
+        "model": "https://huggingface.co/Haodong082399/VPP2",
+        "model_revision": "04824ddb3aae11f13db50984ed7d540c3b77dd9f",
+        "pages": 21,
+        "sha256": "fc15a7b1d2aa05aeab23f5505703717db85b4c06100c072308e38097ffde616e",
+        "source_record": "assets/029-vpp2/source-record.json"
+      },
+      "code_status": {
+        "value": "Stage-1/2 video inference and weights, RoboDojo and LIBERO training/evaluation and paired checkpoints released; complete generalist event pretraining corpus and ALOHA policy release not established",
+        "checked_on": "2026-10-22",
+        "executed": false
+      },
+      "figures_manifest": "assets/029-vpp2/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/029-vpp2/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "data-processing",
+          "page": 3,
+          "path": "assets/029-vpp2/fig-02-data-processing.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "training-pipeline",
+          "page": 5,
+          "path": "assets/029-vpp2/fig-04-training-pipeline.png"
+        },
+        {
+          "figure": "Figure 8",
+          "role": "real-aloha",
+          "page": 8,
+          "path": "assets/029-vpp2/fig-08-real-aloha.png"
+        },
+        {
+          "figure": "Figure 9",
+          "role": "subtask-planning",
+          "page": 9,
+          "path": "assets/029-vpp2/fig-09-subtask-planning.png"
+        }
+      ],
+      "method": {
+        "video_backbone": "Wan2.1-I2V-14B",
+        "generic_action_expert_B": 0.9,
+        "stages": [
+          "event-level video continued pretraining",
+          "fixed-horizon video posttraining and consistency distillation",
+          "MoT action pretraining using video cache"
+        ],
+        "event_pretraining": {
+          "frames": 49,
+          "resolution": [
+            416,
+            240
+          ],
+          "steps": 30000,
+          "batch": 1024,
+          "learning_rate": 1e-05,
+          "flow_target": "data latent minus noise; flow time 0 noise and 1 data"
+        },
+        "fixed_horizon_seconds": {
+          "human_hand": 2,
+          "robot": 8
+        },
+        "distilled_video_frames": 17,
+        "generic_action_chunk_seconds": 2,
+        "video_attention": "video attends bidirectionally to video; action directly attends allowed early video tokens and action tokens",
+        "early_video_training": "freeze video base; adapt LoRA",
+        "runtime_input": "current RGB views, explicit subtask / instruction, current robot state; history for RoboDojo",
+        "runtime_output": "robot action chunk via diffusion / flow action expert; no required RGB decode",
+        "future_motion_not_required_as_input": true,
+        "human_body_motion_reconstruction_pipeline": false,
+        "final_training_pool_hours_not_reported": true
+      },
+      "evaluation": {
+        "video_instruction_following": {
+          "image_instruction_pairs_human": 50,
+          "image_instruction_pairs_robot": 50,
+          "VPP2_percent": [
+            80,
+            90
+          ],
+          "Cosmos3_64B_percent": [
+            70,
+            78
+          ],
+          "Fixed_Step_ablation_percent": [
+            48,
+            42
+          ],
+          "pooled_improvement_percentage_points": 11,
+          "evaluator": "GPT-based; additional human paired comparison"
+        },
+        "ALOHA": {
+          "categories": 10,
+          "seen_embodiment": true,
+          "task_specific_finetune": false,
+          "mean_success_percent": {
+            "VPP2": 58.5,
+            "pi0.5": 40.0,
+            "FastWAM_14B": 20.5
+          },
+          "category_order": [
+            "Stack",
+            "Pick",
+            "Place",
+            "Fold",
+            "Pour",
+            "Pull",
+            "Insert",
+            "Open",
+            "Close",
+            "Wipe"
+          ],
+          "VPP2_percent": [
+            65,
+            70,
+            75,
+            70,
+            40,
+            50,
+            55,
+            35,
+            60,
+            65
+          ],
+          "pi05_percent": [
+            40,
+            45,
+            55,
+            80,
+            0,
+            35,
+            50,
+            20,
+            30,
+            45
+          ],
+          "trials_per_category_not_sufficiently_reported": true
+        },
+        "LIBERO": {
+          "trained_on": "four standard suites only; no Pro/OOD target task posttraining",
+          "ID_percent": 98.8,
+          "Pro_percent": 45.0,
+          "OOD_percent": 63.9,
+          "Pro_position_task_percent": [
+            42.3,
+            47.8
+          ],
+          "Pro_trials_in_v3": 800,
+          "release_document_counts": {
+            "ID": [
+              1976,
+              2000
+            ],
+            "OOD": [
+              2877,
+              4500
+            ],
+            "Pro": [
+              360,
+              800
+            ]
+          },
+          "baseline_source": "prior papers and official benchmark reports; not all rerun with matched pretraining"
+        },
+        "RoboDojo": {
+          "simulation_tasks": 42,
+          "mean_success_percent": 32.26,
+          "mean_partial_progress_score": 39.26,
+          "main_table_subtask_planning": false,
+          "generalization_standard_randomized_percent": [
+            46.44,
+            12.56
+          ],
+          "precision_percent": 35.17,
+          "long_horizon_percent": 37.0,
+          "memory_percent": 55.56,
+          "open_percent": 4.08,
+          "macro_average": "equal five dimensions; generalization averages standard and randomized",
+          "leaderboard_date_appendix": "2026-10-12",
+          "main_text_footnote_date_inconsistent": true,
+          "history": "episode initial frame and eight past frames at one-second spacing"
+        },
+        "subtask_planning": {
+          "selected_task_groups": 5,
+          "trials_per_group": 50,
+          "baseline_percent": [
+            46,
+            10,
+            44,
+            38,
+            0
+          ],
+          "planning_percent": [
+            70,
+            52,
+            76,
+            52,
+            38
+          ],
+          "mean_percent": [
+            27.6,
+            57.6
+          ],
+          "also_changes_subtask_conditioned_training": true
+        },
+        "generic_latency": {
+          "video_seconds": 0.12,
+          "action_seconds": 0.1,
+          "sum_seconds_per_chunk": 0.22,
+          "action_denoising_steps": 5,
+          "GPU_not_specified": true,
+          "not_VLM_plus_control_end_to_end_latency": true
+        },
+        "multi_seed_confidence_intervals_reported": false
+      },
+      "release_configuration": {
+        "LIBERO": {
+          "video_steps": 10000,
+          "action_steps": 30000,
+          "approx_action_expert_B": 1,
+          "frozen_video_during_action_training": true,
+          "action_shape": [
+            32,
+            7
+          ],
+          "proprio_shape": [
+            1,
+            8
+          ],
+          "two_view_horizontal_resolution": [
+            448,
+            224
+          ],
+          "action_inference_steps": 10,
+          "execute_actions": 10,
+          "action_directly_visible_video_latents": 3,
+          "total_video_latent_frames": 5
+        },
+        "RoboDojo": {
+          "joint_video_action_steps": 100000,
+          "action_expert_B": 2,
+          "action_inference_steps": 10,
+          "action_horizon": 32,
+          "execute_actions": 24,
+          "history_frames": 8,
+          "history_stride": 25
+        },
+        "not_identical_to_generic_paper_configuration": true
+      }
     }
   ],
   "batches": [
