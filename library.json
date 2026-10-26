@@ -3325,6 +3325,395 @@
           "ranking_invariant_per_task": false
         }
       }
+    },
+    {
+      "id": "031",
+      "short_title": "SP-HLM",
+      "title": "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+      "arxiv_id": "2610.30044",
+      "version": "arXiv:2610.30044v1, 2026-10-21",
+      "submitted_on": "2026-10-21",
+      "read_on": "2026-10-26",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "brain-models",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "核心是五点显式约束与隐式运动先验结合的跟踪接口，以及 SP-GMT 和 SP-MGM；上层 SP-VLA 由 GR00T 适配，按主要贡献归运控侧。",
+      "note_path": "papers/031-sp-hlm.md",
+      "reader_path": "sp-hlm.html",
+      "library_summary": "VLA 输出骨盆、双腕、双踝和手指目标；蒸馏 Kimodo 补全全身运动，SP-GMT 联合显式目标与 VAE latent 跟踪。八项仿真成功率 52.75%，四项真机 65 / 55 / 25 / 40%，均有任务示范。",
+      "platform": "Unitree G1; ZED 2i; GR00T N1.7; Kimodo; SP-GMT",
+      "evidence": "sim-and-real",
+      "tags": [
+        "sparse-pose",
+        "task-space-interface",
+        "motion-prior",
+        "motion-VAE",
+        "Kimodo",
+        "distillation",
+        "PPO",
+        "GR00T-N1.7",
+        "RTC",
+        "G1"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.30044v1",
+        "project": "https://sp-hlm.github.io/",
+        "project_source": "https://github.com/SP-HLM/SP-HLM.github.io",
+        "project_source_commit": "88d27bec126cdd5879553e2e6b6428810f1613dd",
+        "pages": 9,
+        "sha256": "a2a18b7cc6c5f71adb9a476b7b195e0b020b66c657ea285b5fdf512f03396507",
+        "source_record": "assets/031-sp-hlm/source-record.json"
+      },
+      "code_status": {
+        "value": "Official project-site source public; no explicit framework, checkpoint or full training-data download verified from site and organization repositories",
+        "checked_on": "2026-10-26",
+        "executed": false
+      },
+      "figures_manifest": "assets/031-sp-hlm/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/031-sp-hlm/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method-training-deployment",
+          "page": 4,
+          "path": "assets/031-sp-hlm/fig-02-method-training-deployment.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "simulation-tasks",
+          "page": 5,
+          "path": "assets/031-sp-hlm/fig-03-simulation-tasks.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "real-world-tasks",
+          "page": 7,
+          "path": "assets/031-sp-hlm/fig-04-real-world-tasks.png"
+        }
+      ],
+      "method": {
+        "pipeline": [
+          "SP-VLA sparse-pose and finger prediction",
+          "SP-MGM full-body motion completion",
+          "frozen yaw-invariant motion VAE encoder",
+          "SP-GMT explicit-implicit control"
+        ],
+        "sparse_parts": [
+          "pelvis",
+          "left wrist",
+          "right wrist",
+          "left ankle",
+          "right ankle"
+        ],
+        "pose_dimension": 9,
+        "pose_representation": "3D position and first two rotation-matrix columns as row-major 6D values",
+        "sparse_pose_dimensions": 45,
+        "finger_dimensions": 14,
+        "VLA_action_dimensions": 59,
+        "target_coordinates": "world frame from VLA; transformed into current robot pelvis frame for tracker",
+        "SP_VLA": {
+          "base": "GR00T N1.7",
+          "frozen": "vision-language backbone",
+          "trained": "flow-matching action head",
+          "input": "ego RGB, instruction, body joint positions, world pelvis pose and finger positions",
+          "output": "40-step by 59D sparse-pose and finger-target chunk",
+          "training_steps": 160000,
+          "global_batch": 32,
+          "learning_rate": 0.0001,
+          "RTC_training_delay_range": [
+            0,
+            8
+          ],
+          "execute_actions": 34,
+          "clean_prefix_actions": 6,
+          "flow_inference_steps": 4
+        },
+        "motion_VAE": {
+          "motion_hours_approx": 190,
+          "input_window_frames": 10,
+          "per_frame_dimensions": "2J+12",
+          "input": "joint positions and velocities, 6D pelvis rotation, pelvis linear and angular velocities",
+          "invariance": "remove global horizontal placement and heading through yaw-aligned preprocessing",
+          "pretraining": "reconstruction plus KL",
+          "downstream": "frozen encoder posterior mean",
+          "latent_dimension_not_reported": true
+        },
+        "SP_GMT": {
+          "input": "motion latent, pelvis-frame sparse poses, proprioception and previous action",
+          "output": "body joint position targets",
+          "training": "asymmetric actor-critic PPO; reference motion supplies both target branches",
+          "rewards": [
+            "five-point global position/orientation",
+            "full-body pose and velocity",
+            "control and contact regularizers"
+          ],
+          "finger_targets_bypass_body_tracker": true
+        },
+        "SP_MGM": {
+          "base_teacher": "Kimodo",
+          "root_body_transformer_layers": [
+            8,
+            8
+          ],
+          "hidden_FFN": [
+            1024,
+            2048
+          ],
+          "attention_heads": 8,
+          "diffusion_training_steps": 1000,
+          "DDIM_inference_steps": 20,
+          "stage_I": {
+            "training_steps": 10000,
+            "batch": 128,
+            "learning_rate": 2e-05,
+            "teacher_GT_weight_schedule": "0.9/0.1 to 0.3/0.7 over first 8000 updates, then fixed",
+            "supervision": "frozen-teacher clean prediction and paired ground-truth motion from forward-noised inputs"
+          },
+          "stage_II": {
+            "training_steps": 100000,
+            "rollout_batch": 16,
+            "sampled_states_per_rollout": 3,
+            "teacher_GT_weights_appendix": [
+              0.7,
+              0.3
+            ],
+            "learning_rate_start_end": [
+              2e-05,
+              2e-06
+            ],
+            "self_root_heading_smoothness_weights": [
+              5,
+              1,
+              1
+            ],
+            "supervision": "frozen teacher corrects student-visited denoising states, plus temporal finite-difference losses"
+          },
+          "environment_reward_RL": false
+        },
+        "task_demonstrations": {
+          "sim_in_house_tasks": 6,
+          "SONIC_demos_per_in_house_task": 120,
+          "additional_HumanoidArena_tasks": 2,
+          "post_augmentation_count_not_reported": true,
+          "real_tasks": 4,
+          "real_SONIC_demos_per_task": 80,
+          "evaluation_controller": "SP-GMT"
+        },
+        "component_inference_Hz_main_text": {
+          "SP-VLA_TensorRT": 25,
+          "SP-MGM_TensorRT_approx": 10
+        },
+        "end_to_end_latency_or_body_control_frequency_not_reported": true
+      },
+      "evaluation": {
+        "simulation": {
+          "tasks": 8,
+          "trials_per_task": 50,
+          "trials_per_method": 400,
+          "resampled": [
+            "object positions",
+            "robot initial positions",
+            "lighting"
+          ],
+          "success_counts_per_task": {
+            "GR00T_token_SONIC": [
+              22,
+              7,
+              24,
+              20,
+              8,
+              9,
+              19,
+              26
+            ],
+            "GR00T_joint_SONIC": [
+              11,
+              11,
+              20,
+              19,
+              8,
+              21,
+              13,
+              23
+            ],
+            "SP_HLM_direct_latent": [
+              20,
+              6,
+              20,
+              6,
+              16,
+              6,
+              6,
+              13
+            ],
+            "SP_HLM": [
+              26,
+              13,
+              39,
+              24,
+              19,
+              26,
+              28,
+              36
+            ]
+          },
+          "overall_success_percent": {
+            "GR00T_token_SONIC": 33.75,
+            "GR00T_joint_SONIC": 31.5,
+            "SP_HLM_direct_latent": 23.25,
+            "SP_HLM": 52.75
+          },
+          "unseen_task_scene_split_not_reported": true,
+          "full_system_compares_different_backends": true
+        },
+        "tracking": {
+          "datasets": [
+            "Filtered CLOT-500",
+            "BONES-SEED Diverse-500"
+          ],
+          "motions_per_dataset": 500,
+          "evaluation_noise_seed_runs": 10,
+          "not_independent_training_seeds": true,
+          "datasets_unseen_in_SP_GMT_training": true,
+          "BONES_SEED_seen_in_SONIC_training": true,
+          "global_MPJPE_m": {
+            "SP_GMT": [
+              0.0676,
+              0.0797
+            ],
+            "SONIC": [
+              0.4177,
+              0.3181
+            ],
+            "Humanoid_GPT": [
+              0.4742,
+              0.5972
+            ]
+          },
+          "progress_percent": {
+            "SP_GMT": [
+              99.83,
+              92.24
+            ],
+            "SONIC": [
+              100,
+              93.84
+            ],
+            "Humanoid_GPT": [
+              99.93,
+              90.1
+            ]
+          },
+          "CLOT_global_local_MPJPE_m": {
+            "full": [
+              0.0676,
+              0.0278
+            ],
+            "no_sparse": [
+              0.4436,
+              0.039
+            ],
+            "no_implicit": [
+              0.1303,
+              0.0659
+            ],
+            "joint_reference": [
+              0.0812,
+              0.0305
+            ],
+            "no_robot_pelvis_pose": [
+              0.0753,
+              0.0356
+            ]
+          },
+          "reported_tracker_training_GPU_hours": {
+            "SP_GMT": 192,
+            "SONIC": 21000,
+            "Humanoid_GPT": 15000
+          },
+          "not_whole_system_training_cost": true
+        },
+        "motion_generation": {
+          "motions": 600,
+          "dataset": "BONES-SEED",
+          "denoising_steps_for_both_baseline_and_student": 20,
+          "model_order": [
+            "Kimodo",
+            "no_Stage_II",
+            "no_temporal_loss",
+            "SP_MGM"
+          ],
+          "EE_mean_cm": [
+            1.941,
+            8.441,
+            1.915,
+            1.812
+          ],
+          "EE_P95_cm": [
+            3.521,
+            12.772,
+            3.42,
+            3.212
+          ],
+          "EE_jerk_P95_m_s3": [
+            450.768,
+            1068.626,
+            657.125,
+            514.337
+          ],
+          "body_jerk_P95_m_s3": [
+            370.225,
+            916.724,
+            570.246,
+            416.945
+          ],
+          "standard_generation_Hz": [
+            5.405,
+            7.634,
+            7.322,
+            7.813
+          ],
+          "SP_MGM_text_free_TensorRT_Hz": 11.494,
+          "generated_motion_metrics_not_executed_task_success": true
+        },
+        "real_world": {
+          "tasks": [
+            "Object placement",
+            "Shelf transfer",
+            "Cabinet opening",
+            "Trash-bin opening"
+          ],
+          "trials_per_task": 20,
+          "success_counts": [
+            13,
+            11,
+            5,
+            8
+          ],
+          "success_percent": [
+            65,
+            55,
+            25,
+            40
+          ],
+          "total_successes": 37,
+          "total_trials": 80,
+          "pooled_success_percent_reader_calculated": 46.25,
+          "real_baseline_not_reported": true,
+          "real_target_task_demonstrations_used": true,
+          "zero_shot_sim_to_real_claim_not_supported": true
+        }
+      }
     }
   ],
   "batches": [

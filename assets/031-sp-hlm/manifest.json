@@ -1,0 +1,149 @@
+{
+  "paper_id": "031",
+  "title": "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+  "source_document": "https://arxiv.org/abs/2610.30044v1",
+  "source_url": "https://arxiv.org/pdf/2610.30044v1",
+  "source_version": "arXiv:2610.30044v1, 2026-10-21",
+  "source_sha256": "a2a18b7cc6c5f71adb9a476b7b195e0b020b66c657ea285b5fdf512f03396507",
+  "source_pages": 9,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-26",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.086,
+        0.284,
+        0.913,
+        0.665
+      ],
+      "crop_pdf_points": [
+        52.632,
+        224.92799999999997,
+        558.756,
+        526.6800000000001
+      ],
+      "crop_pixels": [
+        146,
+        625,
+        1552,
+        1463
+      ],
+      "dpi": 200,
+      "size_px": [
+        1406,
+        838
+      ],
+      "sha256": "2d11ea017f387f20a2d8f2e203344244d7305d0bb5afd619bd2c5c8b9620ff2c",
+      "original_caption_source": "Figure 1, PDF page 1; full original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original figure and complete English caption visually verified against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method-training-deployment",
+      "pdf_page": 4,
+      "file": "fig-02-method-training-deployment.png",
+      "crop_normalized": [
+        0.087,
+        0.065,
+        0.914,
+        0.377
+      ],
+      "crop_pdf_points": [
+        53.244,
+        51.480000000000004,
+        559.368,
+        298.584
+      ],
+      "crop_pixels": [
+        148,
+        143,
+        1554,
+        829
+      ],
+      "dpi": 200,
+      "size_px": [
+        1406,
+        686
+      ],
+      "sha256": "f4608856f89ada0ca2ebc52cb8a535f34879defa0fb1f7dc95426a935b471083",
+      "original_caption_source": "Figure 2, PDF page 4; full original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original figure and complete English caption visually verified against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "simulation-tasks",
+      "pdf_page": 5,
+      "file": "fig-03-simulation-tasks.png",
+      "crop_normalized": [
+        0.087,
+        0.065,
+        0.913,
+        0.403
+      ],
+      "crop_pdf_points": [
+        53.244,
+        51.480000000000004,
+        558.756,
+        319.17600000000004
+      ],
+      "crop_pixels": [
+        148,
+        143,
+        1552,
+        887
+      ],
+      "dpi": 200,
+      "size_px": [
+        1404,
+        744
+      ],
+      "sha256": "10240d4274f54bff80642cefbc849802f14d72ae1d199a6055f89b6d2e7f0d6d",
+      "original_caption_source": "Figure 3, PDF page 5; full original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original figure and complete English caption visually verified against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "real-world-tasks",
+      "pdf_page": 7,
+      "file": "fig-04-real-world-tasks.png",
+      "crop_normalized": [
+        0.087,
+        0.66,
+        0.491,
+        0.908
+      ],
+      "crop_pdf_points": [
+        53.244,
+        522.72,
+        300.492,
+        719.136
+      ],
+      "crop_pixels": [
+        148,
+        1452,
+        835,
+        1998
+      ],
+      "dpi": 200,
+      "size_px": [
+        687,
+        546
+      ],
+      "sha256": "e93a72d72a935e653eb54b8d9cec8b3f7c7e5168921c66844adbd60a4e6d5f2d",
+      "original_caption_source": "Figure 4, PDF page 7; full original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full original figure and complete English caption visually verified against PDF rendering on 2026-10-26"
+    }
+  ]
+}

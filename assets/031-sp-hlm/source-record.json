@@ -1,0 +1,62 @@
+{
+  "paper_id": "031",
+  "title": "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+  "arxiv_id": "2610.30044",
+  "version": "arXiv:2610.30044v1, 2026-10-21",
+  "first_submitted_on": "2026-10-21",
+  "read_on": "2026-10-26",
+  "source_document": "https://arxiv.org/abs/2610.30044v1",
+  "source_url": "https://arxiv.org/pdf/2610.30044v1",
+  "sha256": "a2a18b7cc6c5f71adb9a476b7b195e0b020b66c657ea285b5fdf512f03396507",
+  "pages": 9,
+  "bytes": 13127630,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2610.30044v1"
+    },
+    {
+      "role": "project",
+      "url": "https://sp-hlm.github.io/"
+    },
+    {
+      "role": "project_site_source",
+      "url": "https://github.com/SP-HLM/SP-HLM.github.io",
+      "commit": "88d27bec126cdd5879553e2e6b6428810f1613dd"
+    },
+    {
+      "role": "organization_public_repositories",
+      "url": "https://api.github.com/users/sp-hlm/repos?per_page=100"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-10-26",
+    "project_site_source_public": true,
+    "framework_code_or_weights_release_verified": false,
+    "verification": "Official organization public repository list contains the project website only; fixed site HTML links to videos, method and results, without explicit implementation, checkpoint or full training-data download links. Not a claim that no other release exists.",
+    "direct_site_access": "Timed out; official GitHub Pages source HTML reviewed"
+  },
+  "source_snapshot_sha256": {
+    "sp-hlm-v1.html": "8d3cded0a0a287b71e478ca87ae4c83426e8ba11cb05c1c72dfc7c82f767f346",
+    "sp-hlm-project-source.html": "42cf5976346c60c5cae64b71e9c366a724958dc38ea20087b3a8faef5dc91036",
+    "sp-hlm-repos.json": "e03d57700c907759a3de90b1b39497b1e696bd9c61cbc8a8d3d80ebee77a21ae"
+  },
+  "evidence_boundaries": [
+    "High-level output is five 9D world poses plus 14 hand joints, not 59 physical robot joints",
+    "VAE motion window of 10 frames differs from VLA action chunk of 40 steps",
+    "Rollout-aware generator distillation concerns student denoising states, not environment reward optimization",
+    "Tracking ten-seed runs vary evaluation trajectory noise; not ten independent policy training runs",
+    "Full-system comparison changes both the interface and the downstream generator/tracker relative to GR00T-SONIC baselines",
+    "Generation benchmark uses 20 denoising steps for both Kimodo and SP-MGM; smoothness remains worse than Kimodo",
+    "Component inference rates do not establish full-system latency or body control frequency",
+    "Real tasks have 80 real demonstrations each and no real-world baseline table",
+    "192 GPU-hours concerns SP-GMT tracking training, not all upstream pretraining or whole-system cost"
+  ],
+  "author_code_executed": false,
+  "model_weights_or_full_dataset_downloaded": false,
+  "licenses": {
+    "paper": "arXiv perpetual non-exclusive license",
+    "framework_weights_data": "Not established; do not infer from website availability"
+  }
+}
