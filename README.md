@@ -4,15 +4,15 @@
 
 **[在线阅读目录](https://wxinhua.github.io/paper_reading/)** · [统一笔记模板](template.md) · [维护说明](CONTRIBUTING.md)
 
-当前共 **29 篇**，保存 **72 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
+当前共 **30 篇**，保存 **77 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
 
 ## 分类
 
-**Wholebody Intelligence · 24 篇**
+**Wholebody Intelligence · 25 篇**
 
 - [大脑模型与任务策略 · 12 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成、世界模型与高层规划。
 - [运动控制与重定向 · 4 篇](https://wxinhua.github.io/paper_reading/#subcategory-motion-control)：GMT / WBC 类全身跟踪、关节控制、重定向 / IK 与部署时参考运动复用。
-- [数据、基准与综述 · 8 篇](https://wxinhua.github.io/paper_reading/#subcategory-data-and-evaluation)：示范对齐与生成、仿真基础设施、评测与综述。
+- [数据、基准与综述 · 9 篇](https://wxinhua.github.io/paper_reading/#subcategory-data-and-evaluation)：示范对齐与生成、仿真基础设施、评测与综述。
 
 每篇按主要贡献确定一个主子类，跨模块工作标注关联方向，篇数不重复计算。分类是笔记库的组织判断。TextOp 属于文字动作生成；VIRAL、FetchMan 属于视觉任务策略，这个分组不把它们都称为基础 VLA。
 
@@ -49,6 +49,7 @@
 - 027 · [EgoHumanoid-V2](papers/027-egohumanoid-v2.md)
 - 028 · [Ropedia W0](papers/028-ropedia-w0.md)
 - 029 · [VPP2](papers/029-vpp2.md)
+- 030 · [LocoManiLab](papers/030-locomanilab.md)
 
 ## 更新方式
 
@@ -74,5 +75,5 @@ python3 tools/build_site.py
 
 论文图片与论文内容的权利归原作者；各笔记和图像记录保留原始出处。论文事实与阅读者判断分开；不同实验协议下的成功率不直接排名。
 
-最后整理：**2026-10-22**。
+最后整理：**2026-10-26**。
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-22",
+  "updated_on": "2026-10-26",
   "papers": [
     {
       "id": "001",
@@ -2990,6 +2990,340 @@
           "history_stride": 25
         },
         "not_identical_to_generic_paper_configuration": true
+      }
+    },
+    {
+      "id": "030",
+      "short_title": "LocoManiLab",
+      "title": "LocoManiLab: A Unified Testbed for Data, Policies, Controllers, and Deployment in Humanoid Loco-Manipulation",
+      "arxiv_id": "2610.30876",
+      "version": "arXiv:2610.30876v2, 2026-10-23",
+      "submitted_on": "2026-10-22",
+      "read_on": "2026-10-26",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是统一场景、示范、策略—控制器接口、数据生成及仿真 / 真机评测的试验台；Kimodo 适配是其中的数据生成研究，并非整篇提出新 VLA。",
+      "note_path": "papers/030-locomanilab.md",
+      "reader_path": "locomanilab.html",
+      "library_summary": "234 项 G1 任务统一比较 12 种策略、5 种控制器与不同示范来源。XR-1 熟悉任务 80.2%，新任务 25.2%，新任务加新场景 8.2%；生成示范可成功回放仍不保证提高策略。",
+      "platform": "Unitree G1; MuJoCo; SONIC / AMO / HEFT / ALMI / ScaleBFM",
+      "evidence": "sim-and-real",
+      "tags": [
+        "benchmark",
+        "MuJoCo",
+        "G1",
+        "loco-manipulation",
+        "SONIC",
+        "controller-interface",
+        "teleoperation",
+        "Kimodo",
+        "motion-synthesis",
+        "domain-randomization",
+        "sim-real-comparison"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.30876v2",
+        "project": "https://locomanilab.github.io/",
+        "author_publication": "https://baichenjia.cn/publication/locomanilab/",
+        "project_source": "https://github.com/LocoManiLab/locomanilab.github.io",
+        "project_source_commit": "0b98b98facb35fde098bf279143e11253e5d9b9e",
+        "rollout_recordings": "https://github.com/LocoManiLab/policy-rollouts",
+        "rollout_recordings_commit": "bd2592fe63434e387f72442924919ea43b235405",
+        "pages": 27,
+        "sha256": "f2c846963fa4398e9f05ff54a1d86b91fd9d879981261e3cb80edfcde0fdf7c1",
+        "source_record": "assets/030-locomanilab/source-record.json"
+      },
+      "code_status": {
+        "value": "Official project-site source still marks framework Code and Dataset Coming soon; public site and selected MP4 rollout repository available",
+        "checked_on": "2026-10-26",
+        "executed": false
+      },
+      "figures_manifest": "assets/030-locomanilab/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview-framework",
+          "page": 2,
+          "path": "assets/030-locomanilab/fig-01-overview-framework.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "data-statistics",
+          "page": 7,
+          "path": "assets/030-locomanilab/fig-02-data-statistics.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "controller-comparison",
+          "page": 10,
+          "path": "assets/030-locomanilab/fig-03-controller-comparison.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "demonstration-scale",
+          "page": 11,
+          "path": "assets/030-locomanilab/fig-04-demonstration-scale.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "sim-and-real",
+          "page": 14,
+          "path": "assets/030-locomanilab/fig-05-sim-and-real.png"
+        }
+      ],
+      "method": {
+        "contribution": "unified testbed for data, policy-controller pairs, evaluation and deployment",
+        "tasks": {
+          "atomic": 102,
+          "compositional": 132,
+          "total": 234,
+          "rooms": 5,
+          "scene_instances": 13
+        },
+        "main_controller": "SONIC",
+        "runtime_input": "head RGB, task text, model-supported robot proprioception",
+        "main_proprioception": {
+          "joint_positions": 43,
+          "GR00T_extra_projected_gravity": 3,
+          "StarVLA_uses_proprioception": false
+        },
+        "runtime_output": "action chunk; each step is 64D SONIC token and 14 absolute finger targets",
+        "main_action_dimensions": 78,
+        "command_Hz": 50,
+        "policy_query_control_steps": 20,
+        "policy_query_not_50_Hz": true,
+        "controller_action_dimensions": {
+          "AMO": 36,
+          "SONIC": 78,
+          "HEFT": 50,
+          "ALMI": 52,
+          "ScaleBFM": 50
+        },
+        "controller_comparison_retrains_pairs": true,
+        "teleoperation": {
+          "sim_episodes": 14160,
+          "sim_hours": 51.5,
+          "real_episodes": 567,
+          "real_hours_approx": 9.0,
+          "main_training_atomic_episodes": 2546,
+          "main_training_compositional_episodes": 2558
+        },
+        "Kimodo_generation": {
+          "input": "text, executed motion prefix, root/wrist spatial targets",
+          "output": "3-second, 30-Hz G1 motion reference tracked by frozen SONIC at 50 Hz",
+          "navigation": "A-star root waypoints from known occupancy",
+          "manipulation": "known geometry / task-annotated wrist stages and hand logic",
+          "adaptation": "Gaussian denoising transitions updated with group-normalized PPO-style policy gradient using execution rewards",
+          "backprop_through_simulator": false,
+          "online_LLM_in_reported_rollouts": false
+        }
+      },
+      "evaluation": {
+        "main_protocol": {
+          "train_seen_tasks": 100,
+          "seen_atomic_compositional": [
+            50,
+            50
+          ],
+          "seen_trials_per_task": 20,
+          "unseen_task_tasks": 123,
+          "unseen_scene_tasks": 11,
+          "unseen_trials_per_task": 10,
+          "total_rollouts_per_policy": 3340,
+          "aggregate": "equal weight per task, not per rollout or split",
+          "unseen_scene_also_changes_task": true,
+          "fall_early_termination": false,
+          "one_training_run_per_configuration": true,
+          "matched_training_compute": false
+        },
+        "main_success_percent_order": [
+          "Seen",
+          "Unseen task",
+          "Unseen scene",
+          "Overall"
+        ],
+        "main_success_percent": {
+          "XR-1": [
+            80.2,
+            25.2,
+            8.2,
+            47.9
+          ],
+          "DM0.5": [
+            77.9,
+            16.6,
+            15.5,
+            42.7
+          ],
+          "pi0.5": [
+            67.7,
+            13.3,
+            11.8,
+            36.5
+          ],
+          "GR00T_N1.7": [
+            68.2,
+            11.5,
+            6.4,
+            35.5
+          ],
+          "Fast-WAM": [
+            40.7,
+            5.5,
+            2.7,
+            20.4
+          ],
+          "Diffusion_Policy": [
+            14.7,
+            1.5,
+            0,
+            7.1
+          ]
+        },
+        "visual_robustness": {
+          "seen_tasks": 100,
+          "trials_per_task_per_level": 20,
+          "levels": 3,
+          "rollouts_per_policy": 6000,
+          "training_with_DR_ablation": false,
+          "three_level_mean_percent": {
+            "DM0.5": 70.2,
+            "XR-1": 69.0,
+            "pi0.5": 60.5,
+            "GR00T_N1.7": 54.2
+          }
+        },
+        "controller_comparison": {
+          "policies": [
+            "GR00T_N1.7",
+            "pi0.5"
+          ],
+          "controllers": 5,
+          "atomic_compositional_tasks": [
+            5,
+            5
+          ],
+          "training_demos_per_task": 50,
+          "eval_trials_per_task": 20,
+          "success_rate_uses_all_trials": true,
+          "other_motion_metrics_use_successful_episodes_only": true,
+          "successful_trials_per_profile_range": [
+            5,
+            79
+          ],
+          "radar_area_is_not_aggregate_score": true
+        },
+        "demonstration_scale": {
+          "nested_demos_per_task": [
+            10,
+            30,
+            50
+          ],
+          "SONIC_extra_demos_per_task": 100,
+          "training_updates_increase_with_data": true,
+          "GR00T_atomic_controller_mean_10_to_50_percent": [
+            33.0,
+            69.8
+          ],
+          "monotonic_improvement_not_guaranteed": true
+        },
+        "source_mixture": {
+          "seen_tasks": 20,
+          "atomic_compositional": [
+            16,
+            4
+          ],
+          "equal_size_or_exposure": false,
+          "source_order": [
+            "T",
+            "S",
+            "A",
+            "T+S",
+            "T+A",
+            "T+S+A"
+          ],
+          "GR00T_success_percent": [
+            82.0,
+            37.2,
+            58.2,
+            71.8,
+            82.5,
+            46.2
+          ],
+          "pi05_success_percent": [
+            89.2,
+            41.5,
+            51.7,
+            85.2,
+            85.0,
+            84.5
+          ]
+        },
+        "Kimodo_adaptation": {
+          "task_scene_pairs": 30,
+          "trials_per_pair_per_model": 10,
+          "pairs_overlapping_adaptation": 13,
+          "pretrained_LoRA_full_success_percent": [
+            39.7,
+            71.3,
+            90.7
+          ],
+          "not_main_234_task_score": true,
+          "separate_spatial_conditions": 198,
+          "matched_training_budget": false,
+          "multiple_training_seeds": false
+        },
+        "real_world": {
+          "tasks": [
+            "Fridge",
+            "Cup-to-desk",
+            "Conveyor"
+          ],
+          "training": "separate policy per model and task; 50 real demonstrations for hardware, 50 sim demonstrations for simulation",
+          "real_trials_per_cell": 10,
+          "sim_trials_per_cell": 20,
+          "total_real_trials": 90,
+          "real_success_counts_out_of_10": {
+            "XR-1": [
+              8,
+              7,
+              6
+            ],
+            "GR00T_N1.7": [
+              5,
+              6,
+              5
+            ],
+            "Fast-WAM": [
+              4,
+              5,
+              5
+            ]
+          },
+          "sim_real_mean_percent": {
+            "XR-1": [
+              76.7,
+              70.0
+            ],
+            "GR00T_N1.7": [
+              53.3,
+              53.3
+            ],
+            "Fast-WAM": [
+              50.0,
+              46.7
+            ]
+          },
+          "zero_shot_sim_to_real": false,
+          "success_predicates_identical": false,
+          "ranking_invariant_per_task": false
+        }
       }
     }
   ],

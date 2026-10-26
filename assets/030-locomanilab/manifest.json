@@ -1,0 +1,182 @@
+{
+  "paper_id": "030",
+  "title": "LocoManiLab: A Unified Testbed for Data, Policies, Controllers, and Deployment in Humanoid Loco-Manipulation",
+  "source_document": "https://arxiv.org/abs/2610.30876v2",
+  "source_url": "https://arxiv.org/pdf/2610.30876v2",
+  "source_version": "arXiv:2610.30876v2, 2026-10-23",
+  "source_sha256": "f2c846963fa4398e9f05ff54a1d86b91fd9d879981261e3cb80edfcde0fdf7c1",
+  "source_pages": 27,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-26",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview-framework",
+      "pdf_page": 2,
+      "file": "fig-01-overview-framework.png",
+      "crop_normalized": [
+        0.114,
+        0.074,
+        0.89,
+        0.468
+      ],
+      "crop_pdf_points": [
+        69.768,
+        58.608,
+        544.6800000000001,
+        370.656
+      ],
+      "crop_pixels": [
+        194,
+        163,
+        1513,
+        1030
+      ],
+      "dpi": 200,
+      "size_px": [
+        1319,
+        867
+      ],
+      "sha256": "5851c463413e79a92c1f3bfb0007a34c0793db63806dc3ac7271b4096cea0742",
+      "original_caption_source": "Figure 1, PDF page 2; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full figure and original English caption visually checked against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "data-statistics",
+      "pdf_page": 7,
+      "file": "fig-02-data-statistics.png",
+      "crop_normalized": [
+        0.114,
+        0.078,
+        0.89,
+        0.474
+      ],
+      "crop_pdf_points": [
+        69.768,
+        61.776,
+        544.6800000000001,
+        375.40799999999996
+      ],
+      "crop_pixels": [
+        194,
+        172,
+        1513,
+        1043
+      ],
+      "dpi": 200,
+      "size_px": [
+        1319,
+        871
+      ],
+      "sha256": "a2eb8ab8049c87d97febe1e038cf57c2a0cd813162cf13a3d3094ee3ea2c756d",
+      "original_caption_source": "Figure 2, PDF page 7; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full figure and original English caption visually checked against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "controller-comparison",
+      "pdf_page": 10,
+      "file": "fig-03-controller-comparison.png",
+      "crop_normalized": [
+        0.114,
+        0.316,
+        0.89,
+        0.739
+      ],
+      "crop_pdf_points": [
+        69.768,
+        250.272,
+        544.6800000000001,
+        585.288
+      ],
+      "crop_pixels": [
+        194,
+        695,
+        1513,
+        1626
+      ],
+      "dpi": 200,
+      "size_px": [
+        1319,
+        931
+      ],
+      "sha256": "a05e17196f4e1e982d04981c1f4b7ff721edfe941db821b1a9b4ad0d5f428536",
+      "original_caption_source": "Figure 3, PDF page 10; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full figure and original English caption visually checked against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "demonstration-scale",
+      "pdf_page": 11,
+      "file": "fig-04-demonstration-scale.png",
+      "crop_normalized": [
+        0.114,
+        0.426,
+        0.89,
+        0.817
+      ],
+      "crop_pdf_points": [
+        69.768,
+        337.392,
+        544.6800000000001,
+        647.064
+      ],
+      "crop_pixels": [
+        194,
+        937,
+        1513,
+        1797
+      ],
+      "dpi": 200,
+      "size_px": [
+        1319,
+        860
+      ],
+      "sha256": "d918a28f21ef98362831ac53af086e97aa9a306a6809b614e9d7481265d6ad2e",
+      "original_caption_source": "Figure 4, PDF page 11; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full figure and original English caption visually checked against PDF rendering on 2026-10-26"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "sim-and-real",
+      "pdf_page": 14,
+      "file": "fig-05-sim-and-real.png",
+      "crop_normalized": [
+        0.114,
+        0.216,
+        0.89,
+        0.465
+      ],
+      "crop_pdf_points": [
+        69.768,
+        171.072,
+        544.6800000000001,
+        368.28000000000003
+      ],
+      "crop_pixels": [
+        194,
+        475,
+        1513,
+        1023
+      ],
+      "dpi": 200,
+      "size_px": [
+        1319,
+        548
+      ],
+      "sha256": "5c2e07e5ccdeb5a33a68d4adff812b143b64a72723acc98167d87f9751aa6758",
+      "original_caption_source": "Figure 5, PDF page 14; full original caption preserved in the image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; full figure and original English caption visually checked against PDF rendering on 2026-10-26"
+    }
+  ]
+}
