@@ -1,0 +1,215 @@
+{
+  "paper_id": "032",
+  "title": "Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model",
+  "source_document": "https://arxiv.org/abs/2508.07863v1",
+  "source_url": "https://arxiv.org/pdf/2508.07863v1",
+  "source_version": "arXiv:2508.07863v1, 2025-08-11",
+  "source_sha256": "99d6f1e339fca1318e977a25cdc8aa43ebf179e06e472acd565bb8930a0f5635",
+  "source_pages": 25,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-27",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 2,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.112,
+        0.095,
+        0.891,
+        0.288
+      ],
+      "crop_pdf_points": [
+        68.544,
+        75.24,
+        545.292,
+        228.09599999999998
+      ],
+      "crop_pixels": [
+        190,
+        209,
+        1515,
+        634
+      ],
+      "dpi": 200,
+      "size_px": [
+        1325,
+        425
+      ],
+      "sha256": "f85a3898930757e43c6db8136dbcd96dc7c18186b454fdbd79fc5d1910079b41",
+      "original_caption_source": "Figure 1, PDF page 2; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "model-prq",
+      "pdf_page": 4,
+      "file": "fig-02-model-prq.png",
+      "crop_normalized": [
+        0.112,
+        0.091,
+        0.891,
+        0.383
+      ],
+      "crop_pdf_points": [
+        68.544,
+        72.072,
+        545.292,
+        303.336
+      ],
+      "crop_pixels": [
+        190,
+        200,
+        1515,
+        843
+      ],
+      "dpi": 200,
+      "size_px": [
+        1325,
+        643
+      ],
+      "sha256": "160500a0773e403a9d3511b7bc0ec689005b8835276bdc2c570f727829ecc3e1",
+      "original_caption_source": "Figure 2, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "data-pipeline",
+      "pdf_page": 7,
+      "file": "fig-03-data-pipeline.png",
+      "crop_normalized": [
+        0.112,
+        0.163,
+        0.891,
+        0.276
+      ],
+      "crop_pdf_points": [
+        68.544,
+        129.096,
+        545.292,
+        218.592
+      ],
+      "crop_pixels": [
+        190,
+        359,
+        1515,
+        607
+      ],
+      "dpi": 200,
+      "size_px": [
+        1325,
+        248
+      ],
+      "sha256": "927f9626f22fdda64dd2aea4169f82a62db1b4a883f352dc65c909fcc0f69267",
+      "original_caption_source": "Figure 3, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "benchmark-overview",
+      "pdf_page": 11,
+      "file": "fig-04-benchmark-overview.png",
+      "crop_normalized": [
+        0.494,
+        0.315,
+        0.894,
+        0.622
+      ],
+      "crop_pdf_points": [
+        302.328,
+        249.48,
+        547.128,
+        492.624
+      ],
+      "crop_pixels": [
+        840,
+        693,
+        1520,
+        1368
+      ],
+      "dpi": 200,
+      "size_px": [
+        680,
+        675
+      ],
+      "sha256": "bd0824149a57705644a17155bb1b8a0c431ba45a4676c32f78e95941901d8073",
+      "original_caption_source": "Figure 4, PDF page 11; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "inference-speed",
+      "pdf_page": 13,
+      "file": "fig-05-inference-speed.png",
+      "crop_normalized": [
+        0.112,
+        0.52,
+        0.892,
+        0.753
+      ],
+      "crop_pdf_points": [
+        68.544,
+        411.84000000000003,
+        545.904,
+        596.376
+      ],
+      "crop_pixels": [
+        190,
+        1144,
+        1516,
+        1657
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        513
+      ],
+      "sha256": "0fb2021aa123995bc8293a12560bb5a3c29b1361cdbdc82a3a7c9121187a18d4",
+      "original_caption_source": "Figure 5, PDF page 13; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "part-long-motion",
+      "pdf_page": 16,
+      "file": "fig-06-part-long-motion.png",
+      "crop_normalized": [
+        0.112,
+        0.095,
+        0.892,
+        0.405
+      ],
+      "crop_pdf_points": [
+        68.544,
+        75.24,
+        545.904,
+        320.76000000000005
+      ],
+      "crop_pixels": [
+        190,
+        209,
+        1516,
+        891
+      ],
+      "dpi": 200,
+      "size_px": [
+        1326,
+        682
+      ],
+      "sha256": "05f282052f97d22ee6dfe4bf4885611c06db96e6d09cb205aa143bf263135988",
+      "original_caption_source": "Figure 6, PDF page 16; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete original figure and English caption visually verified against PDF rendering on 2026-10-27"
+    }
+  ]
+}

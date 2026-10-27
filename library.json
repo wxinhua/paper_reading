@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-26",
+  "updated_on": "2026-10-27",
   "papers": [
     {
       "id": "001",
@@ -3713,6 +3713,324 @@
           "real_target_task_demonstrations_used": true,
           "zero_shot_sim_to_real_claim_not_supported": true
         }
+      }
+    },
+    {
+      "id": "032",
+      "short_title": "Being-M0.5",
+      "title": "Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model",
+      "aliases": [
+        "MotionCtrl: A Real-time Controllable Vision-Language-Motion Model"
+      ],
+      "arxiv_id": "2508.07863",
+      "version": "arXiv:2508.07863v1, 2025-08-11",
+      "venue": "ICCV 2025",
+      "submitted_on": "2025-08-11",
+      "read_on": "2026-10-27",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要贡献为基于部位 residual quantization 的可控人体 motion 生成模型；HuMo100M 与多任务标注是数据贡献。没有机器人闭环任务评测，按大脑侧运动生成归档。",
+      "note_path": "papers/032-being-m05.md",
+      "reader_path": "being-m05.html",
+      "library_summary": "HuMo100M 视频伪标签与层级指令，配合五部位 PRQ 和 7B VLMM，实现部位、初始姿态与长动作生成。4-bit 达 20–28.9 motion FPS；HumanML3D 语义对齐更好但 FID 非最优，无机器人闭环验证。",
+      "platform": "Human SMPL motion; LLaMA-2-7B; SigLIP; PRQ; WHAM / PHC data pipeline",
+      "evidence": "offline-motion-benchmarks",
+      "tags": [
+        "VLMM",
+        "human-motion-generation",
+        "HuMo100M",
+        "PRQ",
+        "part-control",
+        "long-motion",
+        "SMPL",
+        "WHAM",
+        "PHC",
+        "MotionCtrl",
+        "streaming-generation"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2508.07863v1",
+        "project": "https://beingbeyond.github.io/Being-M0.5/",
+        "code": "https://github.com/BeingBeyond/Being-M0.5",
+        "code_commit": "67dec3c506f47b050f1faed46559df7bf609500f",
+        "pages": 25,
+        "sha256": "99d6f1e339fca1318e977a25cdc8aa43ebf179e06e472acd565bb8930a0f5635",
+        "source_record": "assets/032-being-m05/source-record.json",
+        "additional_versions": [
+          {
+            "title": "MotionCtrl: A Real-time Controllable Vision-Language-Motion Model",
+            "version": "ICCV 2025 conference paper",
+            "paper": "https://openaccess.thecvf.com/content/ICCV2025/html/Cao_MotionCtrl_A_Real-time_Controllable_Vision-Language-Motion_Model_ICCV_2025_paper.html",
+            "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Cao_MotionCtrl_A_Real-time_Controllable_Vision-Language-Motion_Model_ICCV_2025_paper.pdf",
+            "pages": 10,
+            "sha256": "f1cc968a0a1c81f2254c6d5188961f086faf00d25e25b5338fd965944af81edf"
+          }
+        ]
+      },
+      "code_status": {
+        "value": "Repository remains a documentation and figure release; README says code and part of dataset coming soon",
+        "checked_on": "2026-10-27",
+        "executed": false
+      },
+      "figures_manifest": "assets/032-being-m05/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/032-being-m05/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "model-prq",
+          "page": 4,
+          "path": "assets/032-being-m05/fig-02-model-prq.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "data-pipeline",
+          "page": 7,
+          "path": "assets/032-being-m05/fig-03-data-pipeline.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "benchmark-overview",
+          "page": 11,
+          "path": "assets/032-being-m05/fig-04-benchmark-overview.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "inference-speed",
+          "page": 13,
+          "path": "assets/032-being-m05/fig-05-inference-speed.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "part-long-motion",
+          "page": 16,
+          "path": "assets/032-being-m05/fig-06-part-long-motion.png"
+        }
+      ],
+      "method": {
+        "output": "human motion codes decoded into continuous body motion; text for motion understanding tasks",
+        "robot_motor_action_output_evaluated": false,
+        "input": "task-dependent text instruction, visual clips and/or existing motion segments",
+        "backbone_reported": "LLaMA-2-chat 7B; SigLIP 400M plus 2-layer MLP and slow-fast visual pathway",
+        "visual_input": {
+          "resolution": [
+            224,
+            224
+          ],
+          "max_frames": 64
+        },
+        "data": {
+          "video_sources_over": 20000000,
+          "motion_sequences_approx": 5000000,
+          "multitask_instruction_instances_approx": 100000000,
+          "pipeline": [
+            "metadata and YOLO human filtering/tracking",
+            "2D-keypoint and clip-length quality filtering",
+            "WHAM world-coordinate SMPL estimation",
+            "PHC motion refinement",
+            "Gemini-1.5-Pro body/part descriptions and PoseScript geometric labels"
+          ],
+          "not_all_mocap_ground_truth": true
+        },
+        "PRQ": {
+          "parts": [
+            "torso",
+            "left arm",
+            "right arm",
+            "left leg",
+            "right leg"
+          ],
+          "shared_encoder_and_codebook": true,
+          "shared_joints_averaged_on_reconstruction": true,
+          "temporal_downsampling": 4,
+          "quantization_layers": 4,
+          "codebook_entries": 1024,
+          "embedding_dimensions": 512,
+          "training_updates": 300000,
+          "batch": 256,
+          "learning_rate": 0.0001
+        },
+        "VLMM_training": {
+          "objective": "next-token negative log-likelihood over text / motion codes",
+          "stages": [
+            {
+              "name": "motion-text alignment",
+              "epochs": 50,
+              "batch": 2048,
+              "learning_rate": 2e-05,
+              "hardware": "16 A800 GPUs",
+              "full_parameter_finetuning_reported": true
+            },
+            {
+              "name": "vision-text-motion alignment",
+              "epochs": 5,
+              "batch": 128
+            },
+            {
+              "name": "motion instruction tuning",
+              "epochs": 1,
+              "batch": 128
+            }
+          ],
+          "task_ratio_T2M_I2M_MPI_I2PM_I2LM": [
+            5,
+            5,
+            3,
+            2,
+            1
+          ]
+        },
+        "long_motion_data": "orientation and translation alignment, neutral pose / Slerp transition, learned in-between refinement",
+        "runtime_decoding": "frame-by-frame motion code decoding with llama.cpp and optional quantization",
+        "motion_feature": {
+          "name": "HuMo263",
+          "direct_SMPL_rotations": true,
+          "v1_enumerated_components": [
+            126,
+            4,
+            63,
+            4
+          ],
+          "enumerated_sum": 197,
+          "layout_inconsistency_unresolved": true
+        }
+      },
+      "evaluation": {
+        "HumanML3D_T2M": {
+          "training_scope": "all methods trained on HumanML3D in Table 1",
+          "metric_order": [
+            "FID",
+            "R@1",
+            "R@3",
+            "MMDist"
+          ],
+          "Being_PRQ4": [
+            0.056,
+            0.535,
+            0.821,
+            2.865
+          ],
+          "MoMask_RQ6": [
+            0.045,
+            0.521,
+            0.807,
+            2.958
+          ],
+          "Being_VQ1": [
+            0.141,
+            0.528,
+            0.815,
+            2.953
+          ],
+          "not_best_FID": true
+        },
+        "HuMo_I2M": {
+          "meaning": "Instruct-to-Motion; caption Image-to-Motion treated as typo from task context",
+          "dataset_pairs": 1000000,
+          "train_val_test_percent": [
+            80,
+            5,
+            15
+          ],
+          "Being_FID_R1_R3": [
+            0.148,
+            0.428,
+            0.625
+          ],
+          "MoMask_FID_R1_R3": [
+            0.324,
+            0.325,
+            0.382
+          ]
+        },
+        "HuMo_Unseen": {
+          "held_out_motions": 200000,
+          "training_data_order": [
+            "HumanML3D",
+            "MotionX",
+            "HuMo100M"
+          ],
+          "FID": [
+            65.04,
+            43.28,
+            8.65
+          ],
+          "R1": [
+            0.068,
+            0.092,
+            0.136
+          ],
+          "source_video_subject_or_action_class_holdout_not_established": true
+        },
+        "HuMo_I2PM": {
+          "test_examples": 150000,
+          "validation_examples": 50000,
+          "FID": {
+            "RQ6_no_part_labels": 4.025,
+            "PRQ4_no_part_labels": 4.281,
+            "RQ6_part_labels": 3.752,
+            "PRQ4_no_shared_joints_part_labels": 2.471,
+            "PRQ4_part_labels": 1.831,
+            "PRQ6_part_labels": 2.357
+          },
+          "deeper_reconstruction_not_necessarily_better_generation": true
+        },
+        "part_awareness": {
+          "left_right_exchange_sentences": 50,
+          "success_percent": {
+            "Being_M05": 76,
+            "ParCo": 64,
+            "T2M": 46
+          },
+          "not_robot_task_success": true
+        },
+        "visual_alignment_ablation": {
+          "testbed": "HuMo-T2M",
+          "without_with_second_stage_FID": [
+            7.053,
+            5.791
+          ],
+          "without_with_R3": [
+            0.418,
+            0.445
+          ]
+        },
+        "multitask_ablation": {
+          "full_FID": 5.791,
+          "no_I2LM_FID": 5.765,
+          "T2M_only_FID": 7.152,
+          "double_T2M_FID": 7.058,
+          "all_metrics_not_monotonic": true
+        },
+        "speed": {
+          "implementation": "llama.cpp",
+          "quantization_bits": 4,
+          "all_tested_GPU_minimum_motion_FPS": 20,
+          "H100_peak_motion_FPS": 28.9,
+          "GPU_list": [
+            "RTX3090",
+            "RTXA6000",
+            "A800",
+            "RTX4090",
+            "A100",
+            "H100"
+          ],
+          "approx_required_motion_tokens_per_second_for_20_FPS": 100,
+          "not_closed_loop_robot_control_Hz": true,
+          "complete_pipeline_first_frame_latency_not_reported": true
+        },
+        "full_data_model_separately_marked_in_Figure_4": true,
+        "robot_task_evaluation": false,
+        "comprehensive_video_to_motion_reconstruction_benchmark": false
       }
     }
   ],

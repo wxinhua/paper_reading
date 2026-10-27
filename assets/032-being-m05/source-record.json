@@ -1,0 +1,68 @@
+{
+  "paper_id": "032",
+  "title": "Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model",
+  "arxiv_id": "2508.07863",
+  "version": "arXiv:2508.07863v1, 2025-08-11",
+  "first_submitted_on": "2025-08-11",
+  "read_on": "2026-10-27",
+  "source_document": "https://arxiv.org/abs/2508.07863v1",
+  "source_url": "https://arxiv.org/pdf/2508.07863v1",
+  "sha256": "99d6f1e339fca1318e977a25cdc8aa43ebf179e06e472acd565bb8930a0f5635",
+  "pages": 25,
+  "bytes": 6728398,
+  "source_preserved_unmodified": true,
+  "pagination_note": "16 main-text pages; actual archived arXiv PDF has 25 pages including references and appendices",
+  "additional_document": {
+    "title": "MotionCtrl: A Real-time Controllable Vision-Language-Motion Model",
+    "venue": "ICCV 2025",
+    "pages_in_proceedings": "12253-12262",
+    "source_document": "https://openaccess.thecvf.com/content/ICCV2025/html/Cao_MotionCtrl_A_Real-time_Controllable_Vision-Language-Motion_Model_ICCV_2025_paper.html",
+    "source_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Cao_MotionCtrl_A_Real-time_Controllable_Vision-Language-Motion_Model_ICCV_2025_paper.pdf",
+    "pages": 10,
+    "bytes": 2605675,
+    "sha256": "f1cc968a0a1c81f2254c6d5188961f086faf00d25e25b5338fd965944af81edf",
+    "purpose": "Cross-check conference identity and main results; all archived figures use the arXiv v1 source"
+  },
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2508.07863v1"
+    },
+    {
+      "role": "conference",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Cao_MotionCtrl_A_Real-time_Controllable_Vision-Language-Motion_Model_ICCV_2025_paper.html"
+    },
+    {
+      "role": "project",
+      "url": "https://beingbeyond.github.io/Being-M0.5/"
+    },
+    {
+      "role": "repository",
+      "url": "https://github.com/BeingBeyond/Being-M0.5",
+      "commit": "67dec3c506f47b050f1faed46559df7bf609500f"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-10-27",
+    "value": "README says code and part of dataset will be released soon; reviewed pinned tree contains README, project-site documents and images, not a verified runnable framework, checkpoint or full dataset release"
+  },
+  "source_snapshot_sha256": {
+    "being-m05-readme.md": "24b41707571f739f9f63c68ee9e6aec1a5087a290e641e8a5dde5d798e39e5e3",
+    "being-m05-tree.json": "db71cb35dd374c02c4cdc83a93eb312fb95e55d15f8ba0a5405dca700801996c"
+  },
+  "evidence_boundaries": [
+    "Human motion generation and understanding, not demonstrated robot whole-body task control",
+    "Web videos yield WHAM SMPL pseudo-labels refined with PHC; this is distinct from the VLMM generator",
+    "Five million motions differs from one hundred million multi-task instructional instances",
+    "Table 1 is benchmark-specific HumanML3D training; starred Figure 4 model additionally uses full HuMo100M",
+    "Higher semantic alignment does not imply best HumanML3D generation FID",
+    "I2M means Instruct-to-Motion despite Table 2 caption saying Image-to-Motion",
+    "Motion FPS under quantized inference is not robot closed-loop control frequency",
+    "HuMo263 component dimensions enumerated in v1 total 197, leaving actual feature layout unverified"
+  ],
+  "author_code_executed": false,
+  "model_weights_or_full_dataset_downloaded": false,
+  "licenses": {
+    "code_weights_data": "Not established from README MIT badge; no full implementation or data license verified"
+  }
+}
