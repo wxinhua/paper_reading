@@ -1,0 +1,83 @@
+{
+  "paper_id": "033",
+  "title": "Tokens of Motion: Primitive Motion Learning for Human-Humanoid Skill Transfer",
+  "source_document": "https://arxiv.org/abs/2610.37330v1",
+  "source_url": "https://arxiv.org/pdf/2610.37330v1",
+  "source_version": "arXiv:2610.37330v1, 2026-10-27",
+  "source_sha256": "92a51e308fcd6d5b8128d05109f1c0f4ca4016db33922e19dc581f4305c84453",
+  "source_pages": 12,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-28",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 2,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.83,
+        0.3
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        507.96,
+        237.6
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1411,
+        660
+      ],
+      "dpi": 200,
+      "size_px": [
+        1122,
+        440
+      ],
+      "sha256": "e052704b91b98a2a134f6ab84a3e6fa2c0a1e2bd1b07e4bc11ba604715744e98",
+      "original_caption_source": "Figure 1, PDF page 2; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption verified on 2026-10-28"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "method",
+      "pdf_page": 4,
+      "file": "fig-02-method.png",
+      "crop_normalized": [
+        0.17,
+        0.1,
+        0.83,
+        0.294
+      ],
+      "crop_pdf_points": [
+        104.04,
+        79.2,
+        507.96,
+        232.84799999999998
+      ],
+      "crop_pixels": [
+        289,
+        220,
+        1411,
+        647
+      ],
+      "dpi": 200,
+      "size_px": [
+        1122,
+        427
+      ],
+      "sha256": "38ed99ba0c06057e9e6d39b818a1b387fa6c72fa3d0db2a52fa01f1f22f4ca59",
+      "original_caption_source": "Figure 2, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; complete figure and original English caption verified on 2026-10-28"
+    }
+  ]
+}

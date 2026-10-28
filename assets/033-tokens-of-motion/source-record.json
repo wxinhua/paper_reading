@@ -1,0 +1,51 @@
+{
+  "paper_id": "033",
+  "title": "Tokens of Motion: Primitive Motion Learning for Human-Humanoid Skill Transfer",
+  "arxiv_id": "2610.37330",
+  "version": "arXiv:2610.37330v1, 2026-10-27",
+  "read_on": "2026-10-28",
+  "source_document": "https://arxiv.org/abs/2610.37330v1",
+  "source_url": "https://arxiv.org/pdf/2610.37330v1",
+  "sha256": "92a51e308fcd6d5b8128d05109f1c0f4ca4016db33922e19dc581f4305c84453",
+  "pages": 12,
+  "bytes": 711319,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2610.37330v1"
+    },
+    {
+      "role": "author_demo",
+      "url": "https://iclr2027website.github.io/paper_demo_website/"
+    },
+    {
+      "role": "demo_repository",
+      "url": "https://github.com/iclr2027website/paper_demo_website",
+      "tree_sha": "0d033b2a86c66a8a756af15193a767ff1edf2f32"
+    }
+  ],
+  "source_snapshot_sha256": {
+    "tokens-of-motion-demo.html": "4301cd1cfb8d966296b72da86a89a164e1f9642fe8e51ed409fed529db6cff40",
+    "tokens-of-motion-tree.json": "99f5b37c726a981e1e7501003e8021c3fa84f3085589c4781c9be65b43eb8372",
+    "tokens-of-motion-source.tar": "a83ff31fac100f259dd346908892df62236e8d4d18e1dfee98cf51dab784b6f5"
+  },
+  "source_discrepancy": "arXiv abstract landing page incorrectly displays AFIL text; archived PDF and arXiv HTML identify M-PACT consistently. Summary follows PDF/full text.",
+  "supplement_status": "12-page PDF and public TeX archive contain no appendix despite references to it; demo repository contains website, images and videos only. Detailed supplementary implementation and ~100-demo result not independently verified.",
+  "release_status": {
+    "checked_on": "2026-10-28",
+    "value": "Verified public demonstration website source and video entries, not model training code, checkpoints or full dataset release"
+  },
+  "evidence_boundaries": [
+    "Hand/wrist manipulation primitives, not a whole-body joint tracker",
+    "Translation/aperture discrete; rotation continuous",
+    "Decoder reconstructs segment endpoint effects, not entire within-segment trajectories",
+    "Frozen representation reuse does not imply zero-shot contextual policy transfer",
+    "Robot prediction table measures translation labels only, without images or decoder execution",
+    "Robot translation errors use paper human-equivalent scaling",
+    "Real robot results are qualitative demonstrations, no trial-count success-rate comparison",
+    "Author demo webpage defaults to 4x playback and time-scales hand view to external view"
+  ],
+  "author_code_executed": false,
+  "model_weights_or_full_dataset_downloaded": false
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-27",
+  "updated_on": "2026-10-28",
   "papers": [
     {
       "id": "001",
@@ -4032,6 +4032,136 @@
         "robot_task_evaluation": false,
         "comprehensive_video_to_motion_reconstruction_benchmark": false
       }
+    },
+    {
+      "id": "033",
+      "short_title": "Tokens of Motion / M-PACT",
+      "title": "Tokens of Motion: Primitive Motion Learning for Human-Humanoid Skill Transfer",
+      "arxiv_id": "2610.37330",
+      "version": "arXiv:2610.37330v1, 2026-10-27",
+      "submitted_on": "2026-10-27",
+      "read_on": "2026-10-28",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control"
+      ],
+      "classification_reason": "共享手部原语表示与上下文动作选择为主要贡献；轻量解码器负责机器人适配，不是全身关节跟踪器。",
+      "note_path": "papers/033-tokens-of-motion.md",
+      "reader_path": "tokens-of-motion.html",
+      "library_summary": "M-PACT 从三维手部轨迹学习 16 类平移、4 类开合和连续旋转原语；冻结字典、适配 2.74 万参数解码器。离线重建支持跨具身复用，但上下文预测仍是瓶颈，真机仅定性展示。",
+      "platform": "Unitree G1; EgoDex / HoloAssist / HumanoidEveryday; CLIP; hand-state primitives",
+      "evidence": "offline-and-qualitative-robot",
+      "tags": [
+        "M-PACT",
+        "EPMT",
+        "SkillSeg",
+        "CC-EPMT",
+        "motion-tokenization",
+        "human-to-robot",
+        "hand-motion",
+        "decoder-adaptation"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.37330v1",
+        "full_text": "https://arxiv.org/html/2610.37330v1",
+        "project": "https://iclr2027website.github.io/paper_demo_website/",
+        "demo_repository": "https://github.com/iclr2027website/paper_demo_website",
+        "pages": 12,
+        "sha256": "92a51e308fcd6d5b8128d05109f1c0f4ca4016db33922e19dc581f4305c84453",
+        "source_record": "assets/033-tokens-of-motion/source-record.json"
+      },
+      "figures_manifest": "assets/033-tokens-of-motion/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/033-tokens-of-motion/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "method",
+          "page": 4,
+          "path": "assets/033-tokens-of-motion/fig-02-method.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-10-28",
+        "value": "Verified public demonstration website source and video entries, not model training code, checkpoints or full dataset release"
+      },
+      "method": {
+        "translation_codes": 16,
+        "aperture_codes": 4,
+        "rotation_latent_dimensions": 3,
+        "resampling_points": 8,
+        "embedding_dimensions": 67,
+        "hand_state_dimensions": 10,
+        "decoder_input_dimensions": 77,
+        "decoder_output_dimensions": 7,
+        "decoder_parameters": 27399,
+        "segmentation_ensemble_size": 7,
+        "supervision": "net segment effect, not full within-segment trajectory",
+        "context": "frozen CLIP image/text features and hand state; training labels from frozen EPMT",
+        "adaptation": "frozen segmentation/encoders/codebooks; train target decoder on unpaired target demonstrations"
+      },
+      "evaluation": {
+        "EgoDex": {
+          "episodes": 27411,
+          "segments_approx": 2920000,
+          "test_segments": 292806,
+          "reconstruction_translation_cm": 2.658,
+          "reconstruction_rotation_deg": 0.931
+        },
+        "HoloAssist": {
+          "episodes": 35087,
+          "segments_approx": 800000,
+          "frozen_translation_cm": 3.123,
+          "frozen_rotation_deg": 2.732
+        },
+        "HumanoidEveryday": {
+          "episodes": 4064,
+          "segments": 96241,
+          "decoder_test_segments": 14754,
+          "predictor_test_segments": 28871,
+          "refitted_translation_cm_human_equivalent": 3.442,
+          "refitted_rotation_deg": 0.901,
+          "normalized_aperture_error": 1.388
+        },
+        "human_prediction": {
+          "state_top1_pct": 36.37,
+          "context_top1_pct": 40.42,
+          "context_rotation_deg": 20.28,
+          "seeds": 1
+        },
+        "robot_translation_classification": {
+          "frozen_human_top1_pct": 7.48,
+          "state_top1_pct": 30.64,
+          "text_state_top1_pct": 33.98,
+          "image_input": false,
+          "decoder_execution": false
+        },
+        "real_robot_quantitative_success_rate_reported": false,
+        "demo_entries_by_mode": [
+          10,
+          3,
+          7,
+          2
+        ],
+        "approximately_100_demo_claim": "abstract; detailed supporting curve unavailable in reviewed source"
+      },
+      "evidence_boundaries": [
+        "Hand/wrist manipulation primitives, not a whole-body joint tracker",
+        "Translation/aperture discrete; rotation continuous",
+        "Decoder reconstructs segment endpoint effects, not entire within-segment trajectories",
+        "Frozen representation reuse does not imply zero-shot contextual policy transfer",
+        "Robot prediction table measures translation labels only, without images or decoder execution",
+        "Robot translation errors use paper human-equivalent scaling",
+        "Real robot results are qualitative demonstrations, no trial-count success-rate comparison",
+        "Author demo webpage defaults to 4x playback and time-scales hand view to external view"
+      ]
     }
   ],
   "batches": [

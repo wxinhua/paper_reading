@@ -13,6 +13,7 @@ EVIDENCE = {
     'sim-and-real': '仿真与真机', 'simulation-only': '仅仿真',
     'real-robot': '真机实验', 'survey-no-new-experiment': '综述',
     'offline-motion-benchmarks': '人体运动离线评测',
+    'offline-and-qualitative-robot': '离线定量 · 真机定性展示',
 }
 STYLE = """
 :root{color-scheme:light dark;--bg:light-dark(#fafaf8,#171918);--fg:light-dark(#202520,#edf0ec);--sub:light-dark(#566157,#b3beb4);--rule:light-dark(#d7ded6,#374238);--link:light-dark(#285c40,#99cda5)}
