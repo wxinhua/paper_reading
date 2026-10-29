@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-28",
+  "updated_on": "2026-10-29",
   "papers": [
     {
       "id": "001",
@@ -4161,6 +4161,188 @@
         "Robot translation errors use paper human-equivalent scaling",
         "Real robot results are qualitative demonstrations, no trial-count success-rate comparison",
         "Author demo webpage defaults to 4x playback and time-scales hand view to external view"
+      ]
+    },
+    {
+      "id": "034",
+      "short_title": "Stochastic Motion Tokenization",
+      "title": "Whole-Body Humanoid Control via Stochastic Motion Tokenization",
+      "arxiv_id": "2610.36452",
+      "version": "arXiv:2610.36452v1, 2026-10-27",
+      "venue": "Humanoids 2026",
+      "submitted_on": "2026-10-27",
+      "read_on": "2026-10-29",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "motion-control",
+      "related_subcategories": [
+        "brain-models"
+      ],
+      "classification_reason": "主要研究随机 motion tokenizer 作为高层生成与物理全身跟踪之间的接口、未来 token 缓冲与 wildcard 行为切换。",
+      "note_path": "papers/034-stochastic-motion-tokenization.md",
+      "reader_path": "stochastic-motion-tokenization.html",
+      "library_summary": "DAPS 将 0.8 秒 G1 motion 编成 16 个 token，TrajectoryGPT 生成续写，PPO 直接读取 2.4 秒 token 缓冲。重建优于同容量 FSQ / VQ-VAE；真机完成约 35 秒行为切换，但使用离线生成动作库。",
+      "platform": "Unitree G1 29-DoF; JAX / XLA; MuJoCo; DAPS; TrajectoryGPT; PPO",
+      "evidence": "sim-and-real",
+      "tags": [
+        "DAPS",
+        "stochastic-tokenization",
+        "TrajectoryGPT",
+        "PPO",
+        "motion-generation",
+        "whole-body-tracking",
+        "wildcard",
+        "latent-lookahead"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.36452v1",
+        "full_text": "https://arxiv.org/html/2610.36452v1",
+        "institution": "https://www.ias.informatik.tu-darmstadt.de/Publications/BibTex?id=12053",
+        "related_prior_code": "https://github.com/mdrolet01/jadex/tree/daps-iclr2026",
+        "pages": 8,
+        "sha256": "2930d742e9bbca2f43121c016a04d015b0a93f4d06e504a01a63f6137a409a5a",
+        "source_record": "assets/034-stochastic-motion-tokenization/source-record.json"
+      },
+      "figures_manifest": "assets/034-stochastic-motion-tokenization/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/034-stochastic-motion-tokenization/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "generated-tracked-motions",
+          "page": 4,
+          "path": "assets/034-stochastic-motion-tokenization/fig-02-generated-tracked-motions.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "tokenizer-comparison",
+          "page": 5,
+          "path": "assets/034-stochastic-motion-tokenization/fig-04-tokenizer-comparison.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "temperature",
+          "page": 5,
+          "path": "assets/034-stochastic-motion-tokenization/fig-05-temperature.png"
+        },
+        {
+          "figure": "Figure 7",
+          "role": "wildcard-transition",
+          "page": 7,
+          "path": "assets/034-stochastic-motion-tokenization/fig-07-wildcard-transition.png"
+        },
+        {
+          "figure": "Figure 8",
+          "role": "hardware-tracking",
+          "page": 7,
+          "path": "assets/034-stochastic-motion-tokenization/fig-08-hardware-tracking.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-10-29",
+        "value": "Related DAPS ICLR 2026 code verified; README lists LAFAN as TODO release. Full three-stage humanoid pipeline and deployment checkpoints not verified as publicly released."
+      },
+      "method": {
+        "input": "already G1-retargeted LAFAN1 / BONES-SEED kinematics",
+        "sample_rate_Hz": 30,
+        "chunk_frames": 24,
+        "chunk_seconds": 0.8,
+        "frame_features": 162,
+        "qpos_dimensions": 36,
+        "site_features": 126,
+        "tokens_per_chunk": 16,
+        "vocab_size": 1024,
+        "nominal_bits_per_chunk": 160,
+        "tokenizer": "DAPS autoregressive stochastic discrete VAE adopted from prior work",
+        "tokenizer_updates": 250000,
+        "tokenizer_batch": 256,
+        "MC_samples": 16,
+        "ESS_target": 0.5,
+        "generation_layers": 12,
+        "generation_embedding": 384,
+        "history_chunks": 8,
+        "actor_buffer_chunks": 3,
+        "actor_total_context_seconds": 2.4,
+        "future_context_seconds": 1.6,
+        "PPO_envs": 2048,
+        "PPO_steps_reported": 2000000000,
+        "actor_inputs": [
+          "proprioception",
+          "within-chunk phase",
+          "current and two future latent chunks"
+        ],
+        "actor_action_parameterization": "not fully specified in reviewed text",
+        "hardware_control_Hz": 50,
+        "high_level_generation_online": false,
+        "DAPS_decoder_in_50Hz_loop": false,
+        "wildcard": "removes tracking reward during interval while regularization remains active"
+      },
+      "evaluation": {
+        "tokenizer_seeds": 5,
+        "qpos_MSE_units": "1e-3 raw qpos MSE",
+        "BONES_SEED_qpos_MSE": {
+          "DAPS": [
+            7.1,
+            0.3
+          ],
+          "FSQ": [
+            9.0,
+            0.4
+          ],
+          "VQ_VAE": [
+            11.5,
+            1.7
+          ]
+        },
+        "LAFAN1_qpos_MSE": {
+          "DAPS": [
+            14.4,
+            1.0
+          ],
+          "FSQ": [
+            19.0,
+            1.5
+          ],
+          "VQ_VAE": [
+            28.3,
+            3.0
+          ]
+        },
+        "temperature": {
+          "validation_segments": 5580000,
+          "T1_changed_token_pct": 74.8,
+          "T0_RMSE": 0.2476,
+          "T1_RMSE": 0.2488,
+          "T1_25_RMSE": 0.2512
+        },
+        "tracking_policies": [
+          "25 generated motions",
+          "3 base motions and 9 transition pairings",
+          "5 generated motions"
+        ],
+        "hardware_single_behavior_seconds": 16.8,
+        "stitch_total_seconds": 35.2,
+        "wildcard_seconds": 1.6,
+        "hardware_multi_trial_success_statistics_reported": false,
+        "held_out_latent_schedule_generalization_reported": false,
+        "downstream_control_tokenizer_ablation_reported": false
+      },
+      "evidence_boundaries": [
+        "DAPS is adopted from earlier work, not invented in this paper",
+        "Inputs are already G1-retargeted motions, not raw human video",
+        "Stage-1 matched-capacity comparison is not a downstream tracking ablation",
+        "Three PPO policies use distinct finite generated-motion banks",
+        "Hardware consumes offline precomputed tokens; no online TrajectoryGPT or DAPS decoder in 50 Hz loop",
+        "Wildcard removes reference tracking during interval but regularization remains",
+        "No held-out latent-schedule generalization or multi-trial hardware success statistics reported",
+        "Raw qpos MSE mixes configuration components and is not Cartesian MPJPE in meters",
+        "Text conditioning supported in formulation; hardware bank uses LAFAN1 label-conditioned generator",
+        "Actor action parameterization is not fully specified in reviewed paper"
       ]
     }
   ],

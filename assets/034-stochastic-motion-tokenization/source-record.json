@@ -1,0 +1,55 @@
+{
+  "paper_id": "034",
+  "title": "Whole-Body Humanoid Control via Stochastic Motion Tokenization",
+  "arxiv_id": "2610.36452",
+  "version": "arXiv:2610.36452v1, 2026-10-27",
+  "venue": "Humanoids 2026; acceptance reported by arXiv and author institution",
+  "read_on": "2026-10-29",
+  "source_document": "https://arxiv.org/abs/2610.36452v1",
+  "source_url": "https://arxiv.org/pdf/2610.36452v1",
+  "sha256": "2930d742e9bbca2f43121c016a04d015b0a93f4d06e504a01a63f6137a409a5a",
+  "pages": 8,
+  "bytes": 2512442,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2610.36452v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2610.36452v1"
+    },
+    {
+      "role": "institution_bibliography",
+      "url": "https://www.ias.informatik.tu-darmstadt.de/Publications/BibTex?id=12053"
+    },
+    {
+      "role": "related_prior_DAPS_project_not_this_paper",
+      "url": "https://www.drolet.io/daps/"
+    },
+    {
+      "role": "related_prior_DAPS_code_not_verified_full_humanoid_release",
+      "url": "https://github.com/mdrolet01/jadex/tree/daps-iclr2026"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-10-29",
+    "value": "Related DAPS ICLR 2026 code verified; README lists LAFAN as TODO release. Full three-stage humanoid pipeline and deployment checkpoints not verified as publicly released."
+  },
+  "related_readme_sha256": "27eaebb6e2259503f8866ff75ec7dcf0482bdbac14d84db2ee39f82aae668117",
+  "evidence_boundaries": [
+    "DAPS is adopted from earlier work, not invented in this paper",
+    "Inputs are already G1-retargeted motions, not raw human video",
+    "Stage-1 matched-capacity comparison is not a downstream tracking ablation",
+    "Three PPO policies use distinct finite generated-motion banks",
+    "Hardware consumes offline precomputed tokens; no online TrajectoryGPT or DAPS decoder in 50 Hz loop",
+    "Wildcard removes reference tracking during interval but regularization remains",
+    "No held-out latent-schedule generalization or multi-trial hardware success statistics reported",
+    "Raw qpos MSE mixes configuration components and is not Cartesian MPJPE in meters",
+    "Text conditioning supported in formulation; hardware bank uses LAFAN1 label-conditioned generator",
+    "Actor action parameterization is not fully specified in reviewed paper"
+  ],
+  "author_code_executed": false,
+  "weights_or_full_dataset_downloaded": false
+}

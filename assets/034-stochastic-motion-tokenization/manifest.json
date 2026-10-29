@@ -1,0 +1,215 @@
+{
+  "paper_id": "034",
+  "title": "Whole-Body Humanoid Control via Stochastic Motion Tokenization",
+  "source_document": "https://arxiv.org/abs/2610.36452v1",
+  "source_url": "https://arxiv.org/pdf/2610.36452v1",
+  "source_version": "arXiv:2610.36452v1, 2026-10-27",
+  "source_sha256": "2930d742e9bbca2f43121c016a04d015b0a93f4d06e504a01a63f6137a409a5a",
+  "source_pages": 8,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-29",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.505,
+        0.18,
+        0.918,
+        0.322
+      ],
+      "crop_pdf_points": [
+        309.06,
+        142.56,
+        561.816,
+        255.024
+      ],
+      "crop_pixels": [
+        858,
+        396,
+        1561,
+        708
+      ],
+      "dpi": 200,
+      "size_px": [
+        703,
+        312
+      ],
+      "sha256": "23451df8bb20e8feb4594772df1696d2c003e72d1396c282612045dfcc770f9a",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "generated-tracked-motions",
+      "pdf_page": 4,
+      "file": "fig-02-generated-tracked-motions.png",
+      "crop_normalized": [
+        0.08,
+        0.06,
+        0.92,
+        0.338
+      ],
+      "crop_pdf_points": [
+        48.96,
+        47.519999999999996,
+        563.0400000000001,
+        267.696
+      ],
+      "crop_pixels": [
+        136,
+        132,
+        1564,
+        744
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        612
+      ],
+      "sha256": "61339e3c679348b84dbe5070f92ce6f533051a92a019f37c660cbad786d487a4",
+      "original_caption_source": "Figure 2, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "tokenizer-comparison",
+      "pdf_page": 5,
+      "file": "fig-04-tokenizer-comparison.png",
+      "crop_normalized": [
+        0.08,
+        0.382,
+        0.495,
+        0.584
+      ],
+      "crop_pdf_points": [
+        48.96,
+        302.544,
+        302.94,
+        462.52799999999996
+      ],
+      "crop_pixels": [
+        136,
+        840,
+        842,
+        1285
+      ],
+      "dpi": 200,
+      "size_px": [
+        706,
+        445
+      ],
+      "sha256": "91fe876285ee0ccb366305b53889a50313daa89b599e203c84c5c2b558b25310",
+      "original_caption_source": "Figure 4, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "temperature",
+      "pdf_page": 5,
+      "file": "fig-05-temperature.png",
+      "crop_normalized": [
+        0.505,
+        0.382,
+        0.92,
+        0.594
+      ],
+      "crop_pdf_points": [
+        309.06,
+        302.544,
+        563.0400000000001,
+        470.448
+      ],
+      "crop_pixels": [
+        858,
+        840,
+        1564,
+        1307
+      ],
+      "dpi": 200,
+      "size_px": [
+        706,
+        467
+      ],
+      "sha256": "2e0296cdd3b974b7944305efd00c4237fe99c189fbd1fe5283125ee11d5b4623",
+      "original_caption_source": "Figure 5, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    },
+    {
+      "figure": "Figure 7",
+      "role": "wildcard-transition",
+      "pdf_page": 7,
+      "file": "fig-07-wildcard-transition.png",
+      "crop_normalized": [
+        0.08,
+        0.058,
+        0.92,
+        0.215
+      ],
+      "crop_pdf_points": [
+        48.96,
+        45.936,
+        563.0400000000001,
+        170.28
+      ],
+      "crop_pixels": [
+        136,
+        128,
+        1564,
+        473
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        345
+      ],
+      "sha256": "2b496e4675ebfd794c75a87f290399473084f7b85a9e5cac4d7657640447e414",
+      "original_caption_source": "Figure 7, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    },
+    {
+      "figure": "Figure 8",
+      "role": "hardware-tracking",
+      "pdf_page": 7,
+      "file": "fig-08-hardware-tracking.png",
+      "crop_normalized": [
+        0.08,
+        0.226,
+        0.92,
+        0.487
+      ],
+      "crop_pdf_points": [
+        48.96,
+        178.99200000000002,
+        563.0400000000001,
+        385.704
+      ],
+      "crop_pixels": [
+        136,
+        497,
+        1564,
+        1071
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        574
+      ],
+      "sha256": "1fc137b7e89e3928faadc20043dff7fc9427a1a9044777c2ccd743012b5c0c76",
+      "original_caption_source": "Figure 8, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-10-29"
+    }
+  ]
+}
