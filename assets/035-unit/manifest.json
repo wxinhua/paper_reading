@@ -1,0 +1,215 @@
+{
+  "paper_id": "035",
+  "title": "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
+  "source_document": "https://arxiv.org/abs/2604.19734v2",
+  "source_url": "https://arxiv.org/pdf/2604.19734v2",
+  "source_version": "arXiv:2604.19734v2, 2026-10-11",
+  "source_sha256": "6546d4f8dc930da6b654fc38fdbd37a9eaf9f274d5d6e3d9d5a5814ff04d3dc6",
+  "source_pages": 21,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-10-30",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.165,
+        0.329,
+        0.835,
+        0.765
+      ],
+      "crop_pdf_points": [
+        100.98,
+        260.568,
+        511.02,
+        605.88
+      ],
+      "crop_pixels": [
+        280,
+        724,
+        1420,
+        1683
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        959
+      ],
+      "sha256": "254aed5cac0d1b09953a4b107ab6109d997aa403aa2f54c417b0fb093c896b01",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "tokenizer",
+      "pdf_page": 5,
+      "file": "fig-03-tokenizer.png",
+      "crop_normalized": [
+        0.165,
+        0.088,
+        0.835,
+        0.385
+      ],
+      "crop_pdf_points": [
+        100.98,
+        69.696,
+        511.02,
+        304.92
+      ],
+      "crop_pixels": [
+        280,
+        194,
+        1420,
+        847
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        653
+      ],
+      "sha256": "ee1976fdb5bebf37a55f40a42e49ad6fb8f042323126f85b6b90a6934060c0d9",
+      "original_caption_source": "Figure 3, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "vla-world-model",
+      "pdf_page": 6,
+      "file": "fig-04-vla-world-model.png",
+      "crop_normalized": [
+        0.165,
+        0.088,
+        0.835,
+        0.342
+      ],
+      "crop_pdf_points": [
+        100.98,
+        69.696,
+        511.02,
+        270.86400000000003
+      ],
+      "crop_pixels": [
+        280,
+        194,
+        1420,
+        752
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        558
+      ],
+      "sha256": "c72b23ceaa7e8312acad13b65e2d7212c8da6a0461f5840bd1f133d59d07a7ec",
+      "original_caption_source": "Figure 4, PDF page 6; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    },
+    {
+      "figure": "Figure 11",
+      "role": "real-world-results",
+      "pdf_page": 13,
+      "file": "fig-11-real-world-results.png",
+      "crop_normalized": [
+        0.165,
+        0.09,
+        0.835,
+        0.267
+      ],
+      "crop_pdf_points": [
+        100.98,
+        71.28,
+        511.02,
+        211.464
+      ],
+      "crop_pixels": [
+        280,
+        198,
+        1420,
+        587
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        389
+      ],
+      "sha256": "05a93babab04c420a295e9220b57e1e17223c70745fb27a68285c16ee70d4f1e",
+      "original_caption_source": "Figure 11, PDF page 13; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    },
+    {
+      "figure": "Figure 12",
+      "role": "zero-shot-stacking",
+      "pdf_page": 14,
+      "file": "fig-12-zero-shot-stacking.png",
+      "crop_normalized": [
+        0.165,
+        0.09,
+        0.835,
+        0.333
+      ],
+      "crop_pdf_points": [
+        100.98,
+        71.28,
+        511.02,
+        263.736
+      ],
+      "crop_pixels": [
+        280,
+        198,
+        1420,
+        733
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        535
+      ],
+      "sha256": "28c4ace621d4ac6cb4320b81130a570c4f21c630bd324a515af6c944dd7e5c96",
+      "original_caption_source": "Figure 12, PDF page 14; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    },
+    {
+      "figure": "Figure 15",
+      "role": "ablation",
+      "pdf_page": 17,
+      "file": "fig-15-ablation.png",
+      "crop_normalized": [
+        0.165,
+        0.615,
+        0.835,
+        0.802
+      ],
+      "crop_pdf_points": [
+        100.98,
+        487.08,
+        511.02,
+        635.1840000000001
+      ],
+      "crop_pixels": [
+        280,
+        1353,
+        1420,
+        1764
+      ],
+      "dpi": 200,
+      "size_px": [
+        1140,
+        411
+      ],
+      "sha256": "040a53b93a5048e725d3f0117d4f0d52b2e320c1e7b9a8aedc6a29bd7fff78b9",
+      "original_caption_source": "Figure 15, PDF page 17; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-10-30"
+    }
+  ]
+}

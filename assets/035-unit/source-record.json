@@ -1,0 +1,55 @@
+{
+  "paper_id": "035",
+  "title": "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
+  "arxiv_id": "2604.19734",
+  "version": "arXiv:2604.19734v2, 2026-10-11",
+  "first_submitted_on": "2026-04-21",
+  "version_note": "arXiv reports v2 adds ancillary citation file; manuscript unchanged",
+  "read_on": "2026-10-30",
+  "source_document": "https://arxiv.org/abs/2604.19734v2",
+  "source_url": "https://arxiv.org/pdf/2604.19734v2",
+  "sha256": "6546d4f8dc930da6b654fc38fdbd37a9eaf9f274d5d6e3d9d5a5814ff04d3dc6",
+  "pages": 21,
+  "bytes": 7399110,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2604.19734v2"
+    },
+    {
+      "role": "project",
+      "url": "https://xpeng-robotics.github.io/unit/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/xpeng-robotics/UniT"
+    },
+    {
+      "role": "weights",
+      "url": "https://huggingface.co/xpeng-robotics/VLA-UniT-checkpoints"
+    }
+  ],
+  "code_commit": "800c0a428d431964dad4e7adc9c667d639432249",
+  "weights_repository_commit": "64029aff5548ee1ebc37c44c8990320ca98fa87f",
+  "release_status": {
+    "checked_on": "2026-10-30",
+    "value": "Data preparation, tokenizer and VLA training/GR1 evaluation available; 3B few-shot/full-data model and tokenizer safetensors listed on Hugging Face. WM-UniT and real-world deployment stack pending."
+  },
+  "evidence_boundaries": [
+    "Main experiments use paired visual/action demonstrations, not arbitrary unannotated internet video",
+    "VLA action expert conditions on shared visual-language context and proprioception, not argmax token IDs",
+    "WM uses continuous pre-quantization action-branch features",
+    "WM cross-embodiment video generation is not real robot action execution",
+    "Real robot experiments use proprietary pretraining data; w/o human labels do not establish no human data in full training history",
+    "Figure 11 UniT w/o human combinatorial result is 20 percent; prose says 10 percent",
+    "Few-shot articulated performance drops from 56.7 to 51.7 percent after human co-training",
+    "Zero-shot stacking is 6/10 and absent only from robot demonstrations, present in human demonstrations",
+    "t-SNE overlap is supporting visualization, not proof of embodiment invariance",
+    "WM and VLA are separately evaluated; integrated planning/RL is future work",
+    "DROID FVD slightly worse than raw action",
+    "Real-world deployment stack and WM code not yet released"
+  ],
+  "author_code_executed": false,
+  "weights_or_full_dataset_downloaded": false
+}

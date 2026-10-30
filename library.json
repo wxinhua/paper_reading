@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-29",
+  "updated_on": "2026-10-30",
   "papers": [
     {
       "id": "001",
@@ -4343,6 +4343,205 @@
         "Raw qpos MSE mixes configuration components and is not Cartesian MPJPE in meters",
         "Text conditioning supported in formulation; hardware bank uses LAFAN1 label-conditioned generator",
         "Actor action parameterization is not fully specified in reviewed paper"
+      ]
+    },
+    {
+      "id": "035",
+      "short_title": "UniT",
+      "title": "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
+      "arxiv_id": "2604.19734",
+      "version": "arXiv:2604.19734v2, 2026-10-11",
+      "submitted_on": "2026-04-21",
+      "read_on": "2026-10-30",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [],
+      "classification_reason": "主要贡献为视觉锚定的人机共享动作表示及其在 VLA、动作条件世界模型中的迁移，不是新的全身步行稳定控制器。",
+      "note_path": "papers/035-unit.md",
+      "reader_path": "unit.html",
+      "library_summary": "视觉、动作、融合三分支通过共享残差量化与交叉重建对齐。VLA 以 token 监督共享上下文，再由 flow expert 生成动作；WM 使用量化前连续动作特征。GR1 成功率 66.7%，人类叠碗迁移真机 6/10。",
+      "platform": "RoboCasa GR1; IRON-R01-1.11; EgoDex; DROID; Qwen2.5-VL; Cosmos Predict 2.5",
+      "evidence": "sim-and-real",
+      "tags": [
+        "human-to-humanoid",
+        "visual-anchoring",
+        "cross-reconstruction",
+        "RQ-VAE",
+        "VLA",
+        "world-model",
+        "EgoDex",
+        "GR1",
+        "IRON"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2604.19734v2",
+        "project": "https://xpeng-robotics.github.io/unit/",
+        "code": "https://github.com/xpeng-robotics/UniT",
+        "weights": "https://huggingface.co/xpeng-robotics/VLA-UniT-checkpoints",
+        "pages": 21,
+        "sha256": "6546d4f8dc930da6b654fc38fdbd37a9eaf9f274d5d6e3d9d5a5814ff04d3dc6",
+        "source_record": "assets/035-unit/source-record.json"
+      },
+      "figures_manifest": "assets/035-unit/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/035-unit/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "tokenizer",
+          "page": 5,
+          "path": "assets/035-unit/fig-03-tokenizer.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "vla-world-model",
+          "page": 6,
+          "path": "assets/035-unit/fig-04-vla-world-model.png"
+        },
+        {
+          "figure": "Figure 11",
+          "role": "real-world-results",
+          "page": 13,
+          "path": "assets/035-unit/fig-11-real-world-results.png"
+        },
+        {
+          "figure": "Figure 12",
+          "role": "zero-shot-stacking",
+          "page": 14,
+          "path": "assets/035-unit/fig-12-zero-shot-stacking.png"
+        },
+        {
+          "figure": "Figure 15",
+          "role": "ablation",
+          "page": 17,
+          "path": "assets/035-unit/fig-15-ablation.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-10-30",
+        "value": "Data preparation, tokenizer and VLA training/GR1 evaluation available; 3B few-shot/full-data model and tokenizer safetensors listed on Hugging Face. WM-UniT and real-world deployment stack pending."
+      },
+      "method": {
+        "tokenizer_branches": [
+          "vision",
+          "action",
+          "fusion"
+        ],
+        "visual_backbone": "frozen DINOv2",
+        "quantization": "shared RQ-VAE",
+        "training": "each branch reconstructs future DINO features and embodiment-specific action chunk",
+        "VLA_token_target": "fusion branch, frozen pretrained tokenizer",
+        "VLA_action_expert_input": "vision-language context, current image encoding, current state and embodiment ID in public implementation",
+        "VLA_hard_code_to_action_decoder": false,
+        "WM_input": "current image and continuous pre-quantization state/action branch features",
+        "WM_backbone": "Cosmos Predict 2.5",
+        "official_code_defaults": {
+          "action_horizon": 16,
+          "padded_action_state_dimension": 128,
+          "latent_queries": 8,
+          "RQ_levels": 2,
+          "codebook_size_per_level": 128,
+          "code_embedding_dimension": 32,
+          "nominal_code_bits": 112,
+          "flow_inference_steps": 4,
+          "VLM": "Qwen2.5-VL-3B-Instruct",
+          "tokenizer_updates": 80000,
+          "full_data_VLA_updates": 160000,
+          "fewshot_mixed_updates": 20000,
+          "fewshot_robot_finetune_updates": 20000
+        }
+      },
+      "evaluation": {
+        "GR1_tasks": 24,
+        "episodes_per_task": 50,
+        "robot_full_trajectories": 24000,
+        "robot_fewshot_trajectories": 2400,
+        "egodex_PnP_trajectories": 27419,
+        "GR1_full_success_pct": 66.7,
+        "FLARE_full_pct": 55.0,
+        "GR00T_Qwen25_full_pct": 47.8,
+        "GR1_fewshot_success_pct": 45.5,
+        "GR1_fewshot_human_success_pct": 50.0,
+        "fewshot_articulated_pct": [
+          56.7,
+          51.7
+        ],
+        "fewshot_OOD_pct": [
+          34.7,
+          38.5
+        ],
+        "full_human_ablation_OOD_pct": {
+          "action_only": 42.1,
+          "vision_only": 45.2,
+          "no_cross_recon": 30.3,
+          "UniT": 49.9
+        },
+        "real_robot_action_dimensions": 50,
+        "real_task_demos_each": 120,
+        "real_pretraining_reported": {
+          "proprietary_robot_trajectories": 32000,
+          "human_trajectories": 30000
+        },
+        "real_PnP_success_pct": [
+          30,
+          70,
+          78
+        ],
+        "real_pouring_success_pct": [
+          5,
+          35,
+          75
+        ],
+        "stacking_successes": 6,
+        "stacking_trials": 10,
+        "real_combinatorial_figure11_UniT_pct": [
+          20,
+          70
+        ],
+        "real_combinatorial_prose_UniT_pct": [
+          10,
+          70
+        ],
+        "WM_rollout_steps": 10,
+        "WM_video_seconds": 10,
+        "WM_EPE_definition": "optical flow endpoint error",
+        "DROID_EPE_raw_UniT": [
+          0.2662,
+          0.2588
+        ],
+        "DROID_FVD_raw_UniT": [
+          76.38,
+          76.44
+        ],
+        "WM_cotraining_GR1_EPE_raw_UniT": [
+          0.558,
+          0.453
+        ],
+        "WM_human_pretrain_EPE_without_with": [
+          0.478,
+          0.446
+        ],
+        "MLLM_judge": "Gemini-3-Pro, 1-5 semantic/temporal/geometric scores, not robot success"
+      },
+      "evidence_boundaries": [
+        "Main experiments use paired visual/action demonstrations, not arbitrary unannotated internet video",
+        "VLA action expert conditions on shared visual-language context and proprioception, not argmax token IDs",
+        "WM uses continuous pre-quantization action-branch features",
+        "WM cross-embodiment video generation is not real robot action execution",
+        "Real robot experiments use proprietary pretraining data; w/o human labels do not establish no human data in full training history",
+        "Figure 11 UniT w/o human combinatorial result is 20 percent; prose says 10 percent",
+        "Few-shot articulated performance drops from 56.7 to 51.7 percent after human co-training",
+        "Zero-shot stacking is 6/10 and absent only from robot demonstrations, present in human demonstrations",
+        "t-SNE overlap is supporting visualization, not proof of embodiment invariance",
+        "WM and VLA are separately evaluated; integrated planning/RL is future work",
+        "DROID FVD slightly worse than raw action",
+        "Real-world deployment stack and WM code not yet released"
       ]
     }
   ],
