@@ -1,0 +1,49 @@
+{
+  "paper_id": "036",
+  "title": "Perceptive Humanoid Motion from Simulation",
+  "system": "HALO",
+  "arxiv_id": "2611.06908",
+  "version": "arXiv:2611.06908v1, 2026-11-04",
+  "read_on": "2026-11-06",
+  "source_document": "https://arxiv.org/abs/2611.06908v1",
+  "source_url": "https://arxiv.org/pdf/2611.06908v1",
+  "sha256": "a69ab2fcdaaf407b2ccc01a99ec6575e1bcdba525423c475e5f14c86449e4d33",
+  "pages": 20,
+  "bytes": 15576858,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.06908v1"
+    },
+    {
+      "role": "project",
+      "url": "https://apple-aiml-research.github.io/ml-halo/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/apple-aiml-research/ml-halo"
+    }
+  ],
+  "code_commit": "35d8334e9f7dc3e2b7a7737a9a3ec34f170c809f",
+  "release_status": {
+    "checked_on": "2026-11-06",
+    "value": "Official data-generation, generator, tracker, orchestrator and system code available. No trained HALO generator/tracker weights or complete datasets ship. Released data generation covers sit-on-chair; other skills require additional data. Multi-task example defaults differ from paper."
+  },
+  "evidence_boundaries": [
+    "No per-episode human teleoperation does not mean no human motion sources: G1 logs, phone video keyframes via GVHMR/GMR, recorded push and retargeted LAFAN1 are used",
+    "Kinematic reference rendering and geometric filtering do not guarantee physically valid data; SIT retains best chains after bounded retries even if checks fail",
+    "Zero-shot transfer excludes target-environment training/scans but hardware system identification uses real robot measurements",
+    "Only six skill datasets and ten fixed corpus instructions; free-form requests are mapped by a pretrained orchestrator to a finite skill set",
+    "91 percent real success is 360 single-task trials across six environments; multi-task is 70 percent over 30 trials in one real environment",
+    "All reported stage-wise ablations evaluate SIT in simulation",
+    "Regression comparison also loses the current RTC mechanism",
+    "1000 training rooms is a headline count; DOOR uses 966 multi-room scenes",
+    "No trained generator or tracker checkpoints or complete dataset ship with official repository",
+    "Released datagen focuses on SIT; other task training data and push object trajectories missing",
+    "Released multi-task demo uses proprio tracker and 0.4 second generation interval, not a verified full paper evaluation recipe",
+    "Frozen vs fine-tuned VLM observations in Appendix G are not systematic quantitative ablations"
+  ],
+  "author_code_executed": false,
+  "weights_or_full_dataset_downloaded": false
+}

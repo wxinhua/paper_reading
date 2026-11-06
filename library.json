@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-10-30",
+  "updated_on": "2026-11-06",
   "papers": [
     {
       "id": "001",
@@ -4542,6 +4542,247 @@
         "WM and VLA are separately evaluated; integrated planning/RL is future work",
         "DROID FVD slightly worse than raw action",
         "Real-world deployment stack and WM code not yet released"
+      ]
+    },
+    {
+      "id": "036",
+      "short_title": "HALO",
+      "title": "Perceptive Humanoid Motion from Simulation",
+      "arxiv_id": "2611.06908",
+      "version": "arXiv:2611.06908v1, 2026-11-04",
+      "submitted_on": "2026-11-04",
+      "read_on": "2026-11-06",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "主要研究从视觉语言到全身运动的机载自主系统，合成数据、异步运动生成与感知 tracker 构成完整方法；关联运控与数据方向。",
+      "note_path": "papers/036-halo.md",
+      "reader_path": "halo.html",
+      "library_summary": "在千个程序生成环境合成视觉—语言—运动数据；Qwen＋DiT 在线规划 5 秒动作，固定前缀维持接续，深度 tracker 50 Hz 执行。六个新真实环境单技能 360 次约 91%，单环境多任务 30 次为 70%；代码公开但训练权重与完整数据未随库发布。",
+      "platform": "Unitree G1 29-DoF; Infinigen; Kimodo; Qwen3.5-2B; Qwen3.6-35B-A3B; Mac mini M4 Pro; Jetson Orin NX; Isaac Lab; MuJoCo",
+      "evidence": "sim-and-real",
+      "tags": [
+        "HALO",
+        "simulation-data",
+        "vision-language-motion",
+        "Kimodo",
+        "Infinigen",
+        "flow-matching",
+        "training-time-chunking",
+        "depth-tracking",
+        "multi-critic-PPO",
+        "onboard-autonomy"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.06908v1",
+        "project": "https://apple-aiml-research.github.io/ml-halo/",
+        "code": "https://github.com/apple-aiml-research/ml-halo",
+        "pages": 20,
+        "sha256": "a69ab2fcdaaf407b2ccc01a99ec6575e1bcdba525423c475e5f14c86449e4d33",
+        "source_record": "assets/036-halo/source-record.json"
+      },
+      "figures_manifest": "assets/036-halo/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "real-world-overview",
+          "page": 1,
+          "path": "assets/036-halo/fig-01-real-world-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "onboard-stack",
+          "page": 2,
+          "path": "assets/036-halo/fig-02-onboard-stack.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "data-training-pipeline",
+          "page": 5,
+          "path": "assets/036-halo/fig-03-data-training-pipeline.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "skill-motion-sources",
+          "page": 11,
+          "path": "assets/036-halo/fig-05-skill-motion-sources.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "perceptive-tracker",
+          "page": 13,
+          "path": "assets/036-halo/fig-06-perceptive-tracker.png"
+        },
+        {
+          "figure": "Figure 8",
+          "role": "hardware",
+          "page": 17,
+          "path": "assets/036-halo/fig-08-hardware.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-06",
+        "value": "Official data-generation, generator, tracker, orchestrator and system code available. No trained HALO generator/tracker weights or complete datasets ship. Released data generation covers sit-on-chair; other skills require additional data. Multi-task example defaults differ from paper."
+      },
+      "method": {
+        "data_episodes": 162698,
+        "data_hours": 296.3,
+        "fixed_corpus_instructions": 10,
+        "training_rooms_headline": 1000,
+        "held_out_rooms": 178,
+        "door_multroom_scenes": 966,
+        "offline_motion_source": "Kimodo constrained generation plus authored / recorded motion seeds",
+        "VLM_encoder": "Qwen3.5-2B frozen",
+        "generator_trainable_params": 49300000,
+        "DiT_blocks_width_heads": [
+          8,
+          512,
+          8
+        ],
+        "motion_frames": 150,
+        "motion_Hz": 30,
+        "motion_seconds": 5,
+        "frame_dimension": 36,
+        "joint_dimension": 29,
+        "prefix_frames": 15,
+        "prefix_seconds": 0.5,
+        "generated_suffix_frames": 135,
+        "Euler_steps": 15,
+        "generator_Hz": 3,
+        "tracker_Hz": 50,
+        "tracker_output": "29 joint position targets through scaled action and PD",
+        "tracker_phases": [
+          "privileged PPO experts by skill family",
+          "20 percent teacher / 80 percent student DAgger distillation",
+          "shared actor, per-family critic PPO finetuning"
+        ],
+        "depth_size": [
+          48,
+          84
+        ],
+        "tracker_history_steps": 30,
+        "deploy_short_reference_frames": 5,
+        "orchestrator": "Qwen3.6-35B-A3B 4-bit MLX; optional cloud",
+        "orchestrator_Hz": 0.5,
+        "generator_latency_ms_alone_coserved": [
+          152,
+          155
+        ],
+        "orchestrator_latency_s_alone_coserved": [
+          0.72,
+          1.46
+        ]
+      },
+      "evaluation": {
+        "single_task_sim_envs": 100,
+        "single_task_real_envs": 6,
+        "trials_per_task_per_env": 10,
+        "single_task_sim_trials": 6000,
+        "single_task_real_trials": 360,
+        "single_task_mean_sim_real_pct": [
+          91,
+          91
+        ],
+        "single_tasks": {
+          "GO_TO": [
+            98,
+            92
+          ],
+          "SIT": [
+            84,
+            85
+          ],
+          "DOOR": [
+            91,
+            93
+          ],
+          "CROUCH": [
+            95,
+            100
+          ],
+          "CRAWL": [
+            84,
+            90
+          ],
+          "PUSH": [
+            93,
+            88
+          ]
+        },
+        "multi_task_sim_envs": 50,
+        "multi_task_real_envs": 1,
+        "multi_task_sim_trials": 1500,
+        "multi_task_real_trials": 30,
+        "multi_task_mean_sim_real_pct": [
+          69,
+          70
+        ],
+        "multi_tasks": {
+          "DOOR_GO_TO": [
+            71,
+            100
+          ],
+          "CROUCH_SIT": [
+            73,
+            60
+          ],
+          "CROUCH_GO_TO_PUSH": [
+            64,
+            50
+          ]
+        },
+        "SIT_ablation": {
+          "sim_envs": 100,
+          "trials_per_env": 10,
+          "scenes_1_10_100_1000_pct": [
+            43,
+            64,
+            81,
+            84
+          ],
+          "no_inference_training_RTC_pct": [
+            24,
+            66,
+            84
+          ],
+          "regression_flow_pct": [
+            19,
+            84
+          ],
+          "no_depth_depth_pct": [
+            74,
+            84
+          ]
+        },
+        "compute": {
+          "synthesis_H100": 250,
+          "synthesis_hours_reported": 48,
+          "generator_B200": 64,
+          "generator_epochs": 50,
+          "generator_samples": 31000000,
+          "global_batch": 5120,
+          "tracker_final_H100": 4,
+          "tracker_final_envs": 16384
+        }
+      },
+      "evidence_boundaries": [
+        "No per-episode human teleoperation does not mean no human motion sources: G1 logs, phone video keyframes via GVHMR/GMR, recorded push and retargeted LAFAN1 are used",
+        "Kinematic reference rendering and geometric filtering do not guarantee physically valid data; SIT retains best chains after bounded retries even if checks fail",
+        "Zero-shot transfer excludes target-environment training/scans but hardware system identification uses real robot measurements",
+        "Only six skill datasets and ten fixed corpus instructions; free-form requests are mapped by a pretrained orchestrator to a finite skill set",
+        "91 percent real success is 360 single-task trials across six environments; multi-task is 70 percent over 30 trials in one real environment",
+        "All reported stage-wise ablations evaluate SIT in simulation",
+        "Regression comparison also loses the current RTC mechanism",
+        "1000 training rooms is a headline count; DOOR uses 966 multi-room scenes",
+        "No trained generator or tracker checkpoints or complete dataset ship with official repository",
+        "Released datagen focuses on SIT; other task training data and push object trajectories missing",
+        "Released multi-task demo uses proprio tracker and 0.4 second generation interval, not a verified full paper evaluation recipe",
+        "Frozen vs fine-tuned VLM observations in Appendix G are not systematic quantitative ablations"
       ]
     }
   ],

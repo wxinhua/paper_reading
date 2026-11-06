@@ -1,0 +1,215 @@
+{
+  "paper_id": "036",
+  "title": "Perceptive Humanoid Motion from Simulation",
+  "source_document": "https://arxiv.org/abs/2611.06908v1",
+  "source_url": "https://arxiv.org/pdf/2611.06908v1",
+  "source_version": "arXiv:2611.06908v1, 2026-11-04",
+  "source_sha256": "a69ab2fcdaaf407b2ccc01a99ec6575e1bcdba525423c475e5f14c86449e4d33",
+  "source_pages": 20,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-06",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "real-world-overview",
+      "pdf_page": 1,
+      "file": "fig-01-real-world-overview.png",
+      "crop_normalized": [
+        0.08,
+        0.22,
+        0.92,
+        0.642
+      ],
+      "crop_pdf_points": [
+        48.96,
+        174.24,
+        563.0400000000001,
+        508.464
+      ],
+      "crop_pixels": [
+        136,
+        484,
+        1564,
+        1412
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        928
+      ],
+      "sha256": "0a2a0b739c0898f7861019d3377229f64d0f63a3a2c1b9521376d583968a6917",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "onboard-stack",
+      "pdf_page": 2,
+      "file": "fig-02-onboard-stack.png",
+      "crop_normalized": [
+        0.08,
+        0.05,
+        0.92,
+        0.47
+      ],
+      "crop_pdf_points": [
+        48.96,
+        39.6,
+        563.0400000000001,
+        372.23999999999995
+      ],
+      "crop_pixels": [
+        136,
+        110,
+        1564,
+        1034
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        924
+      ],
+      "sha256": "ca53faee2353e164fa7139baa51238fe55187888b96989f0e9adf188a25ea462",
+      "original_caption_source": "Figure 2, PDF page 2; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "data-training-pipeline",
+      "pdf_page": 5,
+      "file": "fig-03-data-training-pipeline.png",
+      "crop_normalized": [
+        0.08,
+        0.05,
+        0.92,
+        0.501
+      ],
+      "crop_pdf_points": [
+        48.96,
+        39.6,
+        563.0400000000001,
+        396.792
+      ],
+      "crop_pixels": [
+        136,
+        110,
+        1564,
+        1102
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        992
+      ],
+      "sha256": "2790f69dce72caff87d2cecb7b121a3cf86e1c5823fab1b0cfbf80d00982bafa",
+      "original_caption_source": "Figure 3, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "skill-motion-sources",
+      "pdf_page": 11,
+      "file": "fig-05-skill-motion-sources.png",
+      "crop_normalized": [
+        0.08,
+        0.468,
+        0.92,
+        0.752
+      ],
+      "crop_pdf_points": [
+        48.96,
+        370.656,
+        563.0400000000001,
+        595.584
+      ],
+      "crop_pixels": [
+        136,
+        1030,
+        1564,
+        1654
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        624
+      ],
+      "sha256": "cd7151bb380b3e1ad3f34348240e1513e7403a4bab9de086c4bfb8b6100f65e3",
+      "original_caption_source": "Figure 5, PDF page 11; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "perceptive-tracker",
+      "pdf_page": 13,
+      "file": "fig-06-perceptive-tracker.png",
+      "crop_normalized": [
+        0.08,
+        0.05,
+        0.92,
+        0.38
+      ],
+      "crop_pdf_points": [
+        48.96,
+        39.6,
+        563.0400000000001,
+        300.96
+      ],
+      "crop_pixels": [
+        136,
+        110,
+        1564,
+        836
+      ],
+      "dpi": 200,
+      "size_px": [
+        1428,
+        726
+      ],
+      "sha256": "55643c15d9475a88e3cb76630c226589449c74df6c8e047dc5ee8310fd071de7",
+      "original_caption_source": "Figure 6, PDF page 13; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    },
+    {
+      "figure": "Figure 8",
+      "role": "hardware",
+      "pdf_page": 17,
+      "file": "fig-08-hardware.png",
+      "crop_normalized": [
+        0.08,
+        0.055,
+        0.495,
+        0.641
+      ],
+      "crop_pdf_points": [
+        48.96,
+        43.56,
+        302.94,
+        507.672
+      ],
+      "crop_pixels": [
+        136,
+        121,
+        842,
+        1410
+      ],
+      "dpi": 200,
+      "size_px": [
+        706,
+        1289
+      ],
+      "sha256": "21bf92cb225737e2c5a92cae32ea7dc4093d1189f25d0429e95361e4f7e6cc1e",
+      "original_caption_source": "Figure 8, PDF page 17; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption visually checked against rendered PDF on 2026-11-06"
+    }
+  ]
+}
