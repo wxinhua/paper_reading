@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-11-06",
+  "updated_on": "2026-11-10",
   "papers": [
     {
       "id": "001",
@@ -4783,6 +4783,180 @@
         "Released datagen focuses on SIT; other task training data and push object trajectories missing",
         "Released multi-task demo uses proprio tracker and 0.4 second generation interval, not a verified full paper evaluation recipe",
         "Frozen vs fine-tuned VLM observations in Appendix G are not systematic quantitative ablations"
+      ]
+    },
+    {
+      "id": "037",
+      "short_title": "GR00T 2 · 全身移动操作",
+      "title": "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+      "version": "November 2026 whitepaper; snapshot 2026-11-10",
+      "submitted_on": "2026-11",
+      "read_on": "2026-11-10",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "重点是 Turbo 世界—动作模型到 SONIC 的任务策略、机载部署及动作中心仿真扩增。",
+      "note_path": "papers/037-gr00t2.md",
+      "reader_path": "gr00t2.html",
+      "library_summary": "全身专题：Turbo 联合预测视频和 1.6 秒 SONIC latent，1 Hz 规划、50 Hz 执行。四项真机任务等权 80.8%，复杂洒漏清洁仅 46.7%；固定真实动作反向拟合场景扩增 25 万段数据，OOD 拾取 6.7→63.3%。",
+      "platform": "Unitree G1; Jetson AGX Thor; Jetson Orin NX; SONIC; Cosmos-Predict2.5-2B; Wan 2.2; MuJoCo; Isaac Lab",
+      "evidence": "sim-and-real",
+      "tags": [
+        "GR00T-2",
+        "Turbo",
+        "WAM",
+        "SONIC",
+        "whole-body-loco-manipulation",
+        "motion-latent",
+        "real-to-sim",
+        "CMA-ES",
+        "onboard"
+      ],
+      "sources": {
+        "paper": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+        "project": "https://research.nvidia.com/labs/gear/gr00t-2/",
+        "pages": 135,
+        "sha256": "a7316845d53aa61db023de15ca4f4fad422ed071f256d9fa7e8801aa7376dd50",
+        "source_record": "assets/037-gr00t2/source-record.json"
+      },
+      "figures_manifest": "assets/037-gr00t2/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "wam-overview",
+          "page": 4,
+          "path": "assets/037-gr00t2/fig-01-wam-overview.png"
+        },
+        {
+          "figure": "Figure 9",
+          "role": "wholebody-stack",
+          "page": 13,
+          "path": "assets/037-gr00t2/fig-09-wholebody-stack.png"
+        },
+        {
+          "figure": "Figure 57",
+          "role": "g1-task-sequences",
+          "page": 110,
+          "path": "assets/037-gr00t2/fig-57-g1-task-sequences.png"
+        },
+        {
+          "figure": "Figure 59",
+          "role": "motion-centric-simulation",
+          "page": 112,
+          "path": "assets/037-gr00t2/fig-59-motion-centric-simulation.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-10",
+        "value": "Official project announces code available in December; no complete GR00T 2 release verified."
+      },
+      "method": {
+        "backbone_params": 2000000000,
+        "Turbo_VAE": "Wan 2.2",
+        "spatial_compression_per_dim": 16,
+        "camera_views": 3,
+        "history_frames_per_view": 5,
+        "camera_size": [
+          224,
+          320
+        ],
+        "action_horizon": 80,
+        "action_seconds": 1.6,
+        "planner_Hz": 1,
+        "SONIC_Hz": 50,
+        "PD_Hz": 1000,
+        "planner_hardware": "Jetson AGX Thor",
+        "controller_hardware": "Jetson Orin NX",
+        "gripper_commands_bypass_SONIC": true,
+        "synthetic_episodes": 250000,
+        "synthetic_hours": 1000,
+        "CMA_ES_candidates": 48,
+        "optimized_G1_video_action_denoising_steps": [
+          1,
+          2
+        ]
+      },
+      "evaluation": {
+        "table25_trials": [
+          48,
+          30,
+          30,
+          30
+        ],
+        "table25_tasks": [
+          "popcorn",
+          "table_clean_up",
+          "ground_pick_up",
+          "spill_clean_up"
+        ],
+        "table25_Turbo_successes": [
+          48,
+          28,
+          25,
+          14
+        ],
+        "table25_Turbo_pct": [
+          100,
+          93.3,
+          83.3,
+          46.7
+        ],
+        "table25_GR00T17_pct": [
+          83.3,
+          73.3,
+          50,
+          43.3
+        ],
+        "table25_task_macro_mean_Turbo": 80.8,
+        "table26_trials_per_cell": 30,
+        "table26_Turbo_ID_real_realsim": [
+          73.3,
+          83.3
+        ],
+        "table26_Turbo_OOD_real_realsim": [
+          6.7,
+          63.3
+        ],
+        "table26_GR00T17_OOD_real_realsim": [
+          6.7,
+          40
+        ],
+        "table26_OOD_cotrained_Fisher_p": 0.12,
+        "Thor_prediction_p50_ms_baseline_optimized": [
+          720.41,
+          123.97
+        ],
+        "RTX5090_prediction_p50_ms_baseline_optimized": [
+          224.73,
+          38.4
+        ],
+        "G1Factory_sim_tasks": 9,
+        "G1Factory_demos_per_task": 100,
+        "G1Factory_trials_per_task": 100,
+        "G1Factory_GR00T2_GR00T17_pct": [
+          84.7,
+          69.4
+        ]
+      },
+      "evidence_boundaries": [
+        "Scope is whole-body loco-manipulation, not complete report coverage",
+        "G1 task post-training uses whole-body teleoperation and simulation; human-video-only G1 transfer not demonstrated",
+        "Popcorn and spill are single-task policies; pick-and-place is a multitask policy with crosshair target guidance",
+        "Same controller, action space and task demonstrations across Table 25 baselines; pretraining differs",
+        "80.8 percent is task-macro average, not trial-pooled success",
+        "OOD Table 26 evaluates unseen scenes and locations, not arbitrary unseen tasks",
+        "Co-trained OOD comparison 19 versus 12 of 30 has Fisher exact p approximately 0.12",
+        "Video prediction explanation for sim-real transfer is a hypothesis, not isolated G1 causal ablation",
+        "Official webpage calls backbone smaller, but report Section 2 and Appendix I use 2B for both; higher video compression is explicit",
+        "123.97 ms is model prediction p50, not end-to-end control latency; planner runs approximately 1 Hz",
+        "S1 runs on Thor and S0 on Orin NX; optional reasoning model is not claimed onboard",
+        "Table 34 G1 Factory is simulated and uses arm-hand-waist plus base/nav interface, not real Turbo SONIC evaluation",
+        "Code announcement is December; old WBC repository is not complete GR00T 2 release"
       ]
     }
   ],

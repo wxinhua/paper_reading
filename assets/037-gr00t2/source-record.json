@@ -1,0 +1,43 @@
+{
+  "paper_id": "037",
+  "title": "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+  "version": "November 2026 whitepaper; snapshot 2026-11-10",
+  "read_on": "2026-11-10",
+  "source_document": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+  "source_url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+  "sha256": "a7316845d53aa61db023de15ca4f4fad422ed071f256d9fa7e8801aa7376dd50",
+  "pages": 135,
+  "bytes": 23457173,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "report",
+      "url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+    },
+    {
+      "role": "project",
+      "url": "https://research.nvidia.com/labs/gear/gr00t-2/"
+    }
+  ],
+  "scope": "Whole-body loco-manipulation: Sections 2, 3.5, 4.1, Appendix H/I and J.3 G1 Factory",
+  "release_status": {
+    "checked_on": "2026-11-10",
+    "value": "Official project announces code available in December; no complete GR00T 2 release verified."
+  },
+  "evidence_boundaries": [
+    "Scope is whole-body loco-manipulation, not complete report coverage",
+    "G1 task post-training uses whole-body teleoperation and simulation; human-video-only G1 transfer not demonstrated",
+    "Popcorn and spill are single-task policies; pick-and-place is a multitask policy with crosshair target guidance",
+    "Same controller, action space and task demonstrations across Table 25 baselines; pretraining differs",
+    "80.8 percent is task-macro average, not trial-pooled success",
+    "OOD Table 26 evaluates unseen scenes and locations, not arbitrary unseen tasks",
+    "Co-trained OOD comparison 19 versus 12 of 30 has Fisher exact p approximately 0.12",
+    "Video prediction explanation for sim-real transfer is a hypothesis, not isolated G1 causal ablation",
+    "Official webpage calls backbone smaller, but report Section 2 and Appendix I use 2B for both; higher video compression is explicit",
+    "123.97 ms is model prediction p50, not end-to-end control latency; planner runs approximately 1 Hz",
+    "S1 runs on Thor and S0 on Orin NX; optional reasoning model is not claimed onboard",
+    "Table 34 G1 Factory is simulated and uses arm-hand-waist plus base/nav interface, not real Turbo SONIC evaluation",
+    "Code announcement is December; old WBC repository is not complete GR00T 2 release"
+  ],
+  "author_code_executed": false
+}

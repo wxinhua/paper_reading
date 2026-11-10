@@ -1,0 +1,149 @@
+{
+  "paper_id": "037",
+  "title": "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+  "source_document": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+  "source_url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+  "source_version": "November 2026 whitepaper; snapshot 2026-11-10",
+  "source_sha256": "a7316845d53aa61db023de15ca4f4fad422ed071f256d9fa7e8801aa7376dd50",
+  "source_pages": 135,
+  "page_size_points": [
+    595.276,
+    841.89
+  ],
+  "extracted_on": "2026-11-10",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "wam-overview",
+      "pdf_page": 4,
+      "file": "fig-01-wam-overview.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.745
+      ],
+      "crop_pdf_points": [
+        59.5276,
+        84.18900000000001,
+        535.7484,
+        627.20805
+      ],
+      "crop_pixels": [
+        165,
+        234,
+        1489,
+        1743
+      ],
+      "dpi": 200,
+      "size_px": [
+        1324,
+        1509
+      ],
+      "sha256": "53e3940215f7f71527f9096715318ff630d7303ae60f2ada3ab953d3a1a3012d",
+      "original_caption_source": "Figure 1, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption checked against rendered PDF on 2026-11-10"
+    },
+    {
+      "figure": "Figure 9",
+      "role": "wholebody-stack",
+      "pdf_page": 13,
+      "file": "fig-09-wholebody-stack.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.392
+      ],
+      "crop_pdf_points": [
+        59.5276,
+        84.18900000000001,
+        535.7484,
+        330.02088000000003
+      ],
+      "crop_pixels": [
+        165,
+        234,
+        1489,
+        917
+      ],
+      "dpi": 200,
+      "size_px": [
+        1324,
+        683
+      ],
+      "sha256": "262c0c0ce74f5bcf5506e8e625600aa21d05fa6dea861d42933cee018ab79258",
+      "original_caption_source": "Figure 9, PDF page 13; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption checked against rendered PDF on 2026-11-10"
+    },
+    {
+      "figure": "Figure 57",
+      "role": "g1-task-sequences",
+      "pdf_page": 110,
+      "file": "fig-57-g1-task-sequences.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.53
+      ],
+      "crop_pdf_points": [
+        59.5276,
+        84.18900000000001,
+        535.7484,
+        446.2017
+      ],
+      "crop_pixels": [
+        165,
+        234,
+        1489,
+        1240
+      ],
+      "dpi": 200,
+      "size_px": [
+        1324,
+        1006
+      ],
+      "sha256": "1cf0039e97502bedc4c6da376b4d74f4b453e29381f7d7b5fbaeeb3eaa9e7a32",
+      "original_caption_source": "Figure 57, PDF page 110; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption checked against rendered PDF on 2026-11-10"
+    },
+    {
+      "figure": "Figure 59",
+      "role": "motion-centric-simulation",
+      "pdf_page": 112,
+      "file": "fig-59-motion-centric-simulation.png",
+      "crop_normalized": [
+        0.1,
+        0.1,
+        0.9,
+        0.318
+      ],
+      "crop_pdf_points": [
+        59.5276,
+        84.18900000000001,
+        535.7484,
+        267.72102
+      ],
+      "crop_pixels": [
+        165,
+        234,
+        1489,
+        744
+      ],
+      "dpi": 200,
+      "size_px": [
+        1324,
+        510
+      ],
+      "sha256": "adfbba5d35c7b396c5bba704566ede1265028e1b386e231bc0c95e3b57fb1ba4",
+      "original_caption_source": "Figure 59, PDF page 112; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and complete English caption checked against rendered PDF on 2026-11-10"
+    }
+  ]
+}
