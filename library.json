@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-11-10",
+  "updated_on": "2026-11-12",
   "papers": [
     {
       "id": "001",
@@ -4957,6 +4957,185 @@
         "S1 runs on Thor and S0 on Orin NX; optional reasoning model is not claimed onboard",
         "Table 34 G1 Factory is simulated and uses arm-hand-waist plus base/nav interface, not real Turbo SONIC evaluation",
         "Code announcement is December; old WBC repository is not complete GR00T 2 release"
+      ]
+    },
+    {
+      "id": "038",
+      "short_title": "LAPT-Scale",
+      "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+      "arxiv_id": "2610.13732",
+      "version": "arXiv:2610.13732v1, 2026-10-09",
+      "submitted_on": "2026-10-09",
+      "read_on": "2026-11-12",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation"
+      ],
+      "classification_reason": "人类视频连续 latent action 预训练及 VLA 机器人适配；实验聚焦操作，不验证全身行走控制。",
+      "note_path": "papers/038-lapt-scale.md",
+      "reader_path": "lapt-scale.html",
+      "library_summary": "两帧视频通过连续 VAE 生成 32 维动作标签，联合像素、感知、语义与光流约束；同一动作专家先学 latent，再以 250 小时机器人数据对齐。1K→5K 视频预训练使三任务成功率 63.3→85%；最终直接输出机器人动作，非 latent 解码执行。",
+      "platform": "AgiBot G1; RoboTwin 2.0; RoboCasa-GR1 Tabletop; JoyAI-RA; DINOv2; RAFT",
+      "evidence": "sim-and-real",
+      "tags": [
+        "LAPT-Scale",
+        "latent-action-pretraining",
+        "human-video",
+        "continuous-VAE",
+        "flow-matching",
+        "embodiment-alignment",
+        "optical-flow",
+        "scaling"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.13732v1",
+        "full_text": "https://arxiv.org/html/2610.13732v1",
+        "pages": 24,
+        "sha256": "97689f115ebd54dc299fcf749fb5fd5b4677800315098ea447bd8e0eba28a525",
+        "source_record": "assets/038-lapt-scale/source-record.json"
+      },
+      "figures_manifest": "assets/038-lapt-scale/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "training-overview",
+          "page": 3,
+          "path": "assets/038-lapt-scale/fig-01-training-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "lam-alignments",
+          "page": 4,
+          "path": "assets/038-lapt-scale/fig-03-lam-alignments.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "human-video-scaling",
+          "page": 7,
+          "path": "assets/038-lapt-scale/fig-04-human-video-scaling.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "latent-replacement",
+          "page": 9,
+          "path": "assets/038-lapt-scale/fig-06-latent-replacement.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-12",
+        "value": "No dedicated official LAPT-Scale code or weight release verified from paper links and targeted search."
+      },
+      "method": {
+        "LAM_hours": 23300,
+        "policy_main_human_hours": 5100,
+        "policy_scaling_human_hours": [
+          1000,
+          3000,
+          5000
+        ],
+        "robot_alignment_hours": 250,
+        "robot_alignment_episodes": 162767,
+        "robot_alignment_frames": 26700000,
+        "latent_dimension": 32,
+        "latent_type": "continuous Gaussian; offline labels use posterior mean",
+        "LAM_encoder_decoder_blocks": [
+          24,
+          24
+        ],
+        "LAM_width": 1024,
+        "LAM_heads": 16,
+        "LAM_frame_gap": [
+          1,
+          4
+        ],
+        "policy_action_horizon": 30,
+        "policy_max_target_dimensions": 32,
+        "same_action_expert_across_stages": true,
+        "LAM_required_at_deployment": false,
+        "LAM_H200_GPU_hours": 4938,
+        "annotation_H200_GPU_hours": 1700,
+        "stage1_stage2_training_steps": [
+          100000,
+          100000
+        ],
+        "stage1_stage2_wall_hours": [
+          43,
+          50
+        ]
+      },
+      "evaluation": {
+        "RoboTwin_easy_hard_pct": [
+          90,
+          89.3
+        ],
+        "RoboCasa_pct": 64.8,
+        "RoboCasa_tasks": 24,
+        "RoboCasa_rollouts_per_task": 50,
+        "real_original_tasks": [
+          "Mouse Pad",
+          "Headphones",
+          "Cup"
+        ],
+        "real_original_trials_per_task": 20,
+        "real_original_LAPT_pct": [
+          85,
+          95,
+          75
+        ],
+        "real_original_LAPT_average_pct": 85,
+        "real_scaling_0_1k_3k_5k_pct": [
+          55,
+          63.3,
+          80,
+          85
+        ],
+        "real_noStage1_standard_computematched_pct": [
+          55,
+          53.3
+        ],
+        "RoboTwinHard_ablation_recon_noLPIPS_noDINO_noFlow_full_pct": [
+          74.2,
+          82.5,
+          84.1,
+          77.8,
+          89.3
+        ],
+        "hard_real_tasks": 4,
+        "hard_real_trials_per_task_domain": 20,
+        "hard_real_demos_per_task": 200,
+        "hard_real_seen_position_light_background_LAPT_pct": [
+          85,
+          75,
+          70,
+          70
+        ],
+        "hard_real_seen_position_light_background_pi05_pct": [
+          85,
+          50,
+          45,
+          40
+        ],
+        "hard_real_trials_per_method": 320
+      },
+      "evidence_boundaries": [
+        "LAM training uses 23.3K hours, policy pretraining 5.1K cleaned hours, scaling 1K/3K/5K; these are different quantities",
+        "Final policy outputs robot actions directly; LAM decoder is not required in deployed control",
+        "Continuous visual latent is not a physical joint-space command or human whole-body motion reconstruction",
+        "Stage 2 uses 250 hours robot alignment and Stage 3 uses additional task demonstrations",
+        "Real robot is AgiBot G1, not Unitree G1; tabletop manipulation does not validate locomotion or balance",
+        "Three original tasks use task-specific finetuning; four harder tasks share one multitask policy",
+        "Each real task-condition has 20 trials; independent-seed intervals not fully reported",
+        "Scaling improves average but Cup task falls from 95 to 75 percent between 3K and 5K",
+        "85 percent seen-domain success is tied with pi0.5 in the harder-task protocol",
+        "75 percent generalization average includes seen domain, not only OOD",
+        "Official pretrained DreamDojo scaling baseline differs from MSE-only diagnostic retrained on this corpus",
+        "VQ baseline does not establish universal superiority over all discrete tokenizers",
+        "Latent replacement and Stage-1 video rollouts are diagnostics, not robot-execution demonstrations",
+        "Exact policy backbone checkpoint, deployment frequency and embodiment-specific action fields not fully specified",
+        "Code, weights and complete data release not verified as of reading date"
       ]
     }
   ],

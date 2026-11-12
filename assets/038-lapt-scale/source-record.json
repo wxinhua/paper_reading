@@ -1,0 +1,45 @@
+{
+  "paper_id": "038",
+  "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+  "arxiv_id": "2610.13732",
+  "version": "arXiv:2610.13732v1, 2026-10-09",
+  "read_on": "2026-11-12",
+  "source_document": "https://arxiv.org/abs/2610.13732v1",
+  "source_url": "https://arxiv.org/pdf/2610.13732v1",
+  "sha256": "97689f115ebd54dc299fcf749fb5fd5b4677800315098ea447bd8e0eba28a525",
+  "pages": 24,
+  "bytes": 7055233,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2610.13732v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2610.13732v1"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-12",
+    "value": "No dedicated official LAPT-Scale code or weight release verified from paper links and targeted search."
+  },
+  "evidence_boundaries": [
+    "LAM training uses 23.3K hours, policy pretraining 5.1K cleaned hours, scaling 1K/3K/5K; these are different quantities",
+    "Final policy outputs robot actions directly; LAM decoder is not required in deployed control",
+    "Continuous visual latent is not a physical joint-space command or human whole-body motion reconstruction",
+    "Stage 2 uses 250 hours robot alignment and Stage 3 uses additional task demonstrations",
+    "Real robot is AgiBot G1, not Unitree G1; tabletop manipulation does not validate locomotion or balance",
+    "Three original tasks use task-specific finetuning; four harder tasks share one multitask policy",
+    "Each real task-condition has 20 trials; independent-seed intervals not fully reported",
+    "Scaling improves average but Cup task falls from 95 to 75 percent between 3K and 5K",
+    "85 percent seen-domain success is tied with pi0.5 in the harder-task protocol",
+    "75 percent generalization average includes seen domain, not only OOD",
+    "Official pretrained DreamDojo scaling baseline differs from MSE-only diagnostic retrained on this corpus",
+    "VQ baseline does not establish universal superiority over all discrete tokenizers",
+    "Latent replacement and Stage-1 video rollouts are diagnostics, not robot-execution demonstrations",
+    "Exact policy backbone checkpoint, deployment frequency and embodiment-specific action fields not fully specified",
+    "Code, weights and complete data release not verified as of reading date"
+  ],
+  "author_code_executed": false
+}

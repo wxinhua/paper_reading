@@ -1,0 +1,149 @@
+{
+  "paper_id": "038",
+  "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+  "source_document": "https://arxiv.org/abs/2610.13732v1",
+  "source_url": "https://arxiv.org/pdf/2610.13732v1",
+  "source_version": "arXiv:2610.13732v1, 2026-10-09",
+  "source_sha256": "97689f115ebd54dc299fcf749fb5fd5b4677800315098ea447bd8e0eba28a525",
+  "source_pages": 24,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-12",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "training-overview",
+      "pdf_page": 3,
+      "file": "fig-01-training-overview.png",
+      "crop_normalized": [
+        0.17,
+        0.085,
+        0.83,
+        0.385
+      ],
+      "crop_pdf_points": [
+        104.04,
+        67.32000000000001,
+        507.96,
+        304.92
+      ],
+      "crop_pixels": [
+        289,
+        187,
+        1411,
+        847
+      ],
+      "dpi": 200,
+      "size_px": [
+        1122,
+        660
+      ],
+      "sha256": "dc46928ce198a7c8712c0d9051258d2718cecd1a2e4e06b12c738d2fe441ce12",
+      "original_caption_source": "Figure 1, PDF page 3; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-11-12"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "lam-alignments",
+      "pdf_page": 4,
+      "file": "fig-03-lam-alignments.png",
+      "crop_normalized": [
+        0.51,
+        0.415,
+        0.83,
+        0.71
+      ],
+      "crop_pdf_points": [
+        312.12,
+        328.68,
+        507.96,
+        562.3199999999999
+      ],
+      "crop_pixels": [
+        867,
+        913,
+        1411,
+        1562
+      ],
+      "dpi": 200,
+      "size_px": [
+        544,
+        649
+      ],
+      "sha256": "b957d215c27314b3fadcc66f74a0b5b048b8f86681514eb721f9a80c871a8e50",
+      "original_caption_source": "Figure 3, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-11-12"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "human-video-scaling",
+      "pdf_page": 7,
+      "file": "fig-04-human-video-scaling.png",
+      "crop_normalized": [
+        0.17,
+        0.085,
+        0.83,
+        0.3
+      ],
+      "crop_pdf_points": [
+        104.04,
+        67.32000000000001,
+        507.96,
+        237.6
+      ],
+      "crop_pixels": [
+        289,
+        187,
+        1411,
+        660
+      ],
+      "dpi": 200,
+      "size_px": [
+        1122,
+        473
+      ],
+      "sha256": "0a76e444dddc99749da810f995e6259da1443a7522406b2d92cd8b8a23ff012f",
+      "original_caption_source": "Figure 4, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-11-12"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "latent-replacement",
+      "pdf_page": 9,
+      "file": "fig-06-latent-replacement.png",
+      "crop_normalized": [
+        0.17,
+        0.273,
+        0.83,
+        0.468
+      ],
+      "crop_pdf_points": [
+        104.04,
+        216.216,
+        507.96,
+        370.656
+      ],
+      "crop_pixels": [
+        289,
+        601,
+        1411,
+        1030
+      ],
+      "dpi": 200,
+      "size_px": [
+        1122,
+        429
+      ],
+      "sha256": "177b5677ea18512ec1994c4228731028520df81be69d7c5bb537d35ad14280fe",
+      "original_caption_source": "Figure 6, PDF page 9; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed; original figure and full English caption checked against rendered PDF on 2026-11-12"
+    }
+  ]
+}
