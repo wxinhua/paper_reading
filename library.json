@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-11-12",
+  "updated_on": "2026-11-13",
   "papers": [
     {
       "id": "001",
@@ -5136,6 +5136,146 @@
         "Latent replacement and Stage-1 video rollouts are diagnostics, not robot-execution demonstrations",
         "Exact policy backbone checkpoint, deployment frequency and embodiment-specific action fields not fully specified",
         "Code, weights and complete data release not verified as of reading date"
+      ]
+    },
+    {
+      "id": "039",
+      "short_title": "Kimodo-Policy",
+      "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+      "arxiv_id": "2611.11554",
+      "version": "arXiv:2611.11554v1, 2026-11-08",
+      "submitted_on": "2026-11-08",
+      "read_on": "2026-11-13",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "冻结运动生成主干，用视觉条件和运动历史学习在线全身任务策略；SONIC 负责低层执行。",
+      "note_path": "papers/039-kimodo-policy.md",
+      "reader_path": "kimodo-policy.html",
+      "library_summary": "以冻结 Kimodo 运动生成器为主干，视觉 ControlNet 与 HandNet 联合预测 root–body–hand 动作；用实际运动历史闭环重规划，SONIC 执行。419h 交互预训练后 Arena 多任务 72.14%、真机八任务均值 60%；单任务预训练收益不一致。",
+      "platform": "Unitree G1; SONIC; Kimodo-G1-RP-v1; HumanoidArena; SIMPLE",
+      "evidence": "sim-and-real",
+      "tags": [
+        "KAM",
+        "motion-prior",
+        "text-to-motion",
+        "ControlNet",
+        "closed-loop",
+        "loco-manipulation",
+        "frozen-backbone",
+        "robot-pretraining"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.11554v1",
+        "full_text": "https://arxiv.org/html/2611.11554v1",
+        "project": "https://kimodo-policy.github.io/",
+        "code": "https://github.com/kimodo-policy/kimodo-policy",
+        "pages": 23,
+        "source_record": "assets/039-kimodo-policy/source-record.json",
+        "sha256": "b179c5bca9890fe2a4c1626798c8c7764b7d253d6b46f1ed533c977e0ed14038"
+      },
+      "figures_manifest": "assets/039-kimodo-policy/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/039-kimodo-policy/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "architecture",
+          "page": 6,
+          "path": "assets/039-kimodo-policy/fig-03-architecture.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "closed-loop",
+          "page": 7,
+          "path": "assets/039-kimodo-policy/fig-04-closed-loop.png"
+        },
+        {
+          "figure": "Figure 14",
+          "role": "ablation",
+          "page": 18,
+          "path": "assets/039-kimodo-policy/fig-14-ablation.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-13",
+        "commit": "32129c968d62a1eac78b9800916703f377a558a2",
+        "value": "Official training, sim evaluation and real-world collection/deployment code; model checkpoints, data and evaluation artifacts linked; not executed."
+      },
+      "method": {
+        "total_parameters_M": 678,
+        "trainable_parameters_M": 92,
+        "frozen_motion_backbone_parameters_M": 282,
+        "policy_pretraining_hours": 419,
+        "history_frames": 100,
+        "future_frames": 50,
+        "executed_prefix_frames_arena_real": 15,
+        "motion_Hz": 30,
+        "tracker_Hz": 50,
+        "DDIM_steps": 10,
+        "RTC_real_only": true,
+        "motion_backbone_frozen": true,
+        "visual_encoder_frozen": true,
+        "policy_pretraining_steps": 1000000,
+        "policy_pretraining_H200_count": 16,
+        "policy_pretraining_wall_hours": 60
+      },
+      "evaluation": {
+        "arena_single_unstar_star_pct": [
+          69.76,
+          67.14
+        ],
+        "arena_multi_unstar_star_pct": [
+          67.63,
+          72.14
+        ],
+        "SIMPLE_paper_successes_trials": [
+          182,
+          240
+        ],
+        "SIMPLE_Psi0_successes_trials": [
+          181,
+          240
+        ],
+        "SIMPLE_L0_L1_L2_pct": [
+          87.5,
+          71.25,
+          68.75
+        ],
+        "real_tasks": 8,
+        "real_trials_per_task": 10,
+        "real_unstar_star_pct": [
+          45,
+          60
+        ],
+        "HOI_ablation_random_finetuned_frozen_pct": [
+          18.33,
+          31.67,
+          51.67
+        ],
+        "released_real_demo_count": 236
+      },
+      "evidence_boundaries": [
+        "Star denotes additional 419h robot-interaction policy pretraining; both variants retain a pretrained Kimodo backbone",
+        "Paper SIMPLE scores differ from current fixed README for Push Office Chair (100 versus 80 percent)",
+        "Paper states 25–30 real demonstrations per task; release lists 236 total and 24–38 per task",
+        "Baselines partly compiled from different reports, not a unified reevaluation",
+        "SIMPLE paper advantage over Psi0 is one success in 240 trials",
+        "Real experiments use task-specific policies and ten trials per task",
+        "Ablation Figure 14 reports three HOI tasks, not overall seven-task success",
+        "Single-task Arena average is lower after interaction pretraining",
+        "RTC active only in real experiments; its contribution not isolated",
+        "Kinematic references require SONIC; no general cross-tracker validation",
+        "Code/checkpoints/data release verified by documentation, not reproduced"
       ]
     }
   ],

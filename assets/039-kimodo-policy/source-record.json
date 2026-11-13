@@ -1,0 +1,51 @@
+{
+  "paper_id": "039",
+  "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+  "arxiv_id": "2611.11554",
+  "version": "arXiv:2611.11554v1, 2026-11-08",
+  "read_on": "2026-11-13",
+  "source_document": "https://arxiv.org/abs/2611.11554v1",
+  "source_url": "https://arxiv.org/pdf/2611.11554v1",
+  "pages": 23,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.11554v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2611.11554v1"
+    },
+    {
+      "role": "project",
+      "url": "https://kimodo-policy.github.io/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/kimodo-policy/kimodo-policy"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-13",
+    "commit": "32129c968d62a1eac78b9800916703f377a558a2",
+    "value": "Official training, sim evaluation and real-world collection/deployment code; model checkpoints, data and evaluation artifacts linked; not executed."
+  },
+  "evidence_boundaries": [
+    "Star denotes additional 419h robot-interaction policy pretraining; both variants retain a pretrained Kimodo backbone",
+    "Paper SIMPLE scores differ from current fixed README for Push Office Chair (100 versus 80 percent)",
+    "Paper states 25–30 real demonstrations per task; release lists 236 total and 24–38 per task",
+    "Baselines partly compiled from different reports, not a unified reevaluation",
+    "SIMPLE paper advantage over Psi0 is one success in 240 trials",
+    "Real experiments use task-specific policies and ten trials per task",
+    "Ablation Figure 14 reports three HOI tasks, not overall seven-task success",
+    "Single-task Arena average is lower after interaction pretraining",
+    "RTC active only in real experiments; its contribution not isolated",
+    "Kinematic references require SONIC; no general cross-tracker validation",
+    "Code/checkpoints/data release verified by documentation, not reproduced"
+  ],
+  "author_code_executed": false,
+  "README_snapshot_sha256": "01e0d68657eda7eff8e89137fb1dcb51dcc4e24f7fdaeeea2b95fc6a5974a417",
+  "sha256": "b179c5bca9890fe2a4c1626798c8c7764b7d253d6b46f1ed533c977e0ed14038",
+  "bytes": 42480497
+}

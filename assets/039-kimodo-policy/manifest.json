@@ -1,0 +1,149 @@
+{
+  "paper_id": "039",
+  "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+  "source_document": "https://arxiv.org/abs/2611.11554v1",
+  "source_url": "https://arxiv.org/pdf/2611.11554v1",
+  "source_version": "arXiv:2611.11554v1, 2026-11-08",
+  "source_sha256": "b179c5bca9890fe2a4c1626798c8c7764b7d253d6b46f1ed533c977e0ed14038",
+  "source_pages": 23,
+  "page_size_points": [
+    595.28,
+    841.89
+  ],
+  "extracted_on": "2026-11-13",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.095,
+        0.332,
+        0.905,
+        0.938
+      ],
+      "crop_pdf_points": [
+        56.5516,
+        279.50748,
+        538.7284,
+        789.69282
+      ],
+      "crop_pixels": [
+        157,
+        777,
+        1497,
+        2194
+      ],
+      "dpi": 200,
+      "size_px": [
+        1340,
+        1417
+      ],
+      "sha256": "a3fc12e5c33552c95728a1de2a4846dbc70a16c69cd97d9fe3897490effe2afd",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible, no clipping"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "architecture",
+      "pdf_page": 6,
+      "file": "fig-03-architecture.png",
+      "crop_normalized": [
+        0.095,
+        0.222,
+        0.905,
+        0.555
+      ],
+      "crop_pdf_points": [
+        56.5516,
+        186.89958,
+        538.7284,
+        467.24895000000004
+      ],
+      "crop_pixels": [
+        157,
+        519,
+        1497,
+        1298
+      ],
+      "dpi": 200,
+      "size_px": [
+        1340,
+        779
+      ],
+      "sha256": "d8a48533a315791ca6e2b951cc96cc7b7c5a7bc35a9ef243190a14608f6e3443",
+      "original_caption_source": "Figure 3, PDF page 6; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible, no clipping"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "closed-loop",
+      "pdf_page": 7,
+      "file": "fig-04-closed-loop.png",
+      "crop_normalized": [
+        0.095,
+        0.53,
+        0.905,
+        0.912
+      ],
+      "crop_pdf_points": [
+        56.5516,
+        446.2017,
+        538.7284,
+        767.80368
+      ],
+      "crop_pixels": [
+        157,
+        1240,
+        1497,
+        2133
+      ],
+      "dpi": 200,
+      "size_px": [
+        1340,
+        893
+      ],
+      "sha256": "1c313bcf81ba19f905497115b8cb8c251a35106bae0a37c95d983cab61f59b9b",
+      "original_caption_source": "Figure 4, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible, no clipping"
+    },
+    {
+      "figure": "Figure 14",
+      "role": "ablation",
+      "pdf_page": 18,
+      "file": "fig-14-ablation.png",
+      "crop_normalized": [
+        0.095,
+        0.07,
+        0.905,
+        0.34
+      ],
+      "crop_pdf_points": [
+        56.5516,
+        58.932300000000005,
+        538.7284,
+        286.24260000000004
+      ],
+      "crop_pixels": [
+        157,
+        164,
+        1497,
+        795
+      ],
+      "dpi": 200,
+      "size_px": [
+        1340,
+        631
+      ],
+      "sha256": "14db8ff4f1dda6e49bf4cff0aa1b61ac3e68690a42d30e560890f43aa6bf24ff",
+      "original_caption_source": "Figure 14, PDF page 18; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible, no clipping"
+    }
+  ]
+}
