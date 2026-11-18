@@ -5571,6 +5571,164 @@
         "Paper v1 tables and project-page summary differ for some drawer and button scores.",
         "Task-specific motion constraints, trajectories, rewards and success filters are retained."
       ]
+    },
+    {
+      "id": "042",
+      "short_title": "DASH",
+      "title": "Decoupled Asynchronous System for Humanoids (DASH): Latency-Agnostic Scaling of Vision-Language-Action Models for Humanoid Manipulation",
+      "arxiv_id": "2611.11854",
+      "version": "arXiv:2611.11854v2, 2026-11-12",
+      "submitted_on": "2026-11-09",
+      "read_on": "2026-11-18",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control"
+      ],
+      "classification_reason": "VLA 快慢路径、错时训练与动作块执行接口。本文真机证据覆盖桌面取放。",
+      "note_path": "papers/042-dash.md",
+      "reader_path": "dash.html",
+      "library_summary": "慢速 VLM 语义缓存与快速 ResNet/DiT 动作头并行，训练配对旧语义和新观测，执行按实际到达间隔插值对齐。RoboTwin 0.8B–8B 快路 20 Hz；真机桌面取放 23/24。",
+      "platform": "RoboTwin (ALOHA); real dual-dexterous-hand humanoid; Qwen; ResNet-152; RTX 4090",
+      "evidence": "sim-and-real",
+      "tags": [
+        "VLA",
+        "asynchronous-inference",
+        "fast-slow",
+        "desynchronized-training",
+        "flow-matching",
+        "action-chunking"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.11854v2",
+        "full_text": "https://arxiv.org/html/2611.11854v2",
+        "pages": 9,
+        "sha256": "4b2393b97b03547899da8842d03c7db30e50059768ee7860ead4b720a264e425",
+        "source_record": "assets/042-dash/source-record.json"
+      },
+      "figures_manifest": "assets/042-dash/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "real-teaser",
+          "page": 1,
+          "path": "assets/042-dash/fig-01-real-teaser.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "architecture",
+          "page": 4,
+          "path": "assets/042-dash/fig-03-architecture.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "desync-training",
+          "page": 5,
+          "path": "assets/042-dash/fig-04-desync-training.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "temporal-alignment",
+          "page": 5,
+          "path": "assets/042-dash/fig-05-temporal-alignment.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "scaling",
+          "page": 6,
+          "path": "assets/042-dash/fig-06-scaling.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-18",
+        "value": "No official DASH implementation, weight or dataset release verified from the paper and targeted searches."
+      },
+      "method": {
+        "DiT_layers": 12,
+        "DiT_width": 1024,
+        "attention_heads": 8,
+        "flow_integration_steps": 4,
+        "VLM_layer_depth_fractions": [
+          0.25,
+          0.5,
+          0.75,
+          1
+        ],
+        "fresh_vision": "ResNet-152",
+        "VLM_frozen": true,
+        "transport": "LCM latest-value publish/subscribe",
+        "explicit_delay_input": false,
+        "frame_offset_training": "uniform per sample, current target unchanged"
+      },
+      "evaluation": {
+        "backbone_sizes_B": [
+          0.8,
+          2,
+          4,
+          8
+        ],
+        "sim_tasks": 50,
+        "scheduled_sim_episodes_per_config": 250,
+        "VLM_ms": [
+          53,
+          82,
+          133,
+          193
+        ],
+        "preprocess_ms": 15,
+        "action_head_ms": 35,
+        "sync_ms": [
+          103,
+          132,
+          183,
+          243
+        ],
+        "dash_action_path_ms": 50,
+        "sync_Hz": [
+          9.7,
+          7.6,
+          5.5,
+          4.1
+        ],
+        "dash_action_update_Hz": 20,
+        "sync_pct": [
+          64.5,
+          66.4,
+          63.6,
+          62.7
+        ],
+        "async_aligned_pct": [
+          61.8,
+          65.5,
+          62.3,
+          62.7
+        ],
+        "dash_pct": [
+          65.5,
+          69.1,
+          69.5,
+          65.9
+        ],
+        "real_sync_fixed_success_trials": [
+          16,
+          24
+        ],
+        "real_dash_adaptive_success_trials": [
+          23,
+          24
+        ]
+      },
+      "evidence_boundaries": [
+        "20 Hz denotes tested action updates, not VLM context refresh or joint servo rate.",
+        "RoboTwin uses ALOHA; real humanoid experiments are quasi-static tabletop manipulation.",
+        "0.8B is Qwen3.5 and 2B/4B/8B are Qwen3-VL. Success is highest at 4B in this protocol.",
+        "Aligned training on the asynchronous runtime yields equal or lower success than sync.",
+        "The real-world comparison changes execution and aggregation jointly; no isolated hardware aggregator ablation.",
+        "RoboTwin plans 250 episodes per configuration and computes success over valid initializations.",
+        "The freshness and adaptability of the independent vision encoder are not separately isolated."
+      ]
     }
   ],
   "batches": [

@@ -1,0 +1,182 @@
+{
+  "paper_id": "042",
+  "title": "Decoupled Asynchronous System for Humanoids (DASH): Latency-Agnostic Scaling of Vision-Language-Action Models for Humanoid Manipulation",
+  "source_document": "https://arxiv.org/abs/2611.11854v2",
+  "source_url": "https://arxiv.org/pdf/2611.11854v2",
+  "source_version": "arXiv:2611.11854v2, 2026-11-12",
+  "source_sha256": "4b2393b97b03547899da8842d03c7db30e50059768ee7860ead4b720a264e425",
+  "source_pages": 9,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-18",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "real-teaser",
+      "pdf_page": 1,
+      "file": "fig-01-real-teaser.png",
+      "crop_normalized": [
+        0.083,
+        0.235,
+        0.917,
+        0.351
+      ],
+      "crop_pdf_points": [
+        50.796,
+        186.11999999999998,
+        561.2040000000001,
+        277.99199999999996
+      ],
+      "crop_pixels": [
+        141,
+        517,
+        1559,
+        772
+      ],
+      "dpi": 200,
+      "size_px": [
+        1418,
+        255
+      ],
+      "sha256": "4b4d7b3e8a3aec60ac9ffcb9ddd59ce9c86e58d1a7ead27c058b25c0252eddb4",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "architecture",
+      "pdf_page": 4,
+      "file": "fig-03-architecture.png",
+      "crop_normalized": [
+        0.083,
+        0.068,
+        0.917,
+        0.53
+      ],
+      "crop_pdf_points": [
+        50.796,
+        53.856,
+        561.2040000000001,
+        419.76000000000005
+      ],
+      "crop_pixels": [
+        141,
+        150,
+        1559,
+        1166
+      ],
+      "dpi": 200,
+      "size_px": [
+        1418,
+        1016
+      ],
+      "sha256": "f09681ad16df5f64caf39882927d8e3f6fc10fc01650e7df4750da25414eb740",
+      "original_caption_source": "Figure 3, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "desync-training",
+      "pdf_page": 5,
+      "file": "fig-04-desync-training.png",
+      "crop_normalized": [
+        0.083,
+        0.07,
+        0.494,
+        0.326
+      ],
+      "crop_pdf_points": [
+        50.796,
+        55.440000000000005,
+        302.328,
+        258.192
+      ],
+      "crop_pixels": [
+        141,
+        154,
+        840,
+        717
+      ],
+      "dpi": 200,
+      "size_px": [
+        699,
+        563
+      ],
+      "sha256": "ac69e321fda0767678fd3266e945251bbdefeef5986c2af64fc2ba91c17cca4a",
+      "original_caption_source": "Figure 4, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "temporal-alignment",
+      "pdf_page": 5,
+      "file": "fig-05-temporal-alignment.png",
+      "crop_normalized": [
+        0.505,
+        0.07,
+        0.917,
+        0.307
+      ],
+      "crop_pdf_points": [
+        309.06,
+        55.440000000000005,
+        561.2040000000001,
+        243.144
+      ],
+      "crop_pixels": [
+        858,
+        154,
+        1559,
+        675
+      ],
+      "dpi": 200,
+      "size_px": [
+        701,
+        521
+      ],
+      "sha256": "aac49f6e0400462fff4ce799551802d50d6dba6ec66539b3984013ae4326adef",
+      "original_caption_source": "Figure 5, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "scaling",
+      "pdf_page": 6,
+      "file": "fig-06-scaling.png",
+      "crop_normalized": [
+        0.505,
+        0.226,
+        0.917,
+        0.449
+      ],
+      "crop_pdf_points": [
+        309.06,
+        178.99200000000002,
+        561.2040000000001,
+        355.608
+      ],
+      "crop_pixels": [
+        858,
+        497,
+        1559,
+        988
+      ],
+      "dpi": 200,
+      "size_px": [
+        701,
+        491
+      ],
+      "sha256": "b1ff928f237d3e455ba32cefa47114f9e26f29fd9971a44fe0c5529f01a15e8d",
+      "original_caption_source": "Figure 6, PDF page 6; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete English caption visible"
+    }
+  ]
+}

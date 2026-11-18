@@ -1,0 +1,37 @@
+{
+  "paper_id": "042",
+  "title": "Decoupled Asynchronous System for Humanoids (DASH): Latency-Agnostic Scaling of Vision-Language-Action Models for Humanoid Manipulation",
+  "arxiv_id": "2611.11854",
+  "version": "arXiv:2611.11854v2, 2026-11-12",
+  "read_on": "2026-11-18",
+  "source_document": "https://arxiv.org/abs/2611.11854v2",
+  "source_url": "https://arxiv.org/pdf/2611.11854v2",
+  "sha256": "4b2393b97b03547899da8842d03c7db30e50059768ee7860ead4b720a264e425",
+  "pages": 9,
+  "bytes": 6020622,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.11854v2"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2611.11854v2"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-18",
+    "value": "No official DASH implementation, weight or dataset release verified from the paper and targeted searches."
+  },
+  "evidence_boundaries": [
+    "20 Hz denotes tested action updates, not VLM context refresh or joint servo rate.",
+    "RoboTwin uses ALOHA; real humanoid experiments are quasi-static tabletop manipulation.",
+    "0.8B is Qwen3.5 and 2B/4B/8B are Qwen3-VL. Success is highest at 4B in this protocol.",
+    "Aligned training on the asynchronous runtime yields equal or lower success than sync.",
+    "The real-world comparison changes execution and aggregation jointly; no isolated hardware aggregator ablation.",
+    "RoboTwin plans 250 episodes per configuration and computes success over valid initializations.",
+    "The freshness and adaptability of the independent vision encoder are not separately isolated."
+  ],
+  "author_code_executed": false
+}
