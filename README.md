@@ -4,13 +4,13 @@
 
 **[在线阅读目录](https://wxinhua.github.io/paper_reading/)** · [统一笔记模板](template.md) · [维护说明](CONTRIBUTING.md)
 
-当前共 **42 篇**，保存 **132 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
+当前共 **43 篇**，保存 **138 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
 
 ## 分类
 
-**Wholebody Intelligence · 37 篇**
+**Wholebody Intelligence · 38 篇**
 
-- [大脑模型与任务策略 · 20 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成、世界模型与高层规划。
+- [大脑模型与任务策略 · 21 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成、世界模型与高层规划。
 - [运动控制与重定向 · 6 篇](https://wxinhua.github.io/paper_reading/#subcategory-motion-control)：GMT / WBC 类全身跟踪、关节控制、重定向 / IK 与部署时参考运动复用。
 - [数据、基准与综述 · 11 篇](https://wxinhua.github.io/paper_reading/#subcategory-data-and-evaluation)：示范对齐与生成、仿真基础设施、评测与综述。
 
@@ -72,6 +72,8 @@
 - 041 · [DreamVLA · 运动生成与纠错示范蒸馏](papers/041-dreamvla.md)
 
 - 042 · [DASH · VLA 快慢异步推理与动作对齐](papers/042-dash.md)
+
+- 043 · [HITCH · VLM 调用三维感知和全身命令](papers/043-hitch.md)
 
 ## 更新方式
 

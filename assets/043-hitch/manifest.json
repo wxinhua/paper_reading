@@ -1,0 +1,215 @@
+{
+  "paper_id": "043",
+  "title": "HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness",
+  "source_document": "https://arxiv.org/abs/2611.08039v1",
+  "source_url": "https://arxiv.org/pdf/2611.08039v1",
+  "source_version": "arXiv:2611.08039v1, 2026-11-05",
+  "source_sha256": "32f3dc76656655ef216e686b434704a096cf96dad3e728cd22f1963509776351",
+  "source_pages": 13,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-18",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "teaser",
+      "pdf_page": 1,
+      "file": "fig-01-teaser.png",
+      "crop_normalized": [
+        0.075,
+        0.241,
+        0.925,
+        0.55
+      ],
+      "crop_pdf_points": [
+        45.9,
+        190.87199999999999,
+        566.1,
+        435.6
+      ],
+      "crop_pixels": [
+        128,
+        530,
+        1572,
+        1210
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        680
+      ],
+      "sha256": "aa685d82879c6a816cfe4d6e3b9f0a89478448bc3d75cbabcb5f5c026b23ef12",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "architecture",
+      "pdf_page": 3,
+      "file": "fig-02-architecture.png",
+      "crop_normalized": [
+        0.075,
+        0.057,
+        0.925,
+        0.44
+      ],
+      "crop_pdf_points": [
+        45.9,
+        45.144,
+        566.1,
+        348.48
+      ],
+      "crop_pixels": [
+        128,
+        125,
+        1572,
+        968
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        843
+      ],
+      "sha256": "4a6db38dc60b011df8a200472c1296bebd6439437be33341b4cd5928f46f5300",
+      "original_caption_source": "Figure 2, PDF page 3; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "body-commands",
+      "pdf_page": 4,
+      "file": "fig-03-body-commands.png",
+      "crop_normalized": [
+        0.075,
+        0.058,
+        0.496,
+        0.325
+      ],
+      "crop_pdf_points": [
+        45.9,
+        45.936,
+        303.552,
+        257.40000000000003
+      ],
+      "crop_pixels": [
+        128,
+        128,
+        843,
+        715
+      ],
+      "dpi": 200,
+      "size_px": [
+        715,
+        587
+      ],
+      "sha256": "a77d0c59658061f4c1a1f1f2bb7f5070cc5c604210c19559b7bd6ba681c51756",
+      "original_caption_source": "Figure 3, PDF page 4; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "active-perception",
+      "pdf_page": 5,
+      "file": "fig-04-active-perception.png",
+      "crop_normalized": [
+        0.075,
+        0.059,
+        0.496,
+        0.36
+      ],
+      "crop_pdf_points": [
+        45.9,
+        46.727999999999994,
+        303.552,
+        285.12
+      ],
+      "crop_pixels": [
+        128,
+        130,
+        843,
+        792
+      ],
+      "dpi": 200,
+      "size_px": [
+        715,
+        662
+      ],
+      "sha256": "bb030ad2c213d7b0ffd7c7f56f1429eb52958c4089ca04d267d0d09fb8a7db9c",
+      "original_caption_source": "Figure 4, PDF page 5; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    },
+    {
+      "figure": "Figure 5",
+      "role": "rollouts",
+      "pdf_page": 7,
+      "file": "fig-05-rollouts.png",
+      "crop_normalized": [
+        0.075,
+        0.059,
+        0.925,
+        0.386
+      ],
+      "crop_pdf_points": [
+        45.9,
+        46.727999999999994,
+        566.1,
+        305.712
+      ],
+      "crop_pixels": [
+        128,
+        130,
+        1572,
+        849
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        719
+      ],
+      "sha256": "72dde330d99c969fb3877ad8e658dace96ea6cfe1f642fb95469b6f5aa63af71",
+      "original_caption_source": "Figure 5, PDF page 7; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "teacher-example",
+      "pdf_page": 12,
+      "file": "fig-06-teacher-example.png",
+      "crop_normalized": [
+        0.075,
+        0.404,
+        0.925,
+        0.665
+      ],
+      "crop_pdf_points": [
+        45.9,
+        319.968,
+        566.1,
+        526.6800000000001
+      ],
+      "crop_pixels": [
+        128,
+        889,
+        1572,
+        1463
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        574
+      ],
+      "sha256": "283e9d08830a96ef438c23413f4c1ff8e687832d4938a909ef0b5ed1a7ec5d7f",
+      "original_caption_source": "Figure 6, PDF page 12; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original panel and full English caption"
+    }
+  ]
+}

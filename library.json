@@ -5729,6 +5729,150 @@
         "RoboTwin plans 250 episodes per configuration and computes success over valid initializations.",
         "The freshness and adaptability of the independent vision encoder are not separately isolated."
       ]
+    },
+    {
+      "id": "043",
+      "short_title": "HITCH",
+      "title": "HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness",
+      "arxiv_id": "2611.08039",
+      "version": "arXiv:2611.08039v1, 2026-11-05",
+      "submitted_on": "2026-11-05",
+      "read_on": "2026-11-18",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "motion-control",
+        "data-and-evaluation"
+      ],
+      "classification_reason": "微调 VLM 调用三维测量与全身身体命令；规划器与 HEFT 执行。",
+      "note_path": "papers/043-hitch.md",
+      "reader_path": "hitch.html",
+      "library_summary": "VLM 交替点图量三维与发结构化身体命令，规划器和 HEFT 执行。仿真基础示范训练后，SIMPLE 51.1%，每任务再加 5 条到 95%；G1 真机夹搬箱 13/20。",
+      "platform": "Unitree G1; RealSense D455; HEFT; Qwen3.8-27B; SIMPLE; HumanoidArena",
+      "evidence": "sim-and-real",
+      "tags": [
+        "VLM-agent",
+        "active-perception",
+        "3D-pointing",
+        "whole-body-harness",
+        "HEFT",
+        "tool-calling",
+        "sim-to-real"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.08039v1",
+        "full_text": "https://arxiv.org/html/2611.08039v1",
+        "project": "https://hitch.axell.top/",
+        "pages": 13,
+        "sha256": "32f3dc76656655ef216e686b434704a096cf96dad3e728cd22f1963509776351",
+        "source_record": "assets/043-hitch/source-record.json"
+      },
+      "figures_manifest": "assets/043-hitch/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "teaser",
+          "page": 1,
+          "path": "assets/043-hitch/fig-01-teaser.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "architecture",
+          "page": 3,
+          "path": "assets/043-hitch/fig-02-architecture.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "body-commands",
+          "page": 4,
+          "path": "assets/043-hitch/fig-03-body-commands.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "active-perception",
+          "page": 5,
+          "path": "assets/043-hitch/fig-04-active-perception.png"
+        },
+        {
+          "figure": "Figure 5",
+          "role": "rollouts",
+          "page": 7,
+          "path": "assets/043-hitch/fig-05-rollouts.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "teacher-example",
+          "page": 12,
+          "path": "assets/043-hitch/fig-06-teacher-example.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-18",
+        "value": "Complete official HITCH code, teacher trajectories, and policy weights were not verified; the project page could not be reviewed."
+      },
+      "evidence_boundaries": [
+        "The VLM emits one structured call per turn. A command runs to completion before the next observation.",
+        "50 Hz denotes HEFT tracking, not VLM query rate.",
+        "Five-shot results use supervised model fine-tuning and simulation, not in-context examples or real trials.",
+        "SIMPLE covers six tasks and HumanoidArena covers four. Camera, execution stack and instruction wording are adapted.",
+        "The five-shot control uses a different training duration. When there are multiple saved checkpoints, the paper selects by SIMPLE success.",
+        "Tracker comparison is under the HITCH command/reference distribution and code teachers, not a general tracker ranking.",
+        "Hardware has rubber palms without finger control. Only two real tasks are tested.",
+        "The planner supports flat walking, reaching, leaning and crouching. Fast within-command reactions and other motions are outside its evaluated scope."
+      ],
+      "method": {
+        "teacher_base_task_types": 5,
+        "trajectories_per_base_task": 500,
+        "base_trajectories": 2500,
+        "VLM": "Qwen3.8-27B",
+        "vision_encoder_and_projector_frozen": true,
+        "tracking_Hz": 50,
+        "VLM_calls_per_turn": 1,
+        "depth_camera": "RealSense D455 on 2-DoF mount",
+        "base_simple_mixed_training_steps": [
+          450,
+          100,
+          750
+        ]
+      },
+      "evaluation": {
+        "simple_tasks": 6,
+        "simple_episodes": 180,
+        "arena_tasks": 4,
+        "arena_episodes": 80,
+        "simple_pretrained_base_five_only_base_plus_five_pct": [
+          3.3,
+          51.1,
+          90,
+          95
+        ],
+        "arena_pretrained_base_base_plus_ten_pct": [
+          16.3,
+          42.5,
+          28.8
+        ],
+        "base_no_point_measurement_simple_arena_pct": [
+          2.8,
+          27.5
+        ],
+        "tracker_teacher_episodes": 240,
+        "teacher_success_adaptedHEFT_HEFT_SONIC_AMO_pct": [
+          97.9,
+          94.2,
+          27.9,
+          12.9
+        ],
+        "real_carry_success_trials": [
+          13,
+          20
+        ],
+        "real_navigation_success_trials": [
+          6,
+          10
+        ]
+      }
     }
   ],
   "batches": [

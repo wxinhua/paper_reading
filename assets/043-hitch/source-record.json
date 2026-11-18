@@ -1,0 +1,42 @@
+{
+  "paper_id": "043",
+  "title": "HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness",
+  "arxiv_id": "2611.08039",
+  "version": "arXiv:2611.08039v1, 2026-11-05",
+  "read_on": "2026-11-18",
+  "source_document": "https://arxiv.org/abs/2611.08039v1",
+  "source_url": "https://arxiv.org/pdf/2611.08039v1",
+  "sha256": "32f3dc76656655ef216e686b434704a096cf96dad3e728cd22f1963509776351",
+  "pages": 13,
+  "bytes": 2686597,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.08039v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2611.08039v1"
+    },
+    {
+      "role": "project",
+      "url": "https://hitch.axell.top/"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-18",
+    "value": "Complete official HITCH code, teacher trajectories, and policy weights were not verified; the project page could not be reviewed."
+  },
+  "evidence_boundaries": [
+    "The VLM emits one structured call per turn. A command runs to completion before the next observation.",
+    "50 Hz denotes HEFT tracking, not VLM query rate.",
+    "Five-shot results use supervised model fine-tuning and simulation, not in-context examples or real trials.",
+    "SIMPLE covers six tasks and HumanoidArena covers four. Camera, execution stack and instruction wording are adapted.",
+    "The five-shot control uses a different training duration. When there are multiple saved checkpoints, the paper selects by SIMPLE success.",
+    "Tracker comparison is under the HITCH command/reference distribution and code teachers, not a general tracker ranking.",
+    "Hardware has rubber palms without finger control. Only two real tasks are tested.",
+    "The planner supports flat walking, reaching, leaning and crouching. Fast within-command reactions and other motions are outside its evaluated scope."
+  ],
+  "author_code_executed": false
+}
