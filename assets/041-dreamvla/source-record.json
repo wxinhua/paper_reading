@@ -1,0 +1,40 @@
+{
+  "paper_id": "041",
+  "title": "DreamVLA: From Generated Human Motions to Humanoid Vision-Language-Action Policies",
+  "arxiv_id": "2611.10872",
+  "version": "arXiv:2611.10872v1, 2026-11-07",
+  "read_on": "2026-11-18",
+  "source_document": "https://arxiv.org/abs/2611.10872v1",
+  "source_url": "https://arxiv.org/pdf/2611.10872v1",
+  "sha256": "72664aa57b5fd4e6ac43dce841ae13666fc1f6d897adbc7928e3a0f87a7a24d6",
+  "pages": 13,
+  "bytes": 3015936,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.10872v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2611.10872v1"
+    },
+    {
+      "role": "project",
+      "url": "https://ember-center-berkeley.github.io/DreamVLA/"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-18",
+    "value": "Official project page provides selected simulated rollouts and reported results; full method code, dataset and checkpoints were not verified."
+  },
+  "evidence_boundaries": [
+    "All reported evaluations are in simulation on a single embodiment.",
+    "Expert and VLA scores differ; reported walk-and-pick is 75.95% expert and 18% student.",
+    "Button success requires right-index contact in paper Table 1.",
+    "The matched offline control matches trajectory count, not demonstrated equality of frame counts.",
+    "Paper v1 tables and project-page summary differ for some drawer and button scores.",
+    "Task-specific motion constraints, trajectories, rewards and success filters are retained."
+  ],
+  "author_code_executed": false
+}

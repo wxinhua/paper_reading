@@ -1,0 +1,182 @@
+{
+  "paper_id": "040",
+  "title": "Ego2Sim2Humanoid: Agentic Real-to-Sim for Learning Loco-Manipulation VLAs without Robot Demonstrations",
+  "source_document": "https://arxiv.org/abs/2611.19196v1",
+  "source_url": "https://arxiv.org/pdf/2611.19196v1",
+  "source_version": "arXiv:2611.19196v1, 2026-11-14",
+  "source_sha256": "125b8ec870aeff2ad518ac04cb6333d2606e92ac178d5d384d1aa8869ae63fdc",
+  "source_pages": 13,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-18",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.075,
+        0.313,
+        0.925,
+        0.646
+      ],
+      "crop_pdf_points": [
+        45.9,
+        247.896,
+        566.1,
+        511.632
+      ],
+      "crop_pixels": [
+        128,
+        689,
+        1572,
+        1421
+      ],
+      "dpi": 200,
+      "size_px": [
+        1444,
+        732
+      ],
+      "sha256": "3e384888e582fa0c51996c79a17077000183580cbf4b0cbb7e6c85e2c2cbfdbf",
+      "original_caption_source": "Figure 1, PDF page 1",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "architecture",
+      "pdf_page": 2,
+      "file": "fig-02-architecture.png",
+      "crop_normalized": [
+        0.074,
+        0.063,
+        0.927,
+        0.658
+      ],
+      "crop_pdf_points": [
+        45.288,
+        49.896,
+        567.3240000000001,
+        521.136
+      ],
+      "crop_pixels": [
+        126,
+        139,
+        1576,
+        1448
+      ],
+      "dpi": 200,
+      "size_px": [
+        1450,
+        1309
+      ],
+      "sha256": "cc49b0b04d035dd8ce783f5c178ad98699ade06b2a63b69c21cd093bf3efd4ee",
+      "original_caption_source": "Figure 2, PDF page 2",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "real-to-sim",
+      "pdf_page": 5,
+      "file": "fig-03-real-to-sim.png",
+      "crop_normalized": [
+        0.074,
+        0.063,
+        0.927,
+        0.255
+      ],
+      "crop_pdf_points": [
+        45.288,
+        49.896,
+        567.3240000000001,
+        201.96
+      ],
+      "crop_pixels": [
+        126,
+        139,
+        1576,
+        561
+      ],
+      "dpi": 200,
+      "size_px": [
+        1450,
+        422
+      ],
+      "sha256": "e9187c8f681605bd91afc3d91bc64158dca06ebdf3fcbe8f7115aebab2de2bc3",
+      "original_caption_source": "Figure 3, PDF page 5",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 4",
+      "role": "robot-view",
+      "pdf_page": 6,
+      "file": "fig-04-robot-view.png",
+      "crop_normalized": [
+        0.074,
+        0.063,
+        0.927,
+        0.278
+      ],
+      "crop_pdf_points": [
+        45.288,
+        49.896,
+        567.3240000000001,
+        220.17600000000002
+      ],
+      "crop_pixels": [
+        126,
+        139,
+        1576,
+        612
+      ],
+      "dpi": 200,
+      "size_px": [
+        1450,
+        473
+      ],
+      "sha256": "a83810c6ad465a43a4a33a2bb98ee474447d3b7771c3b78277dc93d18b731538",
+      "original_caption_source": "Figure 4, PDF page 6",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 6",
+      "role": "real-outcomes",
+      "pdf_page": 7,
+      "file": "fig-06-real-outcomes.png",
+      "crop_normalized": [
+        0.501,
+        0.235,
+        0.927,
+        0.522
+      ],
+      "crop_pdf_points": [
+        306.612,
+        186.11999999999998,
+        567.3240000000001,
+        413.42400000000004
+      ],
+      "crop_pixels": [
+        852,
+        517,
+        1576,
+        1148
+      ],
+      "dpi": 200,
+      "size_px": [
+        724,
+        631
+      ],
+      "sha256": "b3c41b79163a9d4c8af009dda4c026e4749288351abcdf440208d61f4144e14b",
+      "original_caption_source": "Figure 6, PDF page 7",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    }
+  ]
+}

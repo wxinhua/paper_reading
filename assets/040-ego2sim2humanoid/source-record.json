@@ -1,0 +1,44 @@
+{
+  "paper_id": "040",
+  "title": "Ego2Sim2Humanoid: Agentic Real-to-Sim for Learning Loco-Manipulation VLAs without Robot Demonstrations",
+  "arxiv_id": "2611.19196",
+  "version": "arXiv:2611.19196v1, 2026-11-14",
+  "read_on": "2026-11-18",
+  "source_document": "https://arxiv.org/abs/2611.19196v1",
+  "source_url": "https://arxiv.org/pdf/2611.19196v1",
+  "sha256": "125b8ec870aeff2ad518ac04cb6333d2606e92ac178d5d384d1aa8869ae63fdc",
+  "pages": 13,
+  "bytes": 23058305,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2611.19196v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2611.19196v1"
+    },
+    {
+      "role": "project",
+      "url": "https://robonana.github.io/ego2sim2humanoid/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/robonana/ego2sim2humanoid"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-18",
+    "value": "Official repository advertises code coming soon. Full implementation, training data and weights were not verified."
+  },
+  "evidence_boundaries": [
+    "Input includes RGB-D, tracked head trajectory and visible 3D hand poses.",
+    "The missing lower-body and out-of-view motion is synthesized for the robot.",
+    "Two G1 tasks, 20 trials per task; no target-task real robot demonstrations for fine-tuning.",
+    "Contact planning comparison and EgoHumanoid retargeting comparison are not real-world VLA success comparisons.",
+    "EgoHumanoid-V2 full baseline reports metrics over 6 completed held-out clips.",
+    "Object physical parameters are estimated from priors; deformable and heavy object transfer is unverified."
+  ],
+  "author_code_executed": false
+}

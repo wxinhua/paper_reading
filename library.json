@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-11-13",
+  "updated_on": "2026-11-18",
   "papers": [
     {
       "id": "001",
@@ -5276,6 +5276,300 @@
         "RTC active only in real experiments; its contribution not isolated",
         "Kinematic references require SONIC; no general cross-tracker validation",
         "Code/checkpoints/data release verified by documentation, not reproduced"
+      ]
+    },
+    {
+      "id": "040",
+      "short_title": "Ego2Sim2Humanoid",
+      "title": "Ego2Sim2Humanoid: Agentic Real-to-Sim for Learning Loco-Manipulation VLAs without Robot Demonstrations",
+      "arxiv_id": "2611.19196",
+      "version": "arXiv:2611.19196v1, 2026-11-14",
+      "submitted_on": "2026-11-14",
+      "read_on": "2026-11-18",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "主要贡献是将稀疏人类记录转换成物理验证和视角对齐的机器人训练数据。",
+      "note_path": "papers/040-ego2sim2humanoid.md",
+      "reader_path": "ego2sim2humanoid.html",
+      "library_summary": "将人类眼镜的 RGB-D、头和可见手转换成机器人数据。逐段建场景并规划接触与站位，Kimodo 补全全身，仿真验证后重渲染训练 GR00T。真机举瓶 9/20、戴帽 5/20。",
+      "platform": "Unitree G1; Dex3; Aria Gen 2; Kimodo; SONIC; GR00T N1.7 (3B)",
+      "evidence": "sim-and-real",
+      "tags": [
+        "ego-RGB-D",
+        "real-to-sim",
+        "Kimodo",
+        "contact-band",
+        "grasp-planning",
+        "SONIC",
+        "whole-body-VLA"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.19196v1",
+        "full_text": "https://arxiv.org/html/2611.19196v1",
+        "project": "https://robonana.github.io/ego2sim2humanoid/",
+        "pages": 13,
+        "sha256": "125b8ec870aeff2ad518ac04cb6333d2606e92ac178d5d384d1aa8869ae63fdc",
+        "source_record": "assets/040-ego2sim2humanoid/source-record.json",
+        "code": "https://github.com/robonana/ego2sim2humanoid"
+      },
+      "figures_manifest": "assets/040-ego2sim2humanoid/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/040-ego2sim2humanoid/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "architecture",
+          "page": 2,
+          "path": "assets/040-ego2sim2humanoid/fig-02-architecture.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "real-to-sim",
+          "page": 5,
+          "path": "assets/040-ego2sim2humanoid/fig-03-real-to-sim.png"
+        },
+        {
+          "figure": "Figure 4",
+          "role": "robot-view",
+          "page": 6,
+          "path": "assets/040-ego2sim2humanoid/fig-04-robot-view.png"
+        },
+        {
+          "figure": "Figure 6",
+          "role": "real-outcomes",
+          "page": 7,
+          "path": "assets/040-ego2sim2humanoid/fig-06-real-outcomes.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-18",
+        "value": "Official repository advertises code coming soon. Full implementation, training data and weights were not verified."
+      },
+      "method": {
+        "state_joint_positions": 43,
+        "state_also_has_base_frame_gravity": true,
+        "body_token_dimensions": 64,
+        "hand_action_dimensions": 14,
+        "action_dimensions": 78,
+        "motion_generator": "Kimodo",
+        "VLA": "GR00T N1.7 (3B)",
+        "target_task_real_robot_demos_used_for_finetuning": false
+      },
+      "evaluation": {
+        "real_tasks": [
+          "Bottle lift",
+          "Hat wearing"
+        ],
+        "human_recordings": [
+          219,
+          154
+        ],
+        "accepted_episodes": [
+          189,
+          59
+        ],
+        "real_attempts": [
+          20,
+          20
+        ],
+        "real_reached": [
+          17,
+          20
+        ],
+        "real_grasped": [
+          9,
+          8
+        ],
+        "real_successes": [
+          9,
+          5
+        ],
+        "hat_grasp_comparison_recordings": 71,
+        "hat_grasp_comparison_both_succeeded": 43,
+        "hat_retargeting_feasible_grasps": [
+          57,
+          71
+        ],
+        "ego_v2_full_completed_heldout": [
+          6,
+          8
+        ]
+      },
+      "evidence_boundaries": [
+        "Input includes RGB-D, tracked head trajectory and visible 3D hand poses.",
+        "The missing lower-body and out-of-view motion is synthesized for the robot.",
+        "Two G1 tasks, 20 trials per task; no target-task real robot demonstrations for fine-tuning.",
+        "Contact planning comparison and EgoHumanoid retargeting comparison are not real-world VLA success comparisons.",
+        "EgoHumanoid-V2 full baseline reports metrics over 6 completed held-out clips.",
+        "Object physical parameters are estimated from priors; deformable and heavy object transfer is unverified."
+      ]
+    },
+    {
+      "id": "041",
+      "short_title": "DreamVLA",
+      "title": "DreamVLA: From Generated Human Motions to Humanoid Vision-Language-Action Policies",
+      "arxiv_id": "2611.10872",
+      "version": "arXiv:2611.10872v1, 2026-11-07",
+      "submitted_on": "2026-11-07",
+      "read_on": "2026-11-18",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "data-and-evaluation",
+      "related_subcategories": [
+        "brain-models",
+        "motion-control"
+      ],
+      "classification_reason": "核心贡献是合成仿真示范与基于学生失败状态的恢复数据蒸馏。",
+      "note_path": "papers/041-dreamvla.md",
+      "reader_path": "dreamvla.html",
+      "library_summary": "由文本与时空约束生成动作参考，SONIC 残差专家在仿真中造数据。VLA 失败后从学生状态重启专家，收集成功纠错续段。匹配 800 条轨迹时，平台取物与行走取物由 0% 到 54% 与 18%。",
+      "platform": "Simulated Unitree G1; DreamControl; OmniControl; OmniRetarget; SONIC; GR00T",
+      "evidence": "simulation-only",
+      "tags": [
+        "synthetic-demonstrations",
+        "human-motion-generation",
+        "residual-RL",
+        "SONIC",
+        "DAgger",
+        "GR00T"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2611.10872v1",
+        "full_text": "https://arxiv.org/html/2611.10872v1",
+        "project": "https://ember-center-berkeley.github.io/DreamVLA/",
+        "pages": 13,
+        "sha256": "72664aa57b5fd4e6ac43dce841ae13666fc1f6d897adbc7928e3a0f87a7a24d6",
+        "source_record": "assets/041-dreamvla/source-record.json"
+      },
+      "figures_manifest": "assets/041-dreamvla/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 2,
+          "path": "assets/041-dreamvla/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "sim-tasks",
+          "page": 8,
+          "path": "assets/041-dreamvla/fig-02-sim-tasks.png"
+        },
+        {
+          "figure": "Figure 3",
+          "role": "residual-sonic",
+          "page": 9,
+          "path": "assets/041-dreamvla/fig-03-residual-sonic.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-18",
+        "value": "Official project page provides selected simulated rollouts and reported results; full method code, dataset and checkpoints were not verified."
+      },
+      "method": {
+        "VLA": "pretrained GR00T; exact variant not specified in method section",
+        "student_action": "complete executed SONIC token plus binary hand control",
+        "reference_runtime_in_student": false,
+        "new_target_task_teleoperation": false,
+        "visual_domain_randomization": false
+      },
+      "evaluation": {
+        "tasks": [
+          "Pick",
+          "Drawer",
+          "Button",
+          "Walk and pick"
+        ],
+        "rollouts_per_task": 100,
+        "trajectory_budgets_by_round": [
+          200,
+          400,
+          600,
+          800
+        ],
+        "paper_v1_dagger_pct": [
+          [
+            0,
+            51,
+            59,
+            0
+          ],
+          [
+            17,
+            55,
+            58,
+            1
+          ],
+          [
+            30,
+            54,
+            62,
+            7
+          ],
+          [
+            54,
+            60,
+            69,
+            18
+          ]
+        ],
+        "paper_v1_matched_offline_800_pct": [
+          0,
+          54,
+          57,
+          0
+        ],
+        "paper_v1_nominal_sonic_pct": [
+          0,
+          30.0,
+          68.0,
+          17.3
+        ],
+        "paper_v1_residual_expert_pct": [
+          88.6,
+          74.0,
+          81.0,
+          75.95
+        ],
+        "paper_v1_data_scaling_pct": [
+          [
+            0,
+            13,
+            0,
+            0
+          ],
+          [
+            0,
+            51,
+            14,
+            0
+          ],
+          [
+            0,
+            51,
+            59,
+            0
+          ]
+        ]
+      },
+      "evidence_boundaries": [
+        "All reported evaluations are in simulation on a single embodiment.",
+        "Expert and VLA scores differ; reported walk-and-pick is 75.95% expert and 18% student.",
+        "Button success requires right-index contact in paper Table 1.",
+        "The matched offline control matches trajectory count, not demonstrated equality of frame counts.",
+        "Paper v1 tables and project-page summary differ for some drawer and button scores.",
+        "Task-specific motion constraints, trajectories, rewards and success filters are retained."
       ]
     }
   ],

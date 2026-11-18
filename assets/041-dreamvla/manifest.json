@@ -1,0 +1,116 @@
+{
+  "paper_id": "041",
+  "title": "DreamVLA: From Generated Human Motions to Humanoid Vision-Language-Action Policies",
+  "source_document": "https://arxiv.org/abs/2611.10872v1",
+  "source_url": "https://arxiv.org/pdf/2611.10872v1",
+  "source_version": "arXiv:2611.10872v1, 2026-11-07",
+  "source_sha256": "72664aa57b5fd4e6ac43dce841ae13666fc1f6d897adbc7928e3a0f87a7a24d6",
+  "source_pages": 13,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "extracted_on": "2026-11-18",
+  "extraction": "Original PDF rendered with Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 2,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.171,
+        0.086,
+        0.829,
+        0.442
+      ],
+      "crop_pdf_points": [
+        104.652,
+        68.112,
+        507.34799999999996,
+        350.064
+      ],
+      "crop_pixels": [
+        291,
+        189,
+        1409,
+        972
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        783
+      ],
+      "sha256": "03ff767a974fe60f45505fb66cd0c0d741068b88aabf6ab9c4dc260825c71f73",
+      "original_caption_source": "Figure 1, PDF page 2",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "sim-tasks",
+      "pdf_page": 8,
+      "file": "fig-02-sim-tasks.png",
+      "crop_normalized": [
+        0.171,
+        0.085,
+        0.829,
+        0.298
+      ],
+      "crop_pdf_points": [
+        104.652,
+        67.32000000000001,
+        507.34799999999996,
+        236.016
+      ],
+      "crop_pixels": [
+        291,
+        187,
+        1409,
+        656
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        469
+      ],
+      "sha256": "000cf834f7e8a35c52d274857498bb973ed192f3f01f113547d1979b5531a001",
+      "original_caption_source": "Figure 2, PDF page 8",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    },
+    {
+      "figure": "Figure 3",
+      "role": "residual-sonic",
+      "pdf_page": 9,
+      "file": "fig-03-residual-sonic.png",
+      "crop_normalized": [
+        0.171,
+        0.216,
+        0.829,
+        0.419
+      ],
+      "crop_pdf_points": [
+        104.652,
+        171.072,
+        507.34799999999996,
+        331.848
+      ],
+      "crop_pixels": [
+        291,
+        475,
+        1409,
+        922
+      ],
+      "dpi": 200,
+      "size_px": [
+        1118,
+        447
+      ],
+      "sha256": "ca2d84048caf97e615656a98ebbf8ae5a2bf9d80bf213640e679463ac9f84162",
+      "original_caption_source": "Figure 3, PDF page 9",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original figure and complete caption visible"
+    }
+  ]
+}
