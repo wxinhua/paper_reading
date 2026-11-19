@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library_title": "全身智能 · Paper 笔记库",
-  "updated_on": "2026-11-18",
+  "updated_on": "2026-11-19",
   "papers": [
     {
       "id": "001",
@@ -5873,6 +5873,164 @@
           10
         ]
       }
+    },
+    {
+      "id": "044",
+      "short_title": "Movens-Zero",
+      "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+      "arxiv_id": "2610.41877",
+      "version": "arXiv:2610.41877v1, 2026-10-30",
+      "submitted_on": "2026-10-30",
+      "read_on": "2026-11-19",
+      "status": "summarized_not_reproduced",
+      "source_origin": "public_paper_and_official_materials",
+      "category": "wholebody-intelligence",
+      "subcategory": "brain-models",
+      "related_subcategories": [
+        "data-and-evaluation",
+        "motion-control"
+      ],
+      "classification_reason": "全模态条件的全身动作生成与连续执行，另贡献网络视频数据管线和基准。",
+      "note_path": "papers/044-movens-zero.md",
+      "reader_path": "movens-zero.html",
+      "library_summary": "网络视频恢复 SMPL-X，局部修补后经 GMR 和仿真筛选，形成 Movens-5M。冻结全模态编码器与共享 flow 专家支持视频、文字、语音和音乐。MM-RTC 以 30/20/10 帧预测、提交和重叠，真机以定性展示为主。",
+      "platform": "Unitree G1; Qwen2.5-Omni-3B; GMR; GVHMR; PromptHMR; Kimodo; HoloMotion",
+      "evidence": "offline-and-qualitative-robot",
+      "tags": [
+        "motion-generation",
+        "web-video",
+        "video-to-motion",
+        "retargeting",
+        "flow-matching",
+        "MM-RTC",
+        "scaling"
+      ],
+      "sources": {
+        "paper": "https://arxiv.org/abs/2610.41877v1",
+        "full_text": "https://arxiv.org/html/2610.41877v1",
+        "project": "https://movens-zero.github.io/",
+        "code": "https://github.com/wendell0218/Movens-Zero",
+        "dataset": "https://huggingface.co/datasets/wendell0218/Movens-5M",
+        "benchmark": "https://huggingface.co/datasets/wendell0218/Movens-Intent",
+        "XL_weights": "https://huggingface.co/wendell0218/Movens-Zero-XL",
+        "pages": 86,
+        "sha256": "0ccf936e6bcd418ac3f69f1d35eae62b6ceaec9ca838c4821d3fd22214eb4364",
+        "source_record": "assets/044-movens-zero/source-record.json"
+      },
+      "figures_manifest": "assets/044-movens-zero/manifest.json",
+      "figures": [
+        {
+          "figure": "Figure 1",
+          "role": "overview",
+          "page": 1,
+          "path": "assets/044-movens-zero/fig-01-overview.png"
+        },
+        {
+          "figure": "Figure 2",
+          "role": "data-pipeline",
+          "page": 3,
+          "path": "assets/044-movens-zero/fig-02-data-pipeline.png"
+        },
+        {
+          "figure": "Figure 7",
+          "role": "architecture",
+          "page": 12,
+          "path": "assets/044-movens-zero/fig-07-architecture.png"
+        },
+        {
+          "figure": "Figure 9",
+          "role": "scaling",
+          "page": 20,
+          "path": "assets/044-movens-zero/fig-09-scaling.png"
+        },
+        {
+          "figure": "Figure 27",
+          "role": "live-video",
+          "page": 70,
+          "path": "assets/044-movens-zero/fig-27-live-video.png"
+        }
+      ],
+      "code_status": {
+        "checked_on": "2026-11-19",
+        "value": "Official code, four checkpoint links and dataset entry points verified. Full data shards and model execution not independently checked."
+      },
+      "method": {
+        "human_sequences": 15000000,
+        "verified_humanoid_sequences": 5000000,
+        "full_data_scaling_hours": 12231,
+        "motion_types": 297,
+        "scene_groups": 16,
+        "motion_width": 40,
+        "action_expert_M": [
+          64.2,
+          187.9,
+          500.1,
+          910.5
+        ],
+        "motion_Hz": 50,
+        "prediction_commit_overlap_frames": [
+          30,
+          20,
+          10
+        ],
+        "training_tasks": 7,
+        "experiment_execution_tracker": "HoloMotion"
+      },
+      "evaluation": {
+        "intent_pairs": 8192,
+        "XL_data_fractions": [
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1
+        ],
+        "XL_text_R3_pct": [
+          12.72,
+          15.81,
+          24.92,
+          41.8,
+          62.57
+        ],
+        "XL_video_MPJPE_mm": [
+          132.82,
+          129.31,
+          110.55,
+          87.9,
+          40.9
+        ],
+        "XL_speech_R3_pct": [
+          13.98,
+          17.88,
+          21.76,
+          54.34,
+          74.3
+        ],
+        "XL_tracking_score": [
+          0.21,
+          0.28,
+          0.36,
+          0.5,
+          0.72
+        ],
+        "data_ablation_raw_full_video_MPJPE_mm": [
+          126.82,
+          40.9
+        ],
+        "data_ablation_raw_full_tracking_score": [
+          0.41,
+          0.72
+        ]
+      },
+      "evidence_boundaries": [
+        "15M human and 5M humanoid sequences are pipeline-stage counts.",
+        "Acceptance requires one successful evaluated simulation-controller rollout, not hardware validation.",
+        "Video conditioning uses visible human examples; it is not wearer-body reconstruction from egocentric clips.",
+        "The action expert produces explicit 40D G1 reference motion, not torques or a SONIC action latent.",
+        "50 Hz is the motion frame rate; a 20-frame commitment is 0.4 s. Hardware display offsets do not measure system latency.",
+        "Real G1 examples are qualitative; no aggregate hardware success rate or autonomous object-manipulation benchmark is reported.",
+        "Published data card has inconsistent shard-repository count; four linked repositories were verified but individual contents were not audited."
+      ]
     }
   ],
   "batches": [

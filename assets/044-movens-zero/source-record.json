@@ -1,0 +1,57 @@
+{
+  "paper_id": "044",
+  "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+  "arxiv_id": "2610.41877",
+  "version": "arXiv:2610.41877v1, 2026-10-30",
+  "read_on": "2026-11-19",
+  "source_document": "https://arxiv.org/abs/2610.41877v1",
+  "source_url": "https://arxiv.org/pdf/2610.41877v1",
+  "sha256": "0ccf936e6bcd418ac3f69f1d35eae62b6ceaec9ca838c4821d3fd22214eb4364",
+  "pages": 86,
+  "bytes": 50125529,
+  "source_preserved_unmodified": true,
+  "official_sources": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2610.41877v1"
+    },
+    {
+      "role": "full_text",
+      "url": "https://arxiv.org/html/2610.41877v1"
+    },
+    {
+      "role": "project",
+      "url": "https://movens-zero.github.io/"
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/wendell0218/Movens-Zero"
+    },
+    {
+      "role": "dataset",
+      "url": "https://huggingface.co/datasets/wendell0218/Movens-5M"
+    },
+    {
+      "role": "benchmark",
+      "url": "https://huggingface.co/datasets/wendell0218/Movens-Intent"
+    },
+    {
+      "role": "XL_weights",
+      "url": "https://huggingface.co/wendell0218/Movens-Zero-XL"
+    }
+  ],
+  "release_status": {
+    "checked_on": "2026-11-19",
+    "value": "Official code, four checkpoint links and dataset entry points verified. Full data shards and model execution not independently checked."
+  },
+  "evidence_boundaries": [
+    "15M human and 5M humanoid sequences are pipeline-stage counts.",
+    "Acceptance requires one successful evaluated simulation-controller rollout, not hardware validation.",
+    "Video conditioning uses visible human examples; it is not wearer-body reconstruction from egocentric clips.",
+    "The action expert produces explicit 40D G1 reference motion, not torques or a SONIC action latent.",
+    "50 Hz is the motion frame rate; a 20-frame commitment is 0.4 s. Hardware display offsets do not measure system latency.",
+    "Real G1 examples are qualitative; no aggregate hardware success rate or autonomous object-manipulation benchmark is reported.",
+    "Published data card has inconsistent shard-repository count; four linked repositories were verified but individual contents were not audited."
+  ],
+  "author_code_executed": false
+}

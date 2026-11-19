@@ -1,0 +1,182 @@
+{
+  "paper_id": "044",
+  "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+  "source_document": "https://arxiv.org/abs/2610.41877v1",
+  "source_url": "https://arxiv.org/pdf/2610.41877v1",
+  "source_version": "arXiv:2610.41877v1, 2026-10-30",
+  "source_sha256": "0ccf936e6bcd418ac3f69f1d35eae62b6ceaec9ca838c4821d3fd22214eb4364",
+  "source_pages": 86,
+  "page_size_points": [
+    595.276,
+    841.89
+  ],
+  "extracted_on": "2026-11-19",
+  "extraction": "Original PDF rendered with system Poppler and cropped; no redrawing",
+  "figures": [
+    {
+      "figure": "Figure 1",
+      "role": "overview",
+      "pdf_page": 1,
+      "file": "fig-01-overview.png",
+      "crop_normalized": [
+        0.108,
+        0.614,
+        0.892,
+        0.893
+      ],
+      "crop_pdf_points": [
+        64.289808,
+        516.9204599999999,
+        530.986192,
+        751.80777
+      ],
+      "crop_pixels": [
+        179,
+        1436,
+        1475,
+        2089
+      ],
+      "dpi": 200,
+      "size_px": [
+        1296,
+        653
+      ],
+      "sha256": "e334a227eb633037e2f65ca8260cb7a27388f73b736f7ef1a5039d1db31ab874",
+      "original_caption_source": "Figure 1, PDF page 1; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original image and full caption"
+    },
+    {
+      "figure": "Figure 2",
+      "role": "data-pipeline",
+      "pdf_page": 3,
+      "file": "fig-02-data-pipeline.png",
+      "crop_normalized": [
+        0.108,
+        0.072,
+        0.892,
+        0.3
+      ],
+      "crop_pdf_points": [
+        64.289808,
+        60.61608,
+        530.986192,
+        252.56699999999998
+      ],
+      "crop_pixels": [
+        179,
+        168,
+        1475,
+        702
+      ],
+      "dpi": 200,
+      "size_px": [
+        1296,
+        534
+      ],
+      "sha256": "6b6a5ba0c3438c3efd7aa4328fc9b169f760e78fe51774d49a15932ffac8cea2",
+      "original_caption_source": "Figure 2, PDF page 3; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original image and full caption"
+    },
+    {
+      "figure": "Figure 7",
+      "role": "architecture",
+      "pdf_page": 12,
+      "file": "fig-07-architecture.png",
+      "crop_normalized": [
+        0.108,
+        0.07,
+        0.892,
+        0.273
+      ],
+      "crop_pdf_points": [
+        64.289808,
+        58.932300000000005,
+        530.986192,
+        229.83597
+      ],
+      "crop_pixels": [
+        179,
+        164,
+        1475,
+        639
+      ],
+      "dpi": 200,
+      "size_px": [
+        1296,
+        475
+      ],
+      "sha256": "de1191e61951412e9e4aa9a2c2d38f5937977bdd21f28c74d054ece06bba0e49",
+      "original_caption_source": "Figure 7, PDF page 12; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original image and full caption"
+    },
+    {
+      "figure": "Figure 9",
+      "role": "scaling",
+      "pdf_page": 20,
+      "file": "fig-09-scaling.png",
+      "crop_normalized": [
+        0.108,
+        0.07,
+        0.892,
+        0.415
+      ],
+      "crop_pdf_points": [
+        64.289808,
+        58.932300000000005,
+        530.986192,
+        349.38435
+      ],
+      "crop_pixels": [
+        179,
+        164,
+        1475,
+        971
+      ],
+      "dpi": 200,
+      "size_px": [
+        1296,
+        807
+      ],
+      "sha256": "7673b29ff7e8f6c397ed2f4bf3084ffb8f2f56555170340daa0e231f30b9d597",
+      "original_caption_source": "Figure 9, PDF page 20; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original image and full caption"
+    },
+    {
+      "figure": "Figure 27",
+      "role": "live-video",
+      "pdf_page": 70,
+      "file": "fig-27-live-video.png",
+      "crop_normalized": [
+        0.108,
+        0.075,
+        0.892,
+        0.912
+      ],
+      "crop_pdf_points": [
+        64.289808,
+        63.141749999999995,
+        530.986192,
+        767.80368
+      ],
+      "crop_pixels": [
+        179,
+        175,
+        1475,
+        2133
+      ],
+      "dpi": 200,
+      "size_px": [
+        1296,
+        1958
+      ],
+      "sha256": "c98feabc6b8797c60d3365c6266bc4219493ec37558fa62bfc7e0010d1f2d811",
+      "original_caption_source": "Figure 27, PDF page 70; complete original English caption preserved in image",
+      "caption_preserved_in_image": true,
+      "visual_review": "passed: original image and full caption"
+    }
+  ]
+}

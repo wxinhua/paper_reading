@@ -4,13 +4,13 @@
 
 **[在线阅读目录](https://wxinhua.github.io/paper_reading/)** · [统一笔记模板](template.md) · [维护说明](CONTRIBUTING.md)
 
-当前共 **43 篇**，保存 **138 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
+当前共 **44 篇**，保存 **143 张论文原图**。图片保留原图注，来源记录包含论文版本、页码、裁剪参数和校验值。编号按全库顺序累积。
 
 ## 分类
 
-**Wholebody Intelligence · 38 篇**
+**Wholebody Intelligence · 39 篇**
 
-- [大脑模型与任务策略 · 21 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成、世界模型与高层规划。
+- [大脑模型与任务策略 · 22 篇](https://wxinhua.github.io/paper_reading/#subcategory-brain-models)：VLA / VAM / WAM、视觉任务策略、文字动作生成、世界模型与高层规划。
 - [运动控制与重定向 · 6 篇](https://wxinhua.github.io/paper_reading/#subcategory-motion-control)：GMT / WBC 类全身跟踪、关节控制、重定向 / IK 与部署时参考运动复用。
 - [数据、基准与综述 · 11 篇](https://wxinhua.github.io/paper_reading/#subcategory-data-and-evaluation)：示范对齐与生成、仿真基础设施、评测与综述。
 
@@ -75,6 +75,8 @@
 
 - 043 · [HITCH · VLM 调用三维感知和全身命令](papers/043-hitch.md)
 
+- 044 · [Movens-Zero · 网络视频与多模态全身动作生成](papers/044-movens-zero.md)
+
 ## 更新方式
 
 在 GitHub 中编辑 `papers/` 下的 Markdown 笔记，提交到 `main` 后，网页自动重新生成。新增论文时按[维护说明](CONTRIBUTING.md)追加笔记、图片和 `library.json` 记录。
@@ -99,5 +101,5 @@ python3 tools/build_site.py
 
 论文图片与论文内容的权利归原作者；各笔记和图像记录保留原始出处。论文事实与阅读者判断分开；不同实验协议下的成功率不直接排名。
 
-最后整理：**2026-11-18**。
+最后整理：**2026-11-19**。
 
